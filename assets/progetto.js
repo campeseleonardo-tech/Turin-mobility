@@ -34,7 +34,7 @@
       <h2 id="h3p" data-en="Where fragility and few services go together">Dove fragilità e pochi servizi coincidono</h2>
       <p data-en="About <b>1 Turin resident in <span data-n='doppio.n_su'></span></b> (<b><span data-n='doppio.residenti'></span></b> people) lives where social fragility is high and services within walking distance are few. In this situation there are <span data-n='doppio.n_zone'></span> zones: <span data-n='doppio.nomi'></span>.">Circa <b>1 torinese su <span data-n="doppio.n_su"></span></b> (<b><span data-n="doppio.residenti"></span></b> persone) vive dove la fragilità sociale è alta e i servizi a piedi sono pochi. In questa situazione ci sono <span data-n="doppio.n_zone"></span> zone: <span data-n="doppio.nomi"></span>.</p>
       <p data-en="For me this is the strongest result, and it is not about technology: as my thesis said, urban problems are social problems.">Per me è il risultato più forte, e non riguarda la tecnologia: come diceva la tesi, i problemi urbani sono sociali.</p>
-      <div class="link-riga"><a class="btn" href="risultati.html#p5" data-en="Result 5">Risultato 5</a><a class="btn" href="mappa_torino.html#tema=vulnerabilita&amp;vista=doppio" data-en="See it on the map">Vedi sulla mappa</a></div>
+      <div class="link-riga"><a class="btn" href="risultati.html#r10" data-ris="10">Risultato</a><a class="btn" href="mappa_torino.html#tema=vulnerabilita&amp;vista=doppio" data-en="See it on the map">Vedi sulla mappa</a></div>
     </section>
 
     <section data-fig="f4" id="muoversi" aria-labelledby="h4p">
@@ -42,7 +42,7 @@
       <h2 id="h4p" data-en="Public transport takes <span data-n='muoversi.volte'></span> times as long as the car">Coi mezzi pubblici ci vuole <span data-n="muoversi.volte"></span> volte il tempo dell'auto</h2>
       <p data-en="In the morning, going from one zone of the metropolitan area to another takes <b><span data-n='muoversi.volte'></span> times</b> as long by public transport as by car (median, with car times for typical weekday traffic).">Al mattino, andare da una zona all'altra dell'area metropolitana coi mezzi pubblici richiede <b><span data-n="muoversi.volte"></span> volte</b> il tempo dell'auto (mediana, con i tempi dell'auto per il traffico tipico di un feriale).</p>
       <p data-en="Park-and-ride lots work only where the bus is fast: for the bus to match the car you must lose <b><span data-n='muoversi.pareggio'></span> minutes</b> parking downtown.">Anche i parcheggi di scambio funzionano solo dove il bus è veloce: perché il bus pareggi l'auto bisogna perdere <b><span data-n="muoversi.pareggio"></span> minuti</b> a parcheggiare in centro.</p>
-      <div class="link-riga"><a class="btn" href="risultati.html#p3" data-en="Result 3">Risultato 3</a><a class="btn" href="risultati.html#p4" data-en="Result 4">Risultato 4</a></div>
+      <div class="link-riga"><a class="btn" href="risultati.html#r6" data-ris="6">Risultato</a><a class="btn" href="risultati.html#r8" data-ris="8">Risultato</a></div>
     </section>
 
     <section data-fig="f5" id="fiducia" aria-labelledby="h5p">
@@ -70,10 +70,10 @@
     var T = Sito.T, num = Sito.formattaNumero, NS = "http://www.w3.org/2000/svg";
     function svg(id){ return document.querySelector("#" + id + " svg"); }
     function el(tag, att, testo){ var e = document.createElementNS(NS, tag); for(var k in att) e.setAttribute(k, att[k]); if(testo != null) e.textContent = testo; return e; }
-    function scheda(n){ return S.filter(function(s){ return s && s.numero_pubblico === n && s.forma; })[0]; }
+    function scheda(id){ return S.filter(function(s){ return s && String(s.risultato) === String(id) && s.forma; })[0]; }   // id interno (campo «risultato»), mai il numero in pagina
     function forma(s){ return (Sito.lingua() === "en" && s.forma_en) ? s.forma_en : s.forma; }
     function valoreScheda(n){ var s = scheda(n); return s ? String(forma(s).numero.valore) : null; }
-    function pareggioScheda(){ var s = scheda(3), f = s && forma(s); return f && f.pareggio ? String(f.pareggio.tomtom) : null; }
+    function pareggioScheda(){ var s = scheda(6), f = s && forma(s); return f && f.pareggio ? String(f.pareggio.tomtom) : null; }
     function elenco(v){ return v.length < 2 ? v.join("") : v.slice(0, -1).join(", ") + T(" e ", " and ") + v[v.length - 1]; }
 
     /* ---- numeri del testo: tutto arriva dai dati (data/progetto.js e le schede), niente scritto a mano ---- */
@@ -87,9 +87,10 @@
         "doppio.residenti": d && num(d.residenti), "doppio.n_su": d && num(d.n_su),
         "doppio.n_zone": d && (T(["", "una", "due", "tre", "quattro", "cinque", "sei"][d.n_zone] || String(d.n_zone), ["", "one", "two", "three", "four", "five", "six"][d.n_zone] || String(d.n_zone))),
         "doppio.nomi": P && elenco(P.zone.filter(function(z){ return z.doppio; }).map(function(z){ return z.nome; })),
-        "muoversi.volte": valoreScheda(4), "muoversi.pareggio": pareggioScheda(),
+        "muoversi.volte": valoreScheda(8), "muoversi.pareggio": pareggioScheda(),
         "ritardi.feed": r && num(r.feed_pct), "ritardi.gps": r && num(r.gps_pct), "ritardi.rapporto": r && num(r.rapporto)
       };
+      document.querySelectorAll("[data-ris]").forEach(function(e){ var s = scheda(e.getAttribute("data-ris")); e.textContent = T("Risultato", "Result") + (s && s.numero_pubblico != null ? " " + s.numero_pubblico : ""); });   // numero in pagina letto dai dati
       document.querySelectorAll("[data-n]").forEach(function(e){ var x = v[e.getAttribute("data-n")]; e.textContent = (x == null || x === "") ? "…" : x; });
     }
 
@@ -156,7 +157,7 @@
 
     function f4(){
       var s = svg("f4"); s.innerHTML = "";
-      var v = valoreScheda(4), m = v && /^(\d+(?:[.,]\d+)?)$/.exec(v);
+      var v = valoreScheda(8), m = v && /^(\d+(?:[.,]\d+)?)$/.exec(v);
       if(!m){ s.appendChild(el("text", {x: 200, y: 150, "text-anchor": "middle", "class": "d-testo"}, v || "")); return; }
       var x = parseFloat(m[1].replace(",", ".")), W = 300, u = W / Math.max(x, 1) * 0.92;
       s.appendChild(el("text", {x: 30, y: 36, "class": "d-titolo"}, T("In auto", "By car")));

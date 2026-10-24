@@ -17,18 +17,18 @@ Un Raspberry Pi di casa raccoglie ogni minuto la posizione di bus e tram e i sen
 ## I sei risultati
 
 <!-- RISULTATI-IT:INIZIO -->
-1. **Torino, città dei 15 minuti: quasi tutti hanno i servizi a 15 minuti a piedi**  
-   Quanti torinesi hanno i servizi a 5, 10 e 15 minuti a piedi, e quanti vivono su una strada trafficata? → **99,2%** dei residenti delle zone abitate ha tutti e 5 i servizi a 15 minuti a piedi. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
-2. **Circa il 6% dei passaggi arriva con più di 10 minuti di ritardo**  
-   Quanto spesso i mezzi GTT arrivano in ritardo o a coppie? → **6,41%** dei passaggi feriali arriva con oltre 10 minuti di ritardo. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/2.html)
+1. **Per andare al lavoro in centro l'auto costa circa 270 euro al mese più dei mezzi pubblici**  
+   Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi? → **269 euro** in più al mese per andare al lavoro in centro in auto invece che coi mezzi pubblici. Col costo pieno dell'auto sono ~366 euro. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
+2. **Al mattino, coi mezzi pubblici si impiega 1,9 volte il tempo dell'auto**  
+   Al mattino, quanto ci si mette in più coi mezzi pubblici che in auto? → **1,9 volte** il tempo dell'auto, per un viaggio tipico del mattino. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/2.html)
 3. **2 fermate importanti su 3 non hanno abbastanza posti per lasciare l'auto**  
    Chi arriva in auto da fuori trova dove lasciarla vicino a una fermata importante, per proseguire coi mezzi? → **179** fermate importanti su 274 non hanno posti bastanti a 400 metri a piedi. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/3.html)
-4. **Al mattino, coi mezzi pubblici si impiega 1,9 volte il tempo dell'auto**  
-   Al mattino, quanto ci si mette in più coi mezzi pubblici che in auto? → **1,9 volte** il tempo dell'auto, per un viaggio tipico del mattino. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/4.html)
-5. **Circa 1 torinese su 10 vive in una zona con più difficoltà sociali e pochi servizi**  
-   Chi vive dove i servizi sono pochi e le difficoltà sociali sono alte? → **79.598** residenti in zone con più difficoltà sociali e servizi bassi: il 9,5% dei residenti delle zone abitate. È 1,7 volte quanto ci si aspetterebbe per caso. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/5.html)
-6. **Per andare al lavoro in centro l'auto costa circa 270 euro al mese più dei mezzi pubblici**  
-   Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi? → **269 euro** in più al mese per andare al lavoro in centro in auto invece che coi mezzi pubblici. Col costo pieno dell'auto sono ~366 euro. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/6.html)
+4. **Circa 1 torinese su 10 vive in una zona con più difficoltà sociali e pochi servizi**  
+   Chi vive dove i servizi sono pochi e le difficoltà sociali sono alte? → **79.598** residenti in zone con più difficoltà sociali e servizi bassi: il 9,5% dei residenti delle zone abitate. È 1,7 volte quanto ci si aspetterebbe per caso. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/4.html)
+5. **Circa il 6% dei passaggi arriva con più di 10 minuti di ritardo**  
+   Quanto spesso i mezzi GTT arrivano in ritardo o a coppie? → **6,41%** dei passaggi feriali arriva con oltre 10 minuti di ritardo. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/5.html)
+6. **Torino, città dei 15 minuti: quasi tutti hanno i servizi a 15 minuti a piedi**  
+   Quanti torinesi hanno i servizi a 5, 10 e 15 minuti a piedi, e quanti vivono su una strada trafficata? → **99,2%** dei residenti delle zone abitate ha tutti e 5 i servizi a 15 minuti a piedi. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/6.html)
 <!-- RISULTATI-IT:FINE -->
 
 Ogni numero porta la sua etichetta: **misurato** (sensori, GPS dei mezzi), **programmato** (orario ufficiale), **stimato** (calcolo mio su dati veri), **censimento**.
@@ -86,18 +86,18 @@ The site is in Italian and English (button IT/EN); the map is in Italian.
 ## The six results
 
 <!-- RISULTATI-EN:INIZIO -->
-1. **Turin, a 15-minute city: almost everyone has the services within a 15-minute walk**  
-   How many people in Turin have the services within 5, 10 and 15 minutes on foot, and how many live on a busy road? → **99.2%** of residents of inhabited areas have all 5 services within a 15-minute walk. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
-2. **About 6% of stop passages are more than 10 minutes late**  
-   How often are GTT vehicles late or bunched together? → **6.41%** of weekday arrivals are more than 10 minutes late. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/2.html)
+1. **Going to work in the centre costs about 270 euros a month more by car than by public transport**  
+   How much does it cost to go to the centre by car and by public transport, today? → **269 euros** more a month to go to work in the centre by car instead of by public transport. At the car's full cost it is ~366 euros. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
+2. **In the morning, public transport takes 1.9 times as long as the car**  
+   In the morning, how much longer does it take by public transport than by car? → **1.9 times** the car's travel time, for a typical morning trip. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/2.html)
 3. **2 in 3 important stops lack enough spaces to leave the car**  
    Can people driving in from outside find a place to leave the car near an important stop, and continue by public transport? → **179** important stops out of 274 lack enough parking within 400 metres on foot. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/3.html)
-4. **In the morning, public transport takes 1.9 times as long as the car**  
-   In the morning, how much longer does it take by public transport than by car? → **1.9 times** the car's travel time, for a typical morning trip. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/4.html)
-5. **About 1 Turin resident in 10 lives in an area with more social difficulties and few services**  
-   Who lives where services are few and social difficulties are high? → **79,598** residents in zones with more social difficulty and few services: 9.5% of residents of inhabited zones. That is 1.7 times what you would expect by chance. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/5.html)
-6. **Going to work in the centre costs about 270 euros a month more by car than by public transport**  
-   How much does it cost to go to the centre by car and by public transport, today? → **269 euros** more a month to go to work in the centre by car instead of by public transport. At the car's full cost it is ~366 euros. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/6.html)
+4. **About 1 Turin resident in 10 lives in an area with more social difficulties and few services**  
+   Who lives where services are few and social difficulties are high? → **79,598** residents in zones with more social difficulty and few services: 9.5% of residents of inhabited zones. That is 1.7 times what you would expect by chance. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/4.html)
+5. **About 6% of stop passages are more than 10 minutes late**  
+   How often are GTT vehicles late or bunched together? → **6.41%** of weekday arrivals are more than 10 minutes late. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/5.html)
+6. **Turin, a 15-minute city: almost everyone has the services within a 15-minute walk**  
+   How many people in Turin have the services within 5, 10 and 15 minutes on foot, and how many live on a busy road? → **99.2%** of residents of inhabited areas have all 5 services within a 15-minute walk. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/6.html)
 <!-- RISULTATI-EN:FINE -->
 
 Every number carries a label: **measured** (sensors, vehicle GPS), **scheduled** (official timetable), **estimated** (my calculation on real data), **census**.

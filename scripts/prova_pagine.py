@@ -497,7 +497,7 @@ def design_l20(br, cartella):
         ctx = br.br.new_context(viewport={"width": DESKTOP[0], "height": DESKTOP[1]}, reduced_motion="reduce" if riduci else "no-preference")
         page = ctx.new_page()
         try:
-            page.goto(f"http://127.0.0.1:{PORTA}/risultati.html#p6", wait_until="load", timeout=60000)
+            page.goto(f"http://127.0.0.1:{PORTA}/risultati.html#r12", wait_until="load", timeout=60000)
             page.wait_for_timeout(1200)
             nome = "scheda 6 contatori" + (" (riduci movimento)" if riduci else "")
             n_ctrl = page.evaluate("document.querySelectorAll('#finCorpo .anima button, #finCorpo .anima select, #finCorpo .anima input').length")
@@ -510,7 +510,7 @@ def design_l20(br, cartella):
                 errori.append(f"{nome}: {len(prima)} contatori invece di 2")
                 continue
             if riduci:
-                dati = page.evaluate("(window.SCHEDE_RISULTATI.find(s => s.numero_pubblico === 6).forma.anima.righe || []).map(r => Math.round(r.mese * 12))")
+                dati = page.evaluate("(window.SCHEDE_RISULTATI.find(s => String(s.risultato) === '12').forma.anima.righe || []).map(r => Math.round(r.mese * 12))")
                 scritti = [int("".join(ch for ch in t if ch.isdigit()) or 0) for t in prima]
                 if scritti != dati:
                     errori.append(f"{nome}: contatori {scritti}, nei dati {dati}")
@@ -735,7 +735,7 @@ def fai_immagini_condivisione(br, cartella):
             print(f"  README {nome}.jpg: {dim // 1024} KB")
             if dim > 250_000:
                 errori.append(f"assets/readme/{nome}.jpg pesa {dim} byte (limite 250000)")
-        page.goto(base + "risultati.html#p3", wait_until="load", timeout=60000)
+        page.goto(base + "risultati.html#r6", wait_until="load", timeout=60000)
         page.wait_for_timeout(1200)
         dim = _jpg(page.locator("#finestra").screenshot(), IMMAGINI_README / "scheda.jpg", larghezza=900, qualita=80, ritaglia_alt=1000)
         print(f"  README scheda.jpg: {dim // 1024} KB")

@@ -51,8 +51,10 @@ FORME = {"risultato1": forma_r1, "risultato4": forma_r4, "risultato6": forma_r6,
 
 
 
-# numerazione pubblica: in pagina i risultati sono 1-5; i numeri interni e i link #rN restano validi
-NUMERO_PUBBLICO = {"risultato1": 1, "risultato4": 2, "risultato6": 3, "risultato8": 4, "risultato10": 5, "risultato12": 6}
+# numerazione pubblica (L22): in pagina i risultati sono 1-6, prima quelli per decidere poi quelli ricavati dai dati; i numeri interni e i link #rN restano validi.
+# Il codice delle pagine e delle prove cerca una scheda per id interno (campo «risultato»), mai per numero in pagina.
+NUMERO_PUBBLICO = {"risultato12": 1, "risultato8": 2, "risultato6": 3, "risultato10": 4, "risultato4": 5, "risultato1": 6}
+GRUPPO = {"risultato12": "decidere", "risultato8": "decidere", "risultato6": "decidere", "risultato10": "dati", "risultato4": "dati", "risultato1": "dati"}
 
 
 
@@ -76,6 +78,7 @@ def main():
             for frase in dict.fromkeys(mancanti):
                 print(f"  ATTENZIONE {nome}: frase senza traduzione in schede/testi.json: «{frase[:80]}»")
             s["numero_pubblico"] = NUMERO_PUBBLICO[nome]
+            s["gruppo"] = GRUPPO[nome]
             s.pop("_n_su", None)
             print(f"{nome}: forma - «{s['forma']['titolo']}», numero grande {s['forma']['numero']['valore']} {s['forma']['numero']['unita']}")
             controlla_forma(nome, s["forma"])
