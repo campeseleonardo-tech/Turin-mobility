@@ -347,3 +347,64 @@ Leo chiedeva anche di chiamarli «dati misurati manualmente», ma **non si usa**
 - **Non si toccano:** nomi di variabili, chiavi JSON, commenti del codice, `docs/R*.md`, `docs/rapporti/` (documentazione tecnica: «spiegati se mi viene chiesto»).
 - **`docs/FONTI_DATI.md`:** la riga TomTom dice «uso con permesso di TomTom (Leo, 25/10/2026)». Memoria: la condizione per `main` è chiusa.
 - **Prova:** in `prova_design` nessun «TomTom» nel testo visibile di home, schede (IT/EN, parte chiusa compresa) e progetto, fuori dalle righe «Fonti»; la riga «Fonti» c'è in ogni scheda.
+
+### Controllo di L21 (25/10) e giro L22 (in locale): pagine separate, risultati in due gruppi, scheda 6
+**Controllo fatto nel cloud** su `origin/prova` 6e7be54:
+- `main` = `prova`.
+- Pages acceso: home, mappa e `r/1-6.html` rispondono 200, con titoli e immagini giusti.
+- Release `dati-2026-11` pubblicata; in L21 la prova da zero ha dato schede identiche.
+- Schede rifatte identiche; `prova_pagine.py --playwright` 0 errori su 21 pagine, prove L15-L21 OK.
+- Nessun ramo `claude/*` ha lavoro fuori da `prova`: sono 6, già uniti, e si possono cancellare.
+
+**Decisioni di Leo (25/10):**
+- **Pagine separate.**
+  - Home: solo i risultati, con l'animazione e una descrizione brevissima.
+  - `progetto.html`: la descrizione e il perché del progetto.
+  - `risultati.html`: «un goccio più tecnica» della home.
+  - In home via «In breve» e via la fascia «Il progetto»; resta un link «Perché questo progetto →».
+- **Due gruppi di risultati.**
+  - Prima quelli che aiutano a **decidere** (Comune o utenti), prioritari: «quanto costa, dove mettere un parcheggio, quanto ci si mette con bus vs auto».
+  - Poi quelli **ricavati dai dati**: fragilità, passaggi in ritardo, città dei 15 minuti.
+  - **Rinumerati per gruppi:** 1 Quanto costa muoversi (risultato12) · 2 Bus contro auto (risultato8) · 3 Dove lasciare l'auto (risultato6) | 4 Fragilità e servizi (risultato10) · 5 Ritardi (risultato4) · 6 Città dei 15 minuti (risultato1).
+- **Grafici: nessuna regola fissa, «ognuno è un caso a sé».**
+  - Scheda «bus contro auto»: via «I tragitti dove coi mezzi pubblici si impiega più del doppio dell'auto» («troppo specifico»); il resto resta.
+  - Scheda «ritardi»: via «GPS e dato ufficiale GTT»; il resto resta.
+  - Scheda «fragilità»: resta tutto.
+  - Scheda «costi»: via «Un mese di lavoro in centro, dai 12 punti prioritari» («i dodici punti sono troppo lunghi e poco utili»). «Una commissione in centro» è il grafico che piace di più («utile, bello e semplice»).
+- **Scheda «costi».** Diversi tipi di abbonamento. Grafica semplice che rispecchi quello che si è trovato (il parcheggio pesa più di tutto). Due casi chiari: sosta pagata in strada, e parcheggio gratis al lavoro.
+
+**Valori predefiniti di Claude per L22:**
+- **Numeri.**
+  - `NUMERO_PUBBLICO` in `scripts/schede_risultati.py`: 12→1, 8→2, 6→3, 10→4, 4→5, 1→6.
+  - Ogni codice che cerca una scheda per numero pubblico deve cercarla per id interno (`risultato`), così un altro cambio di numeri non rompe niente. Ci sono almeno `assets/progetto.js` (`scheda(n)`, `pareggioScheda` usa 3) e le prove in `scripts/prova_pagine.py` (`#p6`, `numero_pubblico === 6`, `#p3`).
+  - Controllo con `git grep numero_pubblico` e `git grep "#p[0-9]"`.
+  - Gli indirizzi `#rN` restano quelli di oggi; `r/N.html`, le anteprime e il README seguono i numeri nuovi.
+- **Gruppi.** Un campo `gruppo` in ogni scheda («decidere» / «dati»), scritto da `schede_risultati.py`.
+  - Titoli dei gruppi: «Per decidere» – «Risultati che aiutano il Comune e chi si muove a scegliere» e «Cosa dicono i dati» – «Come funziona la città, misurato».
+  - In inglese: «To decide» – «Results that help the city and travellers choose» e «What the data show» – «How the city works, measured».
+  - Si vedono in home e in `risultati.html`.
+- **Home.**
+  - Eroe com'è (mezzi, contatore).
+  - Poi i due gruppi di riquadri: animazione, nome breve del risultato (campo nuovo `titolo_breve`, al massimo 4 parole, es. «Quanto costa muoversi», «Bus contro auto», «Dove lasciare l'auto», «Fragilità e servizi», «Ritardi dei mezzi», «Servizi a piedi»), numero grande e `numero.breve`.
+  - In fondo il link a `progetto.html`.
+  - Via «In breve», il campo `chiave` (se nessun altro lo usa) e la fascia «Il progetto». `assets/progetto.js` e `progetto.css` restano per `progetto.html`.
+- **`risultati.html`:** l'elenco diviso nei due gruppi; resta com'è per il resto: titolo, domanda, numero con il testo lungo, scheda aperta.
+- **Scheda «costi»** (r12.py).
+  - Nessun «12 punti» nel testo visibile. Il numero grande resta la mediana dei punti d'ingresso, con sosta pagata (~270 euro), ma è descritto come «per chi arriva in auto in centro per lavorare, pagando la sosta in strada»; i 12 punti stanno solo nel calcolo.
+  - Grafico principale: «Una commissione in centro (2 ore di sosta), andata e ritorno», come oggi.
+  - Secondo grafico, nuovo e semplice: «Un mese di lavoro in centro», barre in euro al mese:
+    - auto con sosta pagata (carburante + sosta, divisi nella barra);
+    - auto con parcheggio al lavoro (solo carburante);
+    - mezzi con biglietti (40 × 2 euro), abbonamento mensile, abbonamento annuale diviso 12;
+    - le **tariffe agevolate GTT** (giovani, anziani, ISEE…) solo se trovate sul sito GTT ufficiale, con fonte e data in `data/ref/costi.json`; se non si trovano, una riga nei limiti.
+    - Costo pieno dell'auto: barra chiara accanto alle due auto.
+  - Resta «tra due zone di Torino, per distanza»; via «Un mese di lavoro dai 12 punti prioritari»; via il grafico «tempo contro soldi» (12 punti), che diventa un punto: «Coi mezzi ~11 minuti in più a viaggio».
+  - Punti chiave:
+    1. il parcheggio pesa più di tutto;
+    2. con un parcheggio gratis al lavoro l'auto costa ~35 euro al mese di carburante, contro ~26-38 dell'abbonamento;
+    3. tempo in più coi mezzi.
+  - Animazione dei contatori: invariata.
+- **Scheda «fragilità»:** la domanda è ora solo la seconda parte. I due punti chiave sul prezzo restano (Leo: «lascia tutto»), ma con testo che li lega alla domanda, es. «Le case costano meno dove la fragilità è alta (−0,69 a parità di distanza); con i servizi il legame quasi sparisce (0,21).»
+- **Altro da sistemare (controllo di Claude):**
+  - il sottotitolo di `risultati.html` («Cinque domande» / «Five questions», se c'è ancora) e ogni testo che conta i risultati: 6;
+  - `og:description` della home e di `risultati.html` coerenti con le pagine nuove.
