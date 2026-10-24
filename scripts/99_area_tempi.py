@@ -73,6 +73,17 @@ def carica_sezioni(prova):
     return s
 
 
+def zone_finte(sezioni, codici):
+    """Solo per --finto senza imq_zone_geo.json (derivato da IMQ, fuori da git, non c'e' nel controllo di GitHub): le sezioni, ordinate per latitudine,
+    si dividono in tante fasce uguali quante sono le zone. Serve solo a provare formato e pagina."""
+    ordine = sorted(codici)
+    per_lat = np.argsort([s["lat"] for s in sezioni], kind="stable")
+    zona = np.zeros(len(sezioni), dtype=int)
+    for rango, i in enumerate(per_lat):
+        zona[i] = rango * len(ordine) // max(1, len(sezioni))
+    return zona, 0
+
+
 def zona_di_ogni_sezione(sezioni, codici):
     """Codice della zona Q... che contiene il centroide di ogni sezione (ray casting). Chi non e' in nessun poligono va alla zona piu' vicina (contato)."""
     geo = {z["cod"]: z["g"] for z in json.loads(ZONE_GEO.read_text(encoding="utf-8")) if z["cod"] in codici}
@@ -175,7 +186,9 @@ def main():
     ap.add_argument("--prova", type=int, default=0, help="usa solo N sezioni")
     ap.add_argument("--finto", action="store_true", help="tempi finti dalla distanza (solo per provare la pagina)")
     args = ap.parse_args()
-    comuni.richiedi_fonte(ZONE_GEO)      # L12: derivato da IMQ, fuori da git
+    finte = args.finto and not ZONE_GEO.exists()      # con --finto le zone possono essere finte (L23: serve al controllo di GitHub)
+    if not finte:
+        comuni.richiedi_fonte(ZONE_GEO)      # L12: derivato da IMQ, fuori da git
     c = comuni.Controlli()
     sezioni = carica_sezioni(args.prova)
     log(f"sezioni di Torino con residenti: {len(sezioni)} ({sum(s['res'] for s in sezioni):,} residenti)")
@@ -209,7 +222,7 @@ def main():
     for p in cop:
         i, j = k_zona[p["da"]], k_zona[p["a"]]
         z_tp[i][j], z_a1[i][j], z_a2[i][j] = intero(p["tp_min"]), intero(p["auto_punta_min"]), intero(p["auto_punta_basso_min"])
-    zona, fuori = zona_di_ogni_sezione(sezioni, codici)
+    zona, fuori = zone_finte(sezioni, codici) if finte else zona_di_ogni_sezione(sezioni, codici)
     log(f"sezioni assegnate alle zone: {len(sezioni) - fuori} dentro un poligono, {fuori} alla zona piu' vicina")
     # stima principale: fattore TomTom della zona della sezione (o f_basso se manca il modello)
     f_zone = [modello.zona(z)[0] if modello else f_basso for z in codici]

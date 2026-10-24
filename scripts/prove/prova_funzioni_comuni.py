@@ -14,6 +14,17 @@ sys.path.insert(0, str(AQUI))
 import comuni  # noqa: E402
 
 
+def importa_da_comuni(testo, cerca):
+    """True se una riga «from comuni import ...» elenca tutti i nomi di `cerca` (in qualunque ordine, con altri nomi accanto)."""
+    voluti = {x.strip() for x in cerca.split("import", 1)[1].split(",")}
+    for r in testo.splitlines():
+        if r.startswith("from comuni import"):
+            nomi = {x.split(" as ")[0].strip() for x in r.split("import", 1)[1].split("#")[0].split(",")}   # «x as y»: conta x
+            if voluti <= nomi:
+                return True
+    return False
+
+
 def haversine_vecchia(lat1, lon1, lat2, lon2):               # copia che stava negli script 24 e 25
     R = 6371000.0
     p1, p2 = math.radians(lat1), math.radians(lat2)
@@ -79,7 +90,7 @@ def main():
     for nome, cerca in (("24_importanza_vie.py", "from comuni import haversine_m"), ("25_risultato6_interscambio.py", "from comuni import haversine_m, percentile_rank"),
                         ("29_risultato2_metro_notte.py", "from comuni import soglia_quantile")):
         testo = (AQUI / nome).read_text(encoding="utf-8")
-        if cerca not in testo:
+        if not importa_da_comuni(testo, cerca):
             errori.append(f"{nome}: non importa piu' da comuni.py")
         for copia in ("def haversine_m(", "def percentile_rank(", "def percentile("):
             if copia in testo:
@@ -88,7 +99,7 @@ def main():
     # gruppi 33-95: distanze (37, 72, 73) e ora legale (71 non la usava piu': copia morta tolta)
     for nome, cerca in (("37_traffico_AB.py", "from comuni import haversine_m"), ("72_nodi_tp.py", "from comuni import haversine_m"), ("73_segnali_criticita.py", "from comuni import haversine_m")):
         testo = (AQUI / nome).read_text(encoding="utf-8")
-        if cerca not in testo:
+        if not importa_da_comuni(testo, cerca):
             errori.append(f"{nome}: non importa piu' da comuni.py")
         if "def haversine_m(" in testo or "def hav(" in testo or "R = 6371000" in testo:
             errori.append(f"{nome}: ha ancora una copia della distanza")

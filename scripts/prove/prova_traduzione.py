@@ -54,7 +54,7 @@ def main():
         for x in testi:
             if re.search(r"\{[nspwta]\d\}", x):
                 problemi.append(f"{nome}: segnaposto rimasto in «{x[:60]}»")
-            if re.search(r"\d\.\d{3}(?!\d)|\d+,\d(?!\d)", x) and not re.search(r"\d,\d{3}", x):
+            if re.search(r"\d\.\d{3}(?!\d)|\d+,\d(?!\d)", x) and not re.search(r"\d,\d{3}", x) and not re.search(r"per litre|per km", x):   # i prezzi dei carburanti hanno tre decimali anche in inglese
                 problemi.append(f"{nome}: numero in formato italiano in «{x[:60]}»")
     for x in problemi:
         print("PROBLEMA:", x)

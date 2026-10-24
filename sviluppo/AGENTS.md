@@ -33,6 +33,7 @@ pull dà un conflitto, fermati e dillo a Leo. Per i merge usa sempre `--no-edit`
 Sul PC si usa il python nel PATH (Python 3.14). NON usare Anaconda: il suo modulo json è rotto. Sul Pi Python 3.13.
 
 ## Come provare
+- **Alla fine di ogni giro** lancia `python scripts/controllo_completo.py` (sul PC `scripts\CONTROLLO_COMPLETO.bat`): gli stessi passi del controllo di GitHub, nello stesso ordine. Deve essere tutto verde, non basta `prova_pagine.py`.
 - Script Python: eseguili davvero e controlla che i numeri abbiano senso (ordini di grandezza, totali, valori negativi).
 - Se non hai un terminale sul PC, prepara un .bat a doppio clic e di' a Leo cosa deve vedere alla fine.
 - Mappa HTML: dopo averla rigenerata, controlla che il file sia aggiornato e contenga i dati attesi. Non puoi vederla: di' a Leo esattamente quale file aprire e cosa dovrebbe vedere.
