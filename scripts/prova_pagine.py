@@ -452,6 +452,44 @@ def design_l16(br, cartella):
     return errori
 
 
+def design_l21(br, cartella):
+    """L21: il nome TomTom non compare nel testo visibile (home, progetto, schede 1-6, IT ed EN, parte chiusa compresa) fuori dalla riga «Fonti»;
+    la riga «Fonti» c'e' in ogni scheda ed e' l'ultima della parte chiusa."""
+    errori = []
+    JS_TESTO = r"""() => { const c = document.body.cloneNode(true);
+        c.querySelectorAll('script, style, noscript').forEach(e => e.remove());
+        c.querySelectorAll('.fonti').forEach(e => e.remove());
+        return c.textContent.replace(/\s+/g, ' '); }"""
+    for lingua in ("it", "en"):
+        ctx = br.br.new_context(viewport={"width": DESKTOP[0], "height": DESKTOP[1]})
+        page = ctx.new_page()
+        try:
+            for nome, url in (("home", "index.html"), ("progetto", "progetto.html")):
+                page.goto(f"http://127.0.0.1:{PORTA}/{url}?lang={lingua}", wait_until="load", timeout=60000)
+                page.wait_for_timeout(900)
+                if "tomtom" in page.evaluate(JS_TESTO).lower():
+                    errori.append(f"{nome} ({lingua}): «TomTom» nel testo visibile")
+            for n in range(1, 7):
+                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#p{n}", wait_until="load", timeout=60000)
+                page.wait_for_timeout(900)
+                nome = f"scheda {n} ({lingua})"
+                if "tomtom" in page.evaluate(JS_TESTO).lower():
+                    errori.append(f"{nome}: «TomTom» nel testo fuori dalla riga Fonti")
+                r = page.evaluate("""() => { const p = document.querySelector('#finCorpo details.parte');
+                    const f = p ? p.querySelector('p.fonti') : null;
+                    return {c: !!f, ultima: !!f && p.lastElementChild === f, testo: f ? f.textContent : ''}; }""")
+                if not r["c"]:
+                    errori.append(f"{nome}: manca la riga Fonti")
+                elif not r["ultima"]:
+                    errori.append(f"{nome}: la riga Fonti non è l'ultima della parte chiusa")
+                if n in (3, 4, 6) and "tomtom" not in r["testo"].lower():
+                    errori.append(f"{nome}: la riga Fonti non cita il fornitore dei tempi in auto")
+        finally:
+            ctx.close()
+    print(f"  L21 (nessun TomTom nel testo visibile fuori dalla riga Fonti; Fonti in ogni scheda): {'OK' if not errori else 'ERRORE'}")
+    return errori
+
+
 def design_l20(br, cartella):
     """L20: scheda 6, contatori di euro che salgono da soli (nessun comando); con «riduci movimento» i numeri finali sono quelli dei dati."""
     errori = []
@@ -620,7 +658,7 @@ def prova_design(br, cartella):
     if not isinstance(br, BrowserPlaywright) or not (cartella / "data" / "schede_risultati.js").exists():
         print("  prova_design: non provata (serve Playwright e data/schede_risultati.js)")
         return []
-    return design_l15(br, cartella) + design_l16(br, cartella) + design_l17(br, cartella) + design_l18(br, cartella) + design_l20(br, cartella)
+    return design_l15(br, cartella) + design_l16(br, cartella) + design_l17(br, cartella) + design_l18(br, cartella) + design_l20(br, cartella) + design_l21(br, cartella)
 
 
 ANTEPRIME = RADICE / "assets" / "anteprime"
