@@ -108,9 +108,9 @@ TIPO_DATO = {   # una riga nella parte chiusa «Come e' stato calcolato, e limit
     "STIMATO": "Tipo di dato: calcolato da dati veri, non misurato direttamente.",
     "MISURATO": "Tipo di dato: misurato, con la posizione GPS dei mezzi.",
     "STIMATO / CENSIMENTO": "Tipo di dato: calcolato da dati veri, con gli abitanti del censimento 2021.",
-    "STIMATO / PREZZI": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto di TomTom.",
+    "STIMATO / PREZZI": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto col traffico tipico.",
     "STIMATO / MISURATO (dati scarsi)": "Tipo di dato: calcolato da dati veri e in parte misurato, su pochi giorni di dati.",
-    "STIMATO / MISURATO / PROGRAMMATO": "Tipo di dato: calcolato da dati veri, con tempi in auto di TomTom, misure dei sensori e orari ufficiali dei mezzi.",
+    "STIMATO / MISURATO / PROGRAMMATO": "Tipo di dato: calcolato da dati veri, con tempi in auto col traffico tipico, misure dei sensori e orari ufficiali dei mezzi.",
 }
 
 
@@ -212,6 +212,34 @@ def controlla_forma(nome, f):
 
 
 
+# Fonti di ogni scheda (L21): e' l'unico punto del sito dove compaiono i nomi dei fornitori dei dati; ultima riga della parte chiusa.
+FONTI_NOMI = {
+    "gtt_orari": "GTT (orari ufficiali)",
+    "gtt_gps": "GTT (posizioni GPS dei mezzi, dato in tempo reale e orari ufficiali)",
+    "gtt_orari_gps": "GTT (orari ufficiali e posizioni dei mezzi)",
+    "comune_servizi": "Comune di Torino (servizi)",
+    "comune_parcheggi": "Comune di Torino (parcheggi)",
+    "osm": "OpenStreetMap",
+    "istat": "ISTAT (censimento 2021)",
+    "5t": "5T (sensori del traffico)",
+    "imq": "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)",
+    "omi": "Agenzia delle Entrate (quotazioni OMI)",
+    "tomtom": "TomTom (tempi di percorrenza in auto, uso autorizzato)",
+    "google": "Google Maps (3 percorsi controllati a mano)",
+    "carburanti": "Osservatorio prezzi carburanti (Ministero delle imprese e del made in Italy)",
+    "aci": "ACI (tabelle dei costi chilometrici 2026)",
+    "gtt_tariffe": "GTT (tariffe e sosta)",
+}
+FONTI_SCHEDA = {   # per numero interno del risultato
+    "1": ["comune_servizi", "osm", "istat", "gtt_orari", "5t", "imq"],
+    "4": ["gtt_gps"],
+    "6": ["gtt_orari_gps", "comune_parcheggi", "5t", "imq", "osm", "tomtom"],
+    "8": ["gtt_orari", "5t", "imq", "osm", "tomtom", "google"],
+    "10": ["omi", "istat", "comune_servizi", "osm", "gtt_orari"],
+    "12": ["carburanti", "aci", "gtt_tariffe", "osm", "tomtom"],
+}
+
+
 def forma_base(s, titolo, domanda, numero, principale, punti, altri, calcolo, criteri, limiti, english=None, mappa=True, **extra):
     """La forma di una scheda. «english» non si usa più (l'inglese viene da traduci.py): resta come argomento per non cambiare le chiamate."""
     f = {"tipo_dato": TIPO_DATO[s["tag"]], "titolo": titolo, "domanda": domanda, "numero": numero, "principale": principale,
@@ -220,6 +248,7 @@ def forma_base(s, titolo, domanda, numero, principale, punti, altri, calcolo, cr
         f["mappa"] = {"id": s["mappa"]["id"], "nota": s["mappa"]["nota"]}
         if s["mappa"].get("vista"):   # es. #tema=vulnerabilita&vista=doppio
             f["mappa"]["vista"] = s["mappa"]["vista"]
+    f["fonti"] = [FONTI_NOMI[k] for k in FONTI_SCHEDA[str(s["risultato"])]]
     f.update(extra)
     return f
 

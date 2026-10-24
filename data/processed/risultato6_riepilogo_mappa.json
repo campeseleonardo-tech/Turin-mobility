@@ -551,7 +551,7 @@
     "scripts/84_risultato6_parcheggi.py",
     "data/processed/risultato6_v2/mappa_r6.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
     "Come leggere i tag. ",
     "[MISURATO] = misura vera, fatta dai sensori del sistema 5T. [STIMATO] = calcolo nostro su dati veri, non una misura diretta. [DATI SCARSI] = pochi dati, da prendere con cautela."
@@ -689,7 +689,7 @@
       {
         "tipo": "gara",
         "titolo": "La gara: bus e auto verso Piazza Castello, alle 8 di un feriale",
-        "nota": "Bus e auto partono insieme da ogni parcheggio, uno dopo l'altro. L'auto ha il tempo previsto da TomTom, parcheggio compreso.",
+        "nota": "Bus e auto partono insieme da ogni parcheggio, uno dopo l'altro. L'auto ha il tempo previsto con il traffico tipico, parcheggio compreso.",
         "luoghi": [
           {
             "nome": "Santa Rita",
@@ -834,7 +834,7 @@
         "tipo": "barre",
         "titolo": "I parcheggi di scambio che ci sono già: quanto sono pieni e quanto ci mette il bus al centro",
         "unita": "minuti",
-        "nota": "Barra = minuti coi mezzi pubblici fino a Piazza Castello alle 8. A destra il tempo in auto, parcheggio compreso (TomTom), e quanto è pieno il parcheggio di giorno.",
+        "nota": "Barra = minuti coi mezzi pubblici fino a Piazza Castello alle 8. A destra il tempo in auto, parcheggio compreso (traffico tipico), e quanto è pieno il parcheggio di giorno.",
         "voci": [
           {
             "label": "Stura",
@@ -869,8 +869,8 @@
       "Le auto in entrata vengono dall'indagine sugli spostamenti 2022, assegnate al percorso più veloce.",
       "Auto da fermare: auto che passano per il 5,8% che già oggi lascia l'auto. Posti: parcheggi adatti entro 400 metri.",
       "Punti prioritari: fermate senza posti bastanti raggruppate entro 1 km, uno per asse d'ingresso.",
-      "Bus contro auto: minuti coi mezzi verso Piazza Castello alle 8, contro l'auto. Auto: tempo a flusso libero per il fattore TomTom del percorso, più 5 minuti. Dati di traffico: TomTom.",
-      "Pareggio: con 16 minuti persi a parcheggiare in centro, l'auto impiega quanto il bus (mediana dei 12 punti, TomTom).",
+      "Bus contro auto: minuti coi mezzi verso Piazza Castello alle 8, contro l'auto. Auto: tempo a flusso libero per il fattore di traffico del percorso, più 5 minuti.",
+      "Pareggio: con 16 minuti persi a parcheggiare in centro, l'auto impiega quanto il bus (mediana dei 12 punti, traffico tipico).",
       "Dei punti dove il bus conviene, 5 su 8 sono vicini alla soglia: un'auto il 10% più veloce cambia classe.",
       "Con la stima dei sensori del traffico, più favorevole all'auto (fattore 1,2), il pareggio sale a 28 minuti."
     ],
@@ -893,19 +893,27 @@
       ],
       [
         "Bus contro auto",
-        "verso Piazza Castello alle 8; auto: fattore TomTom del percorso (mediana 2,6) + 5 minuti; stima più favorevole all'auto: sensori 5T, fattore 1,2"
+        "verso Piazza Castello alle 8; auto: fattore di traffico del percorso (mediana 2,6) + 5 minuti; stima più favorevole all'auto: sensori 5T, fattore 1,2"
       ]
     ],
     "limiti": [
       "Le auto che passano vengono da un modello del traffico. I posti sono spesso stimati: quelli che mancano sono un ordine di grandezza. Con metà o doppio di chi lascia l'auto, le fermate senza posti bastanti vanno da 135 a 212 su 274.",
       "I tempi coi mezzi sono solo GTT, senza treni. La stima dei sensori non conta semafori e incroci: è la più favorevole all'auto.",
-      "Tempi in auto previsti da TomTom su traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
+      "Tempi di percorrenza in auto con il traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
       "Il costo del parcheggio non è nel calcolo: pesa come minuti in più. Si guarda un solo punto per luogo e una sola destinazione."
     ],
     "mappa": {
       "id": "interscambio",
       "nota": "Due domande nella mappa, nel menu «Cosa vedere»: dove ci sono parcheggi e dove servirebbe di più un parcheggio."
     },
+    "fonti": [
+      "GTT (orari ufficiali e posizioni dei mezzi)",
+      "Comune di Torino (parcheggi)",
+      "5T (sensori del traffico)",
+      "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)",
+      "OpenStreetMap",
+      "TomTom (tempi di percorrenza in auto, uso autorizzato)"
+    ],
     "anima": {
       "tipo": "fermate",
       "contorno": {
@@ -2736,7 +2744,7 @@
       {
         "tipo": "gara",
         "titolo": "The race: bus and car to Piazza Castello, at 8 a.m. on a weekday",
-        "nota": "Bus and car leave together from each car park, one after the other. The car has the time forecast by TomTom, parking included.",
+        "nota": "Bus and car leave together from each car park, one after the other. The car has the time forecast with typical traffic, parking included.",
         "luoghi": [
           {
             "nome": "Santa Rita",
@@ -2881,7 +2889,7 @@
         "tipo": "barre",
         "titolo": "Existing park-and-ride sites: how full they are and how long the bus takes to the centre",
         "unita": "minutes",
-        "nota": "Bar = minutes by public transport to Piazza Castello at 8 a.m. On the right, the car time with parking included (TomTom), and how full the car park is during the day.",
+        "nota": "Bar = minutes by public transport to Piazza Castello at 8 a.m. On the right, the car time with parking included (typical traffic), and how full the car park is during the day.",
         "voci": [
           {
             "label": "Stura",
@@ -2916,8 +2924,8 @@
       "Cars entering come from the 2022 travel survey, assigned to the fastest route.",
       "Cars to stop: passing cars times the 5.8% who already leave the car today. Spaces: suitable car parks within 400 metres.",
       "Priority points: stops without enough parking, grouped within 1 km, one per entry axis.",
-      "Bus versus car: minutes by public transport to Piazza Castello at 8, versus the car. Car: free-flow time times the TomTom factor of the route, plus 5 minutes. Traffic data: TomTom.",
-      "Break-even: with 16 minutes lost parking downtown, the car takes as long as the bus (median of the 12 points, TomTom).",
+      "Bus versus car: minutes by public transport to Piazza Castello at 8, versus the car. Car: free-flow time times the traffic factor of the route, plus 5 minutes.",
+      "Break-even: with 16 minutes lost parking downtown, the car takes as long as the bus (median of the 12 points, typical traffic).",
       "Of the points where the bus pays off, 5 out of 8 are close to the threshold: a car 10% faster changes the class.",
       "With the traffic-sensor estimate, more favourable to the car (factor 1.2), the break-even rises to 28 minutes."
     ],
@@ -2940,19 +2948,27 @@
       ],
       [
         "Bus versus car",
-        "to Piazza Castello at 8; car: TomTom factor of the route (median 2.6) + 5 minutes; estimate most favourable to the car: 5T sensors, factor 1.2"
+        "to Piazza Castello at 8; car: traffic factor of the route (median 2.6) + 5 minutes; estimate most favourable to the car: 5T sensors, factor 1.2"
       ]
     ],
     "limiti": [
       "Passing cars come from a traffic model. Spaces are often estimated: the missing ones are an order of magnitude. With half or double the drivers who leave the car, stops without enough spaces go from 135 to 212 out of 274.",
       "Public transport times are GTT only, without trains. The sensor estimate ignores traffic lights and junctions: it is the most favourable to the car.",
-      "Car times forecast by TomTom for typical traffic on a November weekday, not measured on a specific day. A single service is used.",
+      "Car travel times with typical traffic on a November weekday, not measured on a specific day. A single service is used.",
       "The cost of parking is not in the calculation: it weighs as extra minutes. One point per place and one destination only."
     ],
     "mappa": {
       "id": "interscambio",
       "nota": "Due domande nella mappa, nel menu «Cosa vedere»: dove ci sono parcheggi e dove servirebbe di più un parcheggio."
     },
+    "fonti": [
+      "GTT (official timetables and vehicle positions)",
+      "City of Turin (car parks)",
+      "5T (traffic sensors)",
+      "Piedmont Mobility Agency (2022 travel survey)",
+      "OpenStreetMap",
+      "TomTom (car travel times, used with permission)"
+    ],
     "anima": {
       "tipo": "fermate",
       "contorno": {

@@ -25,7 +25,7 @@
     "docs/rapporti/RAPPORTO_CASE_FRAGILITA_SERVIZI.txt",
     "data/processed/case_fragilita_servizi.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
     "Dati [STIMATO] (servizi, indice) / [CENSIMENTO] (abitanti). Differenza fra zone, non effetto causale."
   ],
@@ -735,6 +735,13 @@
       "nota": "Vista «Doppio svantaggio» nel tema Fragilità sociale.",
       "vista": "doppio"
     },
+    "fonti": [
+      "Agenzia delle Entrate (quotazioni OMI)",
+      "ISTAT (censimento 2021)",
+      "Comune di Torino (servizi)",
+      "OpenStreetMap",
+      "GTT (orari ufficiali)"
+    ],
     "anima": {
       "tipo": "omini",
       "totale": 10,
@@ -1420,6 +1427,13 @@
       "nota": "Vista «Doppio svantaggio» nel tema Fragilità sociale.",
       "vista": "doppio"
     },
+    "fonti": [
+      "Revenue Agency (OMI price quotes)",
+      "ISTAT (2021 census)",
+      "City of Turin (services)",
+      "OpenStreetMap",
+      "GTT (official timetables)"
+    ],
     "anima": {
       "tipo": "omini",
       "totale": 10,

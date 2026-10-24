@@ -305,7 +305,7 @@ function apri(i){
     grafico(f.principale) + mappa +
     altri + extra +
     parte(T("Come è stato calcolato, e limiti", "How it was calculated, and limits"),
-          (f.tipo_dato ? `<p>${esc(f.tipo_dato)}</p>` : "") + elenco(f.calcolo, "ol") + confronto + criteri + `<div class="sottotitolo">${T("Limiti", "Limits")}</div>` + elenco(f.limiti, "ul"));
+          (f.tipo_dato ? `<p>${esc(f.tipo_dato)}</p>` : "") + elenco(f.calcolo, "ol") + confronto + criteri + `<div class="sottotitolo">${T("Limiti", "Limits")}</div>` + elenco(f.limiti, "ul") + (f.fonti && f.fonti.length ? `<p class="fonti"><b>${T("Fonti", "Sources")}:</b> ${f.fonti.map(esc).join("; ")}.</p>` : ""));
   const d = $("finestra");
   if(!d.open) d.showModal();
   d.scrollTop = 0;

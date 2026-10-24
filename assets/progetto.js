@@ -40,7 +40,7 @@
     <section data-fig="f4" id="muoversi" aria-labelledby="h4p">
       <p class="num-parte" data-en="4 · Getting around">4 · Muoversi</p>
       <h2 id="h4p" data-en="Public transport takes <span data-n='muoversi.volte'></span> times as long as the car">Coi mezzi pubblici ci vuole <span data-n="muoversi.volte"></span> volte il tempo dell'auto</h2>
-      <p data-en="In the morning, going from one zone of the metropolitan area to another takes <b><span data-n='muoversi.volte'></span> times</b> as long by public transport as by car (median, with the car time forecast by TomTom for typical weekday traffic).">Al mattino, andare da una zona all'altra dell'area metropolitana coi mezzi pubblici richiede <b><span data-n="muoversi.volte"></span> volte</b> il tempo dell'auto (mediana, con il tempo dell'auto previsto da TomTom per il traffico tipico di un feriale).</p>
+      <p data-en="In the morning, going from one zone of the metropolitan area to another takes <b><span data-n='muoversi.volte'></span> times</b> as long by public transport as by car (median, with car times for typical weekday traffic).">Al mattino, andare da una zona all'altra dell'area metropolitana coi mezzi pubblici richiede <b><span data-n="muoversi.volte"></span> volte</b> il tempo dell'auto (mediana, con i tempi dell'auto per il traffico tipico di un feriale).</p>
       <p data-en="Park-and-ride lots work only where the bus is fast: for the bus to match the car you must lose <b><span data-n='muoversi.pareggio'></span> minutes</b> parking downtown.">Anche i parcheggi di scambio funzionano solo dove il bus è veloce: perché il bus pareggi l'auto bisogna perdere <b><span data-n="muoversi.pareggio"></span> minuti</b> a parcheggiare in centro.</p>
       <div class="link-riga"><a class="btn" href="risultati.html#p3" data-en="Result 3">Risultato 3</a><a class="btn" href="risultati.html#p4" data-en="Result 4">Risultato 4</a></div>
     </section>
@@ -165,7 +165,7 @@
       s.appendChild(el("text", {x: 30, y: 134, "class": "d-titolo"}, T("Coi mezzi pubblici", "By public transport")));
       s.appendChild(el("rect", {x: 30, y: 144, width: u * x, height: 30, rx: 5, "class": "d-blu a-cresci d-barra"}));
       s.appendChild(el("text", {x: 30, y: 214, "class": "d-grande"}, v + " " + T("volte", "times")));
-      s.appendChild(el("text", {x: 30, y: 236, "class": "d-piccolo"}, T("il tempo dell'auto (previsto da TomTom, mediana)", "the car's time (forecast by TomTom, median)")));
+      s.appendChild(el("text", {x: 30, y: 236, "class": "d-piccolo"}, T("il tempo dell'auto (col traffico tipico, mediana)", "the car's time (with typical traffic, median)")));
       var q = pareggioScheda();
       if(q){ s.appendChild(el("text", {x: 30, y: 274, "class": "d-testo"}, T("Il bus pareggia l'auto se in centro si perdono ", "The bus matches the car if you lose ") + q + T(" minuti", " minutes downtown"))); }
     }

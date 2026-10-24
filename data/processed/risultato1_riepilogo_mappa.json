@@ -237,7 +237,7 @@
     "scripts/21_risultato1_vuoti.py",
     "scripts/22_risultato1_candidati.py"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
     "Dati [STIMATO] — solo comune di Torino",
     "Distanze a piedi sulla rete stradale (15 min a 80 m/min) su 848.748 residenti (censimento 2021). Servizi dal catalogo comunale: la cintura non è confrontabile (manca il dato, non il servizio). I punti nuovi sono ipotesi di posizione, calcolate gruppo per gruppo: non si sommano tra gruppi e non tengono conto di costi o spazi disponibili."
@@ -551,6 +551,14 @@
       "id": "faseb",
       "nota": "Nella mappa, tema \"Dove mancano i servizi\": all'apertura quanti servizi mancano in ogni zona (0-5, zone poco abitate in grigio); nel menu un servizio alla volta, con i punti dove aggiungerne uno."
     },
+    "fonti": [
+      "Comune di Torino (servizi)",
+      "OpenStreetMap",
+      "ISTAT (censimento 2021)",
+      "GTT (orari ufficiali)",
+      "5T (sensori del traffico)",
+      "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)"
+    ],
     "anima": {
       "tipo": "cerchi",
       "voci": [
@@ -766,6 +774,14 @@
       "id": "faseb",
       "nota": "Nella mappa, tema \"Dove mancano i servizi\": all'apertura quanti servizi mancano in ogni zona (0-5, zone poco abitate in grigio); nel menu un servizio alla volta, con i punti dove aggiungerne uno."
     },
+    "fonti": [
+      "City of Turin (services)",
+      "OpenStreetMap",
+      "ISTAT (2021 census)",
+      "GTT (official timetables)",
+      "5T (traffic sensors)",
+      "Piedmont Mobility Agency (2022 travel survey)"
+    ],
     "anima": {
       "tipo": "cerchi",
       "voci": [

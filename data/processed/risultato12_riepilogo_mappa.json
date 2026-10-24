@@ -22,7 +22,7 @@
     "data/processed/costo_del_viaggio.json",
     "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
     "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -60,7 +60,7 @@
     }
   ],
   "forma": {
-    "tipo_dato": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto di TomTom.",
+    "tipo_dato": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto col traffico tipico.",
     "titolo": "Per andare al lavoro in centro l'auto costa circa 270 euro al mese più dei mezzi pubblici",
     "domanda": "Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi?",
     "numero": {
@@ -499,7 +499,7 @@
       "Lavoro: 20 giorni al mese, 8 ore di sosta a tariffa ordinaria (1,70 euro l'ora). Mezzi pubblici: abbonamento mensile urbano (38 euro).",
       "Commissione: 2 ore di sosta contro 2 biglietti urbani (2,00 euro l'uno).",
       "Punti: i 12 punti prioritari del risultato 3 verso Piazza Castello. Coppie: 506 coppie di zone di Torino, senza parcheggio.",
-      "Chilometri: percorso più veloce sulla rete stradale, controllato con TomTom su 17 percorsi. Minuti in più: dal confronto di tempi del risultato 4, alle 8."
+      "Chilometri: percorso più veloce sulla rete stradale, controllato con un servizio di navigazione su 17 percorsi. Minuti in più: dal confronto di tempi del risultato 4, alle 8."
     ],
     "criteri": [
       [
@@ -526,8 +526,15 @@
     "limiti": [
       "Carburante: prezzi del giorno, non la media di 4 settimane. Una Golf di consumo medio, non la propria auto; abbonamenti ridotti e agevolazioni non considerati.",
       "La zona a traffico limitato e gli abbonamenti alla sosta non sono nel calcolo. Per il centro vale la tariffa ordinaria.",
-      "Chilometri: su 11 dei 17 percorsi TomTom dà una lunghezza diversa di oltre il 10%. Pesa poco: il parcheggio vale la maggior parte del costo.",
+      "Chilometri: su 11 dei 17 percorsi il servizio di navigazione dà una lunghezza diversa di oltre il 10%. Pesa poco: il parcheggio vale la maggior parte del costo.",
       "Solo Torino: le tariffe a zone della cintura non sono assegnate alle zone dell'indagine."
+    ],
+    "fonti": [
+      "Osservatorio prezzi carburanti (Ministero delle imprese e del made in Italy)",
+      "ACI (tabelle dei costi chilometrici 2026)",
+      "GTT (tariffe e sosta)",
+      "OpenStreetMap",
+      "TomTom (tempi di percorrenza in auto, uso autorizzato)"
     ],
     "anima": {
       "tipo": "contatori",
@@ -554,7 +561,7 @@
     }
   },
   "forma_en": {
-    "tipo_dato": "Type of data: calculated from public prices of October 2026 and TomTom car times.",
+    "tipo_dato": "Type of data: calculated from public prices of October 2026 and car times with typical traffic.",
     "titolo": "Going to work in the centre costs about 270 euros a month more by car than by public transport",
     "domanda": "How much does it cost to go to the centre by car and by public transport, today?",
     "numero": {
@@ -993,7 +1000,7 @@
       "Work: 20 days a month, 8 hours of parking at the ordinary rate (1.70 euros an hour). Public transport: monthly urban pass (38 euros).",
       "Errand: 2 hours of parking against 2 urban tickets (2.00 euros each).",
       "Points: the 12 priority points of result 3 towards Piazza Castello. Pairs: 506 pairs of zones in Turin, without parking.",
-      "Kilometres: fastest route on the road network, checked with TomTom on 17 routes. Extra minutes: from the time comparison of result 4, at 8."
+      "Kilometres: fastest route on the road network, checked with a navigation service on 17 routes. Extra minutes: from the time comparison of result 4, at 8."
     ],
     "criteri": [
       [
@@ -1020,8 +1027,15 @@
     "limiti": [
       "Fuel: prices of the day, not a 4-week average. A Golf of average consumption, not your own car; reduced passes and concessions not considered.",
       "The limited traffic zone and parking passes are not in the calculation. The ordinary rate is used for the centre.",
-      "Kilometres: on 11 of the 17 routes TomTom gives a length that differs by more than 10%. It matters little: parking is most of the cost.",
+      "Kilometres: on 11 of the 17 routes the navigation service gives a length that differs by more than 10%. It matters little: parking is most of the cost.",
       "Turin only: the zoned fares of the surrounding towns are not assigned to the survey zones."
+    ],
+    "fonti": [
+      "Fuel price observatory (Ministry of Enterprises and Made in Italy)",
+      "ACI (2026 cost-per-kilometre tables)",
+      "GTT (fares and parking)",
+      "OpenStreetMap",
+      "TomTom (car travel times, used with permission)"
     ],
     "anima": {
       "tipo": "contatori",

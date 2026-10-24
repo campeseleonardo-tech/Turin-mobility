@@ -231,7 +231,7 @@ def forma_r6(s):
     f_ba_lo, f_ba_hi = virgola(ba["parametri"]["fattore_basso"]), virgola(ba["parametri"]["fattore_alto"])
     stati = {"pieno": "pieno di giorno", "a_meta": "a metà", "libero": "con posti liberi", "non_misurato": "riempimento non noto"}
     graf_inter = {"tipo": "barre", "titolo": "I parcheggi di scambio che ci sono già: quanto sono pieni e quanto ci mette il bus al centro", "unita": "minuti",
-                  "nota": "Barra = minuti coi mezzi pubblici fino a Piazza Castello alle 8. A destra il tempo in auto, parcheggio compreso (TomTom), e quanto è pieno il parcheggio di giorno.",
+                  "nota": "Barra = minuti coi mezzi pubblici fino a Piazza Castello alle 8. A destra il tempo in auto, parcheggio compreso (traffico tipico), e quanto è pieno il parcheggio di giorno.",
                   "voci": [{"label": nome_pulito(l["nome"]), "valore": round(l["tp_min"]),
                             "testo": f"{round(l['tp_min'])} contro {round(l['auto_basso_min'])} in auto · {stati.get(l.get('stato'), 'riempimento non noto')}"}
                            for l in inter]}
@@ -244,7 +244,7 @@ def forma_r6(s):
                     "bus": l["tp_min"], "auto_min": l["auto_basso_min"], "auto_max": l["auto_basso_min"], "giudizio": l["classe_testo"]}
                    for l in ba["luoghi"] if l.get("tp_min") is not None]
     gara_g = {"tipo": "gara", "titolo": "La gara: bus e auto verso Piazza Castello, alle 8 di un feriale",
-              "nota": "Bus e auto partono insieme da ogni parcheggio, uno dopo l'altro. L'auto ha il tempo previsto da TomTom, parcheggio compreso.",
+              "nota": "Bus e auto partono insieme da ogni parcheggio, uno dopo l'altro. L'auto ha il tempo previsto con il traffico tipico, parcheggio compreso.",
               "luoghi": luoghi_gara, "scelto": 0}
     # il messaggio (Leo, 23/10): quanto è facile lasciare l'auto vicino a una fermata importante e proseguire coi mezzi
     fermate = r["fermate"]
@@ -273,19 +273,19 @@ def forma_r6(s):
          "Le auto in entrata vengono dall'indagine sugli spostamenti 2022, assegnate al percorso più veloce.",
          f"Auto da fermare: auto che passano per il {quota}% che già oggi lascia l'auto. Posti: parcheggi adatti entro {raggio} metri.",
          "Punti prioritari: fermate senza posti bastanti raggruppate entro 1 km, uno per asse d'ingresso.",
-         "Bus contro auto: minuti coi mezzi verso Piazza Castello alle 8, contro l'auto. Auto: tempo a flusso libero per il fattore TomTom del percorso, più 5 minuti. Dati di traffico: TomTom.",
-         f"Pareggio: con {lo_m} minuti persi a parcheggiare in centro, l'auto impiega quanto il bus (mediana dei {n_punti_ba} punti, TomTom).",
+         "Bus contro auto: minuti coi mezzi verso Piazza Castello alle 8, contro l'auto. Auto: tempo a flusso libero per il fattore di traffico del percorso, più 5 minuti.",
+         f"Pareggio: con {lo_m} minuti persi a parcheggiare in centro, l'auto impiega quanto il bus (mediana dei {n_punti_ba} punti, traffico tipico).",
          f"Dei punti dove il bus conviene, {len(vicini)} su {len(conv_punti)} sono vicini alla soglia: un'auto il 10% più veloce cambia classe.",
          f"Con la stima dei sensori del traffico, più favorevole all'auto (fattore {f_ba_hi}), il pareggio sale a {hi_m} minuti."],
         [["Fermate importanti", f"{reg['n_corse']} corse all'ora o metro, e {migliaia(reg['m_auto'])} auto che passano"],
          ["Distanza a piedi", f"{raggio} metri"],
          ["Auto da fermare", f"auto che passano × {quota}%"],
          ["Periodo del riempimento dei parcheggi", periodo_it(min(rie["giorni_feriali_validi"]), max(rie["giorni_feriali_validi"]))],
-         ["Bus contro auto", f"verso Piazza Castello alle 8; auto: fattore TomTom del percorso (mediana {f_ba_lo}) + 5 minuti; stima più favorevole all'auto: sensori 5T, fattore {f_ba_hi}"]],
+         ["Bus contro auto", f"verso Piazza Castello alle 8; auto: fattore di traffico del percorso (mediana {f_ba_lo}) + 5 minuti; stima più favorevole all'auto: sensori 5T, fattore {f_ba_hi}"]],
         ["Le auto che passano vengono da un modello del traffico. I posti sono spesso stimati: quelli che mancano sono un ordine di grandezza. "
          f"Con metà o doppio di chi lascia l'auto, le fermate senza posti bastanti vanno da {min(senza_q)} a {max(senza_q)} su {n_fermate}.",
          "I tempi coi mezzi sono solo GTT, senza treni. La stima dei sensori non conta semafori e incroci: è la più favorevole all'auto.",
-         "Tempi in auto previsti da TomTom su traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
+         "Tempi di percorrenza in auto con il traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
          "Il costo del parcheggio non è nel calcolo: pesa come minuti in più. Si guarda un solo punto per luogo e una sola destinazione."],
         anima=anima_fermate(fermate, punti, n_ok, n_pochi, n_nessun),
         pareggio={"tomtom": lo_m, "sensori": hi_m})   # minuti di pareggio mediani dei punti (la home li legge)

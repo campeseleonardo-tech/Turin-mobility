@@ -239,7 +239,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/21_risultato1_vuoti.py",
    "scripts/22_risultato1_candidati.py"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
    "Dati [STIMATO] — solo comune di Torino",
    "Distanze a piedi sulla rete stradale (15 min a 80 m/min) su 848.748 residenti (censimento 2021). Servizi dal catalogo comunale: la cintura non è confrontabile (manca il dato, non il servizio). I punti nuovi sono ipotesi di posizione, calcolate gruppo per gruppo: non si sommano tra gruppi e non tengono conto di costi o spazi disponibili."
@@ -553,6 +553,14 @@ window.SCHEDE_RISULTATI = [
     "id": "faseb",
     "nota": "Nella mappa, tema \"Dove mancano i servizi\": all'apertura quanti servizi mancano in ogni zona (0-5, zone poco abitate in grigio); nel menu un servizio alla volta, con i punti dove aggiungerne uno."
    },
+   "fonti": [
+    "Comune di Torino (servizi)",
+    "OpenStreetMap",
+    "ISTAT (censimento 2021)",
+    "GTT (orari ufficiali)",
+    "5T (sensori del traffico)",
+    "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)"
+   ],
    "anima": {
     "tipo": "cerchi",
     "voci": [
@@ -768,6 +776,14 @@ window.SCHEDE_RISULTATI = [
     "id": "faseb",
     "nota": "Nella mappa, tema \"Dove mancano i servizi\": all'apertura quanti servizi mancano in ogni zona (0-5, zone poco abitate in grigio); nel menu un servizio alla volta, con i punti dove aggiungerne uno."
    },
+   "fonti": [
+    "City of Turin (services)",
+    "OpenStreetMap",
+    "ISTAT (2021 census)",
+    "GTT (official timetables)",
+    "5T (traffic sensors)",
+    "Piedmont Mobility Agency (2022 travel survey)"
+   ],
    "anima": {
     "tipo": "cerchi",
     "voci": [
@@ -1360,7 +1376,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO9_ATTESA.txt",
    "scripts/70_risultato9_attesa.py"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
    "Dati [MISURATO] — pochi giorni",
    "Arrivi misurati con il GPS dei mezzi GTT raccolto dal Raspberry Pi, 2026-10-10 - 2026-10-22: il GPS c'è per il 80% dei passaggi programmati delle corse viste (prima si usava il feed GTT, che sottostima i ritardi: confronto nella scheda). Giorni non tutti interi e solo linee urbane viste dal GPS: vedi i limiti."
@@ -1771,6 +1787,9 @@ window.SCHEDE_RISULTATI = [
     "id": "puntualita",
     "nota": "Nella mappa, tema «Puntualità delle linee»: ogni linea colorata per ritardo nell'ora scelta con il cursore."
    },
+   "fonti": [
+    "GTT (posizioni GPS dei mezzi, dato in tempo reale e orari ufficiali)"
+   ],
    "anima": {
     "tipo": "quadratini",
     "totale": 100,
@@ -2099,6 +2118,9 @@ window.SCHEDE_RISULTATI = [
     "id": "puntualita",
     "nota": "Nella mappa, tema «Puntualità delle linee»: ogni linea colorata per ritardo nell'ora scelta con il cursore."
    },
+   "fonti": [
+    "GTT (GPS positions of vehicles, real-time feed and official timetables)"
+   ],
    "anima": {
     "tipo": "quadratini",
     "totale": 100,
@@ -2732,7 +2754,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/84_risultato6_parcheggi.py",
    "data/processed/risultato6_v2/mappa_r6.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
    "Come leggere i tag. ",
    "[MISURATO] = misura vera, fatta dai sensori del sistema 5T. [STIMATO] = calcolo nostro su dati veri, non una misura diretta. [DATI SCARSI] = pochi dati, da prendere con cautela."
@@ -2870,7 +2892,7 @@ window.SCHEDE_RISULTATI = [
     {
      "tipo": "gara",
      "titolo": "La gara: bus e auto verso Piazza Castello, alle 8 di un feriale",
-     "nota": "Bus e auto partono insieme da ogni parcheggio, uno dopo l'altro. L'auto ha il tempo previsto da TomTom, parcheggio compreso.",
+     "nota": "Bus e auto partono insieme da ogni parcheggio, uno dopo l'altro. L'auto ha il tempo previsto con il traffico tipico, parcheggio compreso.",
      "luoghi": [
       {
        "nome": "Santa Rita",
@@ -3015,7 +3037,7 @@ window.SCHEDE_RISULTATI = [
      "tipo": "barre",
      "titolo": "I parcheggi di scambio che ci sono già: quanto sono pieni e quanto ci mette il bus al centro",
      "unita": "minuti",
-     "nota": "Barra = minuti coi mezzi pubblici fino a Piazza Castello alle 8. A destra il tempo in auto, parcheggio compreso (TomTom), e quanto è pieno il parcheggio di giorno.",
+     "nota": "Barra = minuti coi mezzi pubblici fino a Piazza Castello alle 8. A destra il tempo in auto, parcheggio compreso (traffico tipico), e quanto è pieno il parcheggio di giorno.",
      "voci": [
       {
        "label": "Stura",
@@ -3050,8 +3072,8 @@ window.SCHEDE_RISULTATI = [
     "Le auto in entrata vengono dall'indagine sugli spostamenti 2022, assegnate al percorso più veloce.",
     "Auto da fermare: auto che passano per il 5,8% che già oggi lascia l'auto. Posti: parcheggi adatti entro 400 metri.",
     "Punti prioritari: fermate senza posti bastanti raggruppate entro 1 km, uno per asse d'ingresso.",
-    "Bus contro auto: minuti coi mezzi verso Piazza Castello alle 8, contro l'auto. Auto: tempo a flusso libero per il fattore TomTom del percorso, più 5 minuti. Dati di traffico: TomTom.",
-    "Pareggio: con 16 minuti persi a parcheggiare in centro, l'auto impiega quanto il bus (mediana dei 12 punti, TomTom).",
+    "Bus contro auto: minuti coi mezzi verso Piazza Castello alle 8, contro l'auto. Auto: tempo a flusso libero per il fattore di traffico del percorso, più 5 minuti.",
+    "Pareggio: con 16 minuti persi a parcheggiare in centro, l'auto impiega quanto il bus (mediana dei 12 punti, traffico tipico).",
     "Dei punti dove il bus conviene, 5 su 8 sono vicini alla soglia: un'auto il 10% più veloce cambia classe.",
     "Con la stima dei sensori del traffico, più favorevole all'auto (fattore 1,2), il pareggio sale a 28 minuti."
    ],
@@ -3074,19 +3096,27 @@ window.SCHEDE_RISULTATI = [
     ],
     [
      "Bus contro auto",
-     "verso Piazza Castello alle 8; auto: fattore TomTom del percorso (mediana 2,6) + 5 minuti; stima più favorevole all'auto: sensori 5T, fattore 1,2"
+     "verso Piazza Castello alle 8; auto: fattore di traffico del percorso (mediana 2,6) + 5 minuti; stima più favorevole all'auto: sensori 5T, fattore 1,2"
     ]
    ],
    "limiti": [
     "Le auto che passano vengono da un modello del traffico. I posti sono spesso stimati: quelli che mancano sono un ordine di grandezza. Con metà o doppio di chi lascia l'auto, le fermate senza posti bastanti vanno da 135 a 212 su 274.",
     "I tempi coi mezzi sono solo GTT, senza treni. La stima dei sensori non conta semafori e incroci: è la più favorevole all'auto.",
-    "Tempi in auto previsti da TomTom su traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
+    "Tempi di percorrenza in auto con il traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
     "Il costo del parcheggio non è nel calcolo: pesa come minuti in più. Si guarda un solo punto per luogo e una sola destinazione."
    ],
    "mappa": {
     "id": "interscambio",
     "nota": "Due domande nella mappa, nel menu «Cosa vedere»: dove ci sono parcheggi e dove servirebbe di più un parcheggio."
    },
+   "fonti": [
+    "GTT (orari ufficiali e posizioni dei mezzi)",
+    "Comune di Torino (parcheggi)",
+    "5T (sensori del traffico)",
+    "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)",
+    "OpenStreetMap",
+    "TomTom (tempi di percorrenza in auto, uso autorizzato)"
+   ],
    "anima": {
     "tipo": "fermate",
     "contorno": {
@@ -4917,7 +4947,7 @@ window.SCHEDE_RISULTATI = [
     {
      "tipo": "gara",
      "titolo": "The race: bus and car to Piazza Castello, at 8 a.m. on a weekday",
-     "nota": "Bus and car leave together from each car park, one after the other. The car has the time forecast by TomTom, parking included.",
+     "nota": "Bus and car leave together from each car park, one after the other. The car has the time forecast with typical traffic, parking included.",
      "luoghi": [
       {
        "nome": "Santa Rita",
@@ -5062,7 +5092,7 @@ window.SCHEDE_RISULTATI = [
      "tipo": "barre",
      "titolo": "Existing park-and-ride sites: how full they are and how long the bus takes to the centre",
      "unita": "minutes",
-     "nota": "Bar = minutes by public transport to Piazza Castello at 8 a.m. On the right, the car time with parking included (TomTom), and how full the car park is during the day.",
+     "nota": "Bar = minutes by public transport to Piazza Castello at 8 a.m. On the right, the car time with parking included (typical traffic), and how full the car park is during the day.",
      "voci": [
       {
        "label": "Stura",
@@ -5097,8 +5127,8 @@ window.SCHEDE_RISULTATI = [
     "Cars entering come from the 2022 travel survey, assigned to the fastest route.",
     "Cars to stop: passing cars times the 5.8% who already leave the car today. Spaces: suitable car parks within 400 metres.",
     "Priority points: stops without enough parking, grouped within 1 km, one per entry axis.",
-    "Bus versus car: minutes by public transport to Piazza Castello at 8, versus the car. Car: free-flow time times the TomTom factor of the route, plus 5 minutes. Traffic data: TomTom.",
-    "Break-even: with 16 minutes lost parking downtown, the car takes as long as the bus (median of the 12 points, TomTom).",
+    "Bus versus car: minutes by public transport to Piazza Castello at 8, versus the car. Car: free-flow time times the traffic factor of the route, plus 5 minutes.",
+    "Break-even: with 16 minutes lost parking downtown, the car takes as long as the bus (median of the 12 points, typical traffic).",
     "Of the points where the bus pays off, 5 out of 8 are close to the threshold: a car 10% faster changes the class.",
     "With the traffic-sensor estimate, more favourable to the car (factor 1.2), the break-even rises to 28 minutes."
    ],
@@ -5121,19 +5151,27 @@ window.SCHEDE_RISULTATI = [
     ],
     [
      "Bus versus car",
-     "to Piazza Castello at 8; car: TomTom factor of the route (median 2.6) + 5 minutes; estimate most favourable to the car: 5T sensors, factor 1.2"
+     "to Piazza Castello at 8; car: traffic factor of the route (median 2.6) + 5 minutes; estimate most favourable to the car: 5T sensors, factor 1.2"
     ]
    ],
    "limiti": [
     "Passing cars come from a traffic model. Spaces are often estimated: the missing ones are an order of magnitude. With half or double the drivers who leave the car, stops without enough spaces go from 135 to 212 out of 274.",
     "Public transport times are GTT only, without trains. The sensor estimate ignores traffic lights and junctions: it is the most favourable to the car.",
-    "Car times forecast by TomTom for typical traffic on a November weekday, not measured on a specific day. A single service is used.",
+    "Car travel times with typical traffic on a November weekday, not measured on a specific day. A single service is used.",
     "The cost of parking is not in the calculation: it weighs as extra minutes. One point per place and one destination only."
    ],
    "mappa": {
     "id": "interscambio",
     "nota": "Due domande nella mappa, nel menu «Cosa vedere»: dove ci sono parcheggi e dove servirebbe di più un parcheggio."
    },
+   "fonti": [
+    "GTT (official timetables and vehicle positions)",
+    "City of Turin (car parks)",
+    "5T (traffic sensors)",
+    "Piedmont Mobility Agency (2022 travel survey)",
+    "OpenStreetMap",
+    "TomTom (car travel times, used with permission)"
+   ],
    "anima": {
     "tipo": "fermate",
     "contorno": {
@@ -7247,7 +7285,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO8_TRAFFICO_TP_V2.txt",
    "data/processed/risultato8_traffico_tp_v2.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
    "Dati [STIMATO] (traffico) / [MISURATO] (sensori 5T) / [PROGRAMMATO] (orari GTT)",
    "Traffico stimato con un modello tarato su 22 sensori: errore tipico ±28%. Trasporto pubblico = fermate con almeno 4 passaggi all'ora entro 300 m o metro entro 600 m."
@@ -7291,7 +7329,7 @@ window.SCHEDE_RISULTATI = [
    }
   ],
   "forma": {
-   "tipo_dato": "Tipo di dato: calcolato da dati veri, con tempi in auto di TomTom, misure dei sensori e orari ufficiali dei mezzi.",
+   "tipo_dato": "Tipo di dato: calcolato da dati veri, con tempi in auto col traffico tipico, misure dei sensori e orari ufficiali dei mezzi.",
    "titolo": "Al mattino, coi mezzi pubblici si impiega 1,9 volte il tempo dell'auto",
    "domanda": "Al mattino, quanto ci si mette in più coi mezzi pubblici che in auto?",
    "numero": {
@@ -7305,7 +7343,7 @@ window.SCHEDE_RISULTATI = [
     "titolo": "Auto del mattino, per quante volte i mezzi pubblici impiegano più dell'auto",
     "unita": "%",
     "max": 100,
-    "nota": "Ogni barra è una fascia: coi mezzi pubblici si impiega quel multiplo del tempo in auto (TomTom). Coppie Torino-Torino e Torino-cintura.",
+    "nota": "Ogni barra è una fascia: coi mezzi pubblici si impiega quel multiplo del tempo in auto (traffico tipico). Coppie Torino-Torino e Torino-cintura.",
     "voci": [
      {
       "label": "meno di 1,5 volte",
@@ -7343,7 +7381,7 @@ window.SCHEDE_RISULTATI = [
      "tipo": "linea",
      "titolo": "Quante volte il tempo dell'auto, ora per ora",
      "unita": "volte",
-     "nota": "Rapporto fra il tempo coi mezzi e il tempo in auto (TomTom), pesato per le auto del mattino, alle 4 ore del giorno.",
+     "nota": "Rapporto fra il tempo coi mezzi e il tempo in auto (traffico tipico), pesato per le auto del mattino, alle 4 ore del giorno.",
      "categorie": [
       "8:00",
       "13:00",
@@ -7416,12 +7454,12 @@ window.SCHEDE_RISULTATI = [
       }
      ],
      "scelto": 0,
-     "nota": "Bus e auto partono insieme, uno dopo l'altro, per i 6 viaggi in auto più frequenti del mattino. L'auto ha il tempo previsto da TomTom, parcheggio compreso."
+     "nota": "Bus e auto partono insieme, uno dopo l'altro, per i 6 viaggi in auto più frequenti del mattino. L'auto ha il tempo previsto con il traffico tipico, parcheggio compreso."
     },
     {
      "tipo": "dispersione",
      "titolo": "Tempo in auto e tempo coi mezzi pubblici, una coppia di zone per punto",
-     "xlabel": "minuti in auto (mattino, TomTom)",
+     "xlabel": "minuti in auto (mattino, traffico tipico)",
      "ylabel": "minuti coi mezzi pubblici",
      "punti": [
       [
@@ -10521,7 +10559,7 @@ window.SCHEDE_RISULTATI = [
    "calcolo": [
     "Le zone sono quelle dell'indagine sugli spostamenti 2022 con punti di calcolo; ognuna ha fino a 5 punti.",
     "Mezzi pubblici: a piedi, bus, tram e metro, con partenza fra le 7:45 e le 8:15. Si prende la mediana.",
-    "Auto: tempo a flusso libero per il fattore TomTom della coppia, più 5 minuti. Le coppie non chieste a TomTom prendono la mediana della loro fascia. Dati di traffico: TomTom.",
+    "Auto: tempo a flusso libero per il fattore di traffico della coppia, più 5 minuti. Le coppie non chieste al servizio di navigazione prendono la mediana della loro fascia.",
     "Con i sensori del traffico la stima è più favorevole all'auto: fattore 1,2, senza semafori e incroci. Il rapporto mediano diventa 2,9 e il 97% delle auto ha rapporto oltre 2.",
     "Rapporto = tempo coi mezzi diviso tempo in auto, in fasce fisse. Le auto di una coppia sono i viaggi in auto dell'indagine, dalle 6 alle 10 di un feriale.",
     "Il numero grande vale per il 47% delle auto del mattino (220.307). Mancano i viaggi dentro una zona e fra comuni della cintura.",
@@ -10538,8 +10576,8 @@ window.SCHEDE_RISULTATI = [
      "partenza 07:45-8:15 di un feriale, mediana, cammino a 4,8 km/h, al massimo 120 minuti"
     ],
     [
-     "Auto, stima TomTom",
-     "tempo a flusso libero × fattore TomTom della coppia (mediana 2,2) + 5 minuti"
+     "Auto, stima col traffico tipico",
+     "tempo a flusso libero × fattore di traffico della coppia (mediana 2,2) + 5 minuti"
     ],
     [
      "Auto, stima più favorevole all'auto",
@@ -10556,7 +10594,7 @@ window.SCHEDE_RISULTATI = [
    ],
    "limiti": [
     "Fuori Torino mancano treni e altre aziende: le coppie fra comuni della cintura non sono nel numero. Senza i treni metropolitani, dove ci sono, i mezzi pubblici risultano più lenti del vero. L'orario è quello programmato.",
-    "Tempi in auto previsti da TomTom su traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
+    "Tempi di percorrenza in auto con il traffico tipico di un feriale di novembre, non misurati in un giorno preciso. Si usa un solo servizio.",
     "L'indagine è un campione. I viaggi dentro una zona e 653 coppie senza collegamento (5.616 auto) non sono nel confronto.",
     "Prova sulla scelta del mezzo senza esito. Dalle 6 alle 10 di un feriale le coppie di zone con almeno 30 interviste sono 1."
    ],
@@ -10564,6 +10602,14 @@ window.SCHEDE_RISULTATI = [
     "id": "imq",
     "nota": "Nella mappa, tema «Spostamenti»: quanti spostamenti partono da ogni zona e dove vanno (indagine 2022, feriale)."
    },
+   "fonti": [
+    "GTT (orari ufficiali)",
+    "5T (sensori del traffico)",
+    "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)",
+    "OpenStreetMap",
+    "TomTom (tempi di percorrenza in auto, uso autorizzato)",
+    "Google Maps (3 percorsi controllati a mano)"
+   ],
    "chiave": {
     "valore": "1,9",
     "unita": "volte",
@@ -10571,11 +10617,11 @@ window.SCHEDE_RISULTATI = [
    },
    "anima": {
     "tipo": "area",
-    "didascalia": "Da Piazza Castello, alle 7:45 di un feriale. In 30 minuti si raggiungono ~42% dei torinesi coi mezzi pubblici e ~90% in auto (TomTom, parcheggio compreso)."
+    "didascalia": "Da Piazza Castello, alle 7:45 di un feriale. In 30 minuti si raggiungono ~42% dei torinesi coi mezzi pubblici e ~90% in auto (traffico tipico, parcheggio compreso)."
    }
   },
   "forma_en": {
-   "tipo_dato": "Type of data: calculated from real data, with car times from TomTom, sensor measurements and the official timetables of the vehicles.",
+   "tipo_dato": "Type of data: calculated from real data, with car times with typical traffic, sensor measurements and the official timetables of the vehicles.",
    "titolo": "In the morning, public transport takes 1.9 times as long as the car",
    "domanda": "In the morning, how much longer does it take by public transport than by car?",
    "numero": {
@@ -10589,7 +10635,7 @@ window.SCHEDE_RISULTATI = [
     "titolo": "Morning cars, by how many times public transport takes longer than the car",
     "unita": "%",
     "max": 100,
-    "nota": "Each bar is a band: public transport takes that multiple of the car's travel time (TomTom). Turin-Turin and Turin-belt pairs.",
+    "nota": "Each bar is a band: public transport takes that multiple of the car's travel time (typical traffic). Turin-Turin and Turin-belt pairs.",
     "voci": [
      {
       "label": "less than 1.5 times",
@@ -10627,7 +10673,7 @@ window.SCHEDE_RISULTATI = [
      "tipo": "linea",
      "titolo": "How many times the car time, hour by hour",
      "unita": "times",
-     "nota": "Ratio between public transport time and car time (TomTom), weighted by morning cars, at 4 times of the day.",
+     "nota": "Ratio between public transport time and car time (typical traffic), weighted by morning cars, at 4 times of the day.",
      "categorie": [
       "8:00",
       "13:00",
@@ -10700,12 +10746,12 @@ window.SCHEDE_RISULTATI = [
       }
      ],
      "scelto": 0,
-     "nota": "Bus and car leave together, one trip after the other, for the 6 most frequent morning car trips. The car has the time forecast by TomTom, parking included."
+     "nota": "Bus and car leave together, one trip after the other, for the 6 most frequent morning car trips. The car has the time forecast with typical traffic, parking included."
     },
     {
      "tipo": "dispersione",
      "titolo": "Car time and public transport time, one pair of zones per point",
-     "xlabel": "minutes by car (morning, TomTom)",
+     "xlabel": "minutes by car (morning, typical traffic)",
      "ylabel": "minutes by public transport",
      "punti": [
       [
@@ -13805,7 +13851,7 @@ window.SCHEDE_RISULTATI = [
    "calcolo": [
     "Zones are those of the 2022 travel survey, with calculation points; each has up to 5 points.",
     "Public transport: on foot, bus, tram and metro, departing between 7:45 and 8:15. We take the median.",
-    "Car: free-flow time times the TomTom factor of the pair, plus 5 minutes. Pairs not asked to TomTom take the median of their band. Traffic data: TomTom.",
+    "Car: free-flow time times the traffic factor of the pair, plus 5 minutes. Pairs not asked to the navigation service take the median of their band.",
     "With the traffic sensors the estimate is more favourable to the car: factor 1.2, without traffic lights and junctions. The median ratio becomes 2.9 and 97% of cars have a ratio above 2.",
     "Ratio = public transport time divided by car time, in fixed bands. The cars of a pair are the survey's car trips, leaving between 6 and 10 a.m. on a weekday.",
     "The big number holds for 47% of morning cars (220,307). Trips within a single zone and between towns of the belt are missing.",
@@ -13822,8 +13868,8 @@ window.SCHEDE_RISULTATI = [
      "departure 07:45-8:15 on a weekday, median, walking at 4.8 km/h, at most 120 minutes"
     ],
     [
-     "Car, TomTom estimate",
-     "free-flow time × TomTom factor of the pair (median 2.2) + 5 minutes"
+     "Car, typical-traffic estimate",
+     "free-flow time × traffic factor of the pair (median 2.2) + 5 minutes"
     ],
     [
      "Car, estimate most favourable to the car",
@@ -13840,7 +13886,7 @@ window.SCHEDE_RISULTATI = [
    ],
    "limiti": [
     "Outside Turin, trains and other operators are missing: pairs between suburban towns are not in the number. Without metropolitan trains, where they exist, public transport looks slower than it is. The timetable is the scheduled one.",
-    "Car times forecast by TomTom for typical traffic on a November weekday, not measured on a specific day. A single service is used.",
+    "Car travel times with typical traffic on a November weekday, not measured on a specific day. A single service is used.",
     "The survey is a sample. Trips within a zone and 653 pairs with no connection (5,616 cars) are not in the comparison.",
     "Test on the choice of transport inconclusive. Between 6 and 10 on a weekday, the pairs of zones with at least 30 interviews number 1."
    ],
@@ -13848,6 +13894,14 @@ window.SCHEDE_RISULTATI = [
     "id": "imq",
     "nota": "Nella mappa, tema «Spostamenti»: quanti spostamenti partono da ogni zona e dove vanno (indagine 2022, feriale)."
    },
+   "fonti": [
+    "GTT (official timetables)",
+    "5T (traffic sensors)",
+    "Piedmont Mobility Agency (2022 travel survey)",
+    "OpenStreetMap",
+    "TomTom (car travel times, used with permission)",
+    "Google Maps (3 routes checked by hand)"
+   ],
    "chiave": {
     "valore": "1.9",
     "unita": "times",
@@ -13855,7 +13909,7 @@ window.SCHEDE_RISULTATI = [
    },
    "anima": {
     "tipo": "area",
-    "didascalia": "From Piazza Castello, at 7:45 a.m. on a weekday. In 30 minutes you reach ~42% of Turin residents by public transport and ~90% by car (TomTom, parking included)."
+    "didascalia": "From Piazza Castello, at 7:45 a.m. on a weekday. In 30 minutes you reach ~42% of Turin residents by public transport and ~90% by car (typical traffic, parking included)."
    }
   },
   "numero_pubblico": 4,
@@ -13888,7 +13942,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_CASE_FRAGILITA_SERVIZI.txt",
    "data/processed/case_fragilita_servizi.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
    "Dati [STIMATO] (servizi, indice) / [CENSIMENTO] (abitanti). Differenza fra zone, non effetto causale."
   ],
@@ -14598,6 +14652,13 @@ window.SCHEDE_RISULTATI = [
     "nota": "Vista «Doppio svantaggio» nel tema Fragilità sociale.",
     "vista": "doppio"
    },
+   "fonti": [
+    "Agenzia delle Entrate (quotazioni OMI)",
+    "ISTAT (censimento 2021)",
+    "Comune di Torino (servizi)",
+    "OpenStreetMap",
+    "GTT (orari ufficiali)"
+   ],
    "anima": {
     "tipo": "omini",
     "totale": 10,
@@ -15283,6 +15344,13 @@ window.SCHEDE_RISULTATI = [
     "nota": "Vista «Doppio svantaggio» nel tema Fragilità sociale.",
     "vista": "doppio"
    },
+   "fonti": [
+    "Revenue Agency (OMI price quotes)",
+    "ISTAT (2021 census)",
+    "City of Turin (services)",
+    "OpenStreetMap",
+    "GTT (official timetables)"
+   ],
    "anima": {
     "tipo": "omini",
     "totale": 10,
@@ -15322,7 +15390,7 @@ window.SCHEDE_RISULTATI = [
    "data/processed/costo_del_viaggio.json",
    "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T11:48:10+00:00",
+  "generato": "2026-10-24T12:34:06+00:00",
   "avviso": [
    "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -15360,7 +15428,7 @@ window.SCHEDE_RISULTATI = [
    }
   ],
   "forma": {
-   "tipo_dato": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto di TomTom.",
+   "tipo_dato": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto col traffico tipico.",
    "titolo": "Per andare al lavoro in centro l'auto costa circa 270 euro al mese più dei mezzi pubblici",
    "domanda": "Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi?",
    "numero": {
@@ -15799,7 +15867,7 @@ window.SCHEDE_RISULTATI = [
     "Lavoro: 20 giorni al mese, 8 ore di sosta a tariffa ordinaria (1,70 euro l'ora). Mezzi pubblici: abbonamento mensile urbano (38 euro).",
     "Commissione: 2 ore di sosta contro 2 biglietti urbani (2,00 euro l'uno).",
     "Punti: i 12 punti prioritari del risultato 3 verso Piazza Castello. Coppie: 506 coppie di zone di Torino, senza parcheggio.",
-    "Chilometri: percorso più veloce sulla rete stradale, controllato con TomTom su 17 percorsi. Minuti in più: dal confronto di tempi del risultato 4, alle 8."
+    "Chilometri: percorso più veloce sulla rete stradale, controllato con un servizio di navigazione su 17 percorsi. Minuti in più: dal confronto di tempi del risultato 4, alle 8."
    ],
    "criteri": [
     [
@@ -15826,8 +15894,15 @@ window.SCHEDE_RISULTATI = [
    "limiti": [
     "Carburante: prezzi del giorno, non la media di 4 settimane. Una Golf di consumo medio, non la propria auto; abbonamenti ridotti e agevolazioni non considerati.",
     "La zona a traffico limitato e gli abbonamenti alla sosta non sono nel calcolo. Per il centro vale la tariffa ordinaria.",
-    "Chilometri: su 11 dei 17 percorsi TomTom dà una lunghezza diversa di oltre il 10%. Pesa poco: il parcheggio vale la maggior parte del costo.",
+    "Chilometri: su 11 dei 17 percorsi il servizio di navigazione dà una lunghezza diversa di oltre il 10%. Pesa poco: il parcheggio vale la maggior parte del costo.",
     "Solo Torino: le tariffe a zone della cintura non sono assegnate alle zone dell'indagine."
+   ],
+   "fonti": [
+    "Osservatorio prezzi carburanti (Ministero delle imprese e del made in Italy)",
+    "ACI (tabelle dei costi chilometrici 2026)",
+    "GTT (tariffe e sosta)",
+    "OpenStreetMap",
+    "TomTom (tempi di percorrenza in auto, uso autorizzato)"
    ],
    "anima": {
     "tipo": "contatori",
@@ -15854,7 +15929,7 @@ window.SCHEDE_RISULTATI = [
    }
   },
   "forma_en": {
-   "tipo_dato": "Type of data: calculated from public prices of October 2026 and TomTom car times.",
+   "tipo_dato": "Type of data: calculated from public prices of October 2026 and car times with typical traffic.",
    "titolo": "Going to work in the centre costs about 270 euros a month more by car than by public transport",
    "domanda": "How much does it cost to go to the centre by car and by public transport, today?",
    "numero": {
@@ -16293,7 +16368,7 @@ window.SCHEDE_RISULTATI = [
     "Work: 20 days a month, 8 hours of parking at the ordinary rate (1.70 euros an hour). Public transport: monthly urban pass (38 euros).",
     "Errand: 2 hours of parking against 2 urban tickets (2.00 euros each).",
     "Points: the 12 priority points of result 3 towards Piazza Castello. Pairs: 506 pairs of zones in Turin, without parking.",
-    "Kilometres: fastest route on the road network, checked with TomTom on 17 routes. Extra minutes: from the time comparison of result 4, at 8."
+    "Kilometres: fastest route on the road network, checked with a navigation service on 17 routes. Extra minutes: from the time comparison of result 4, at 8."
    ],
    "criteri": [
     [
@@ -16320,8 +16395,15 @@ window.SCHEDE_RISULTATI = [
    "limiti": [
     "Fuel: prices of the day, not a 4-week average. A Golf of average consumption, not your own car; reduced passes and concessions not considered.",
     "The limited traffic zone and parking passes are not in the calculation. The ordinary rate is used for the centre.",
-    "Kilometres: on 11 of the 17 routes TomTom gives a length that differs by more than 10%. It matters little: parking is most of the cost.",
+    "Kilometres: on 11 of the 17 routes the navigation service gives a length that differs by more than 10%. It matters little: parking is most of the cost.",
     "Turin only: the zoned fares of the surrounding towns are not assigned to the survey zones."
+   ],
+   "fonti": [
+    "Fuel price observatory (Ministry of Enterprises and Made in Italy)",
+    "ACI (2026 cost-per-kilometre tables)",
+    "GTT (fares and parking)",
+    "OpenStreetMap",
+    "TomTom (car travel times, used with permission)"
    ],
    "anima": {
     "tipo": "contatori",
