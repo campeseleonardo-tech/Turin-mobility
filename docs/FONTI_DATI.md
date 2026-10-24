@@ -71,9 +71,9 @@ Prezzi consultati il 24/10/2026 e scritti a mano in `data/ref/costi.json` (valor
 Servizio **TomTom Routing API** (piano gratuito, chiave personale in `config_locale.json`, fuori da git), usato dallo script 101 (L6, 24/10/2026):
 per un insieme di percorsi di Torino, in due giorni feriali futuri (10 e 11/11/2026) a 4 ore del giorno, il tempo previsto col traffico tipico.
 Si usano solo **rapporti** (tempo col traffico / nostro tempo a flusso libero; tempo col traffico / tempo senza traffico), per gruppo e ora.
-**Attribuzione: dati di traffico TomTom** (scritta nelle schede 3 e 4). Le risposte grezze e i minuti **non si salvano né si pubblicano**
+**Uso con permesso di TomTom (Leo, 25/10/2026).** Dal giro L21 il nome TomTom non compare nel testo del sito: i tempi sono «tempi di percorrenza in auto con il traffico tipico»; il nome sta solo nella riga «Fonti» in fondo alla parte chiusa delle schede 3, 4 e 6 («TomTom (tempi di percorrenza in auto, uso autorizzato)»). Le risposte grezze e i minuti **non si salvano né si pubblicano**
 (`SALVA_GREZZI = False` nello script 101): in git ci sono solo statistiche per gruppo e ora e il fattore a due decimali dei percorsi di controllo.
-**Da fare prima di unire in `main`: Leo legge le condizioni d'uso di TomTom** (cosa si può salvare e pubblicare, come citare).
+Le condizioni d'uso (punti 11.4 e 11.6.1: salvataggio dei risultati, database derivati) non permettono questo uso senza permesso: Leo ha dichiarato di avere un permesso speciale (25/10/2026); la condizione per `main` è chiusa. Le note tecniche (`docs/R*.md`, `docs/rapporti/`) mantengono il nome.
 Google Maps NON si usa da programma (le sue condizioni vietano la raccolta automatica): il 2,1 di Google viene da 6 percorsi controllati a mano il 20/10 e resta come confronto.
 
 
