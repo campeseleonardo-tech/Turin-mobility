@@ -17,8 +17,8 @@ Un Raspberry Pi di casa raccoglie ogni minuto la posizione di bus e tram e i sen
 ## I sei risultati
 
 <!-- RISULTATI-IT:INIZIO -->
-1. **Per andare al lavoro in centro l'auto costa circa 270 euro al mese più dei mezzi pubblici**  
-   Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi? → **269 euro** in più al mese per andare al lavoro in centro in auto invece che coi mezzi pubblici. Col costo pieno dell'auto sono ~366 euro. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
+1. **Con la sosta pagata, andare al lavoro in centro in auto costa circa 270 euro al mese più dei mezzi**  
+   Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi? → **269 euro** in più al mese dei mezzi pubblici, in auto con la sosta pagata in strada. Col costo pieno dell'auto sono ~366 euro. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
 2. **Al mattino, coi mezzi pubblici si impiega 1,9 volte il tempo dell'auto**  
    Al mattino, quanto ci si mette in più coi mezzi pubblici che in auto? → **1,9 volte** il tempo dell'auto, per un viaggio tipico del mattino. [Apri](https://campeseleonardo-tech.github.io/Turin-mobility/r/2.html)
 3. **2 fermate importanti su 3 non hanno abbastanza posti per lasciare l'auto**  
@@ -86,8 +86,8 @@ The site is in Italian and English (button IT/EN); the map is in Italian.
 ## The six results
 
 <!-- RISULTATI-EN:INIZIO -->
-1. **Going to work in the centre costs about 270 euros a month more by car than by public transport**  
-   How much does it cost to go to the centre by car and by public transport, today? → **269 euros** more a month to go to work in the centre by car instead of by public transport. At the car's full cost it is ~366 euros. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
+1. **With paid parking, going to work downtown by car costs about 270 euros a month more than public transport**  
+   How much does it cost to go to the centre by car and by public transport, today? → **269 euros** more a month than public transport, driving and paying for street parking. At the car's full cost it is ~366 euros. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/1.html)
 2. **In the morning, public transport takes 1.9 times as long as the car**  
    In the morning, how much longer does it take by public transport than by car? → **1.9 times** the car's travel time, for a typical morning trip. [Open](https://campeseleonardo-tech.github.io/Turin-mobility/r/2.html)
 3. **2 in 3 important stops lack enough spaces to leave the car**  

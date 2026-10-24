@@ -275,6 +275,21 @@ def main():
                  "carburante_giorno_mediana": round(mediana([l["lavoro_mese"]["auto_sente"] / GIORNI_MESE - ORE_LAVORO * costi["sosta"]["tariffe_eur_ora"]["ordinaria"] for l in punti]), 2),
                  "tomtom_percorsi": len(tomtom), "tomtom_fuori": sum(1 for t in tomtom if abs(t["scarto"]) > SCOSTAMENTO_TOMTOM),
                  "km_mediano_punti": round(mediana([l["km"] for l in punti]), 1)}
+    # un mese di lavoro in centro, due casi (L22): sosta pagata in strada e parcheggio gratis al lavoro; mezzi: biglietti, abbonamenti, tariffe agevolate GTT
+    ora_sosta = costi["sosta"]["tariffe_eur_ora"]["ordinaria"]
+    carb_mese = mediana([l["lavoro_mese_senza_sosta"]["auto_sente"] for l in punti])
+    pieno_senza_sosta = mediana([l["lavoro_mese_senza_sosta"]["auto_piena"] for l in punti])
+    agevolati = []
+    for v in costi["gtt"]["agevolati"]["voci"]:
+        mese = v["eur_mese"] if "eur_mese" in v else (v["eur_anno"] + v.get("spese_pratica_eur", 0.0)) / 12.0
+        agevolati.append({"id": v["id"], "nome": v["nome"], "eur_mese": round(mese, 2), "annuale": "eur_anno" in v, "eur_anno": v.get("eur_anno")})
+    riepilogo["mese"] = {
+        "sosta_pagata": {"sente": riepilogo["auto_mese_sente_mediana"], "pieno": riepilogo["auto_mese_pieno_mediana"],
+                         "carburante": round(carb_mese, 2), "sosta": round(GIORNI_MESE * ORE_LAVORO * ora_sosta, 2)},
+        "parcheggio_gratis": {"sente": round(carb_mese, 2), "pieno": round(pieno_senza_sosta, 2)},
+        "mezzi": {"biglietti": round(VIAGGI_ABBONAMENTO * costi["gtt"]["biglietto_urbano_eur"], 2), "mensile": costi["gtt"]["abbonamento_mensile_urbano_eur"],
+                  "annuale_su_12": round(costi["gtt"]["abbonamento_annuale_urbano_eur"] / 12.0, 2), "agevolati": agevolati}}
+    c("la sosta pagata pesa piu' del carburante (caso principale)", riepilogo["mese"]["sosta_pagata"]["sosta"] > riepilogo["mese"]["sosta_pagata"]["carburante"])
     out = {"titolo": "Quanto costa muoversi", "consultato": costi["consultato"],
            "regole": {"giorni_mese": GIORNI_MESE, "ore_sosta_commissione": ORE_COMMISSIONE, "ore_sosta_lavoro": ORE_LAVORO, "viaggi_abbonamento": VIAGGI_ABBONAMENTO,
                       "fasce_km": [[a, None if b > 500 else b] for a, b in FASCE_KM], "scostamento_tomtom": SCOSTAMENTO_TOMTOM,

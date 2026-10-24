@@ -311,7 +311,22 @@
   "Dove lasciare l'auto": "Where to leave the car",
   "Fragilità e servizi": "Fragility and services",
   "Ritardi dei mezzi": "Vehicle delays",
-  "Servizi a piedi": "Services on foot"
+  "Servizi a piedi": "Services on foot",
+  "Mediana dei viaggi dai punti d'ingresso in città a Piazza Castello. Il costo pieno comprende anche assicurazione, usura e perdita di valore.": "Median of the trips from the city's entry points to Piazza Castello. The full cost also includes insurance, wear and loss of value.",
+  "Un mese di lavoro in centro: auto e mezzi pubblici": "A month of work in the centre: car and public transport",
+  "La barra chiara è il costo pieno dell'auto. Le tariffe agevolate sono quelle GTT per giovani e anziani, con certificato ISEE.": "The light bar is the full cost of the car. Concession fares are GTT's for young people and older people, with an ISEE certificate.",
+  "Auto, sosta pagata in strada": "Car, street parking paid",
+  "Carburante e sosta": "Fuel and parking",
+  "Auto, parcheggio gratis al lavoro": "Car, free parking at work",
+  "Solo carburante": "Fuel only",
+  "Abbonamento mensile": "Monthly pass",
+  "Abbonamento annuale, al mese": "Annual pass, per month",
+  "Mezzi pubblici, tariffe agevolate": "Public transport, concession fares",
+  "Under 26, abbonamento mensile": "Under 26, monthly pass",
+  "Over 65, abbonamento mensile": "Over 65, monthly pass",
+  "Carburante: prezzi del giorno, non la media di 4 settimane. Una Golf di consumo medio, non la propria auto.": "Fuel: prices of the day, not a 4-week average. A Golf of average consumption, not your own car.",
+  "La zona a traffico limitato e gli abbonamenti alla sosta non contano; vale la tariffa ordinaria. Solo Torino: le tariffe a zone della cintura non sono assegnate alle zone dell'indagine.": "The limited traffic zone and parking passes are not counted; the ordinary rate applies. Turin only: the zone-based fares of the surrounding area are not assigned to the survey zones.",
+  "Le tariffe agevolate valgono solo con i requisiti (età, ISEE, residenza a Torino); la data delle tariffe non è pubblicata.": "Concession fares apply only to those who qualify (age, ISEE, residence in Turin); the date of the fares is not published."
  },
  "modelli": [
   {
@@ -1181,6 +1196,62 @@
   {
    "it": "Alle 8 di un feriale un bus va in media a ~{n0} km/h, fermate e semafori compresi.",
    "en": "At 8 on a weekday a bus goes at an average of ~{n0} km/h, stops and traffic lights included."
+  },
+  {
+   "it": "Con la sosta pagata, andare al lavoro in centro in auto costa circa {n0} euro al mese più dei mezzi",
+   "en": "With paid parking, going to work downtown by car costs about {n0} euros a month more than public transport"
+  },
+  {
+   "it": "in più al mese dei mezzi pubblici, in auto con la sosta pagata in strada. Col costo pieno dell'auto sono ~{n0} euro.",
+   "en": "more a month than public transport, driving and paying for street parking. At the car's full cost it is ~{n0} euros."
+  },
+  {
+   "it": "Con il parcheggio gratis al lavoro l'auto costa ~{n0} euro al mese di carburante, l'abbonamento tra {n1} e {n2} euro.",
+   "en": "With free parking at work the car costs ~{n0} euros a month in fuel, the pass between {n1} and {n2} euros."
+  },
+  {
+   "it": "Coi mezzi pubblici si impiegano ~{n0} minuti in più a ogni viaggio.",
+   "en": "By public transport a trip takes ~{n0} minutes longer."
+  },
+  {
+   "it": "Biglietti ({n0} viaggi)",
+   "en": "Tickets ({n0} trips)"
+  },
+  {
+   "it": "Under 26, annuale agevolato, ISEE fino a {n0} euro",
+   "en": "Under 26, annual concession pass, ISEE up to {n0} euros"
+  },
+  {
+   "it": "Over 65, annuale, ISEE da {n0} a {n1} euro",
+   "en": "Over 65, annual pass, ISEE from {n0} to {n1} euros"
+  },
+  {
+   "it": "Lavoro: {n0} giorni al mese, {n1} ore di sosta a tariffa ordinaria ({n2} euro l'ora). Se il parcheggio è gratis, solo carburante.",
+   "en": "Work: {n0} days a month, {n1} hours of parking at the ordinary rate ({n2} euros an hour). If parking is free, fuel only."
+  },
+  {
+   "it": "Mezzi pubblici: abbonamento mensile urbano ({n0} euro), {n1} biglietti da {n2} euro o abbonamento annuale diviso 12.",
+   "en": "Public transport: monthly urban pass ({n0} euros), {n1} tickets at {n2} euros or the annual pass divided by 12."
+  },
+  {
+   "it": "Tariffe agevolate GTT: pagine ufficiali del {s0}, senza data di validità. Under 26: mensile {n0} euro, annuale {n1} euro, da {n2} a {n3} con ISEE. Over 65: mensile {n4} euro, annuale da {n5} a {n6} euro con ISEE.",
+   "en": "GTT concession fares: official pages of {s0}, with no validity date. Under 26: monthly {n0} euros, annual {n1} euros, from {n2} to {n3} with ISEE. Over 65: monthly {n4} euros, annual from {n5} to {n6} euros with ISEE."
+  },
+  {
+   "it": "Punti: i {n0} punti d'ingresso in città dei parcheggi verso Piazza Castello. Coppie: {n1} coppie di zone di Torino, senza parcheggio. Chilometri: percorso più veloce sulla rete stradale, controllato con un servizio di navigazione su {n2} percorsi. Minuti in più: dal confronto di tempi tra mezzi pubblici e auto, alle 8.",
+   "en": "Points: the {n0} city entry points of the car-park result towards Piazza Castello. Pairs: {n1} pairs of zones in Turin, without parking. Kilometres: fastest route on the road network, checked with a navigation service on {n2} routes. Extra minutes: from the comparison of times between public transport and car, at 8 am."
+  },
+  {
+   "it": "Il parcheggio pesa più di tutto: {n0} ore in centro costano {n1} euro al giorno, il carburante {n2} euro.",
+   "en": "Parking weighs the most: {n0} hours in the centre cost {n1} euros a day, the fuel {n2} euros."
+  },
+  {
+   "it": "Le case costano meno dove la fragilità è alta ({p0} a parità di distanza dal centro).",
+   "en": "Homes cost less where fragility is high ({p0} at equal distance from the centre)."
+  },
+  {
+   "it": "Con i servizi il legame col prezzo quasi sparisce ({p0}); resta quello fra fragilità e servizi ({p1}).",
+   "en": "With services the link to price almost disappears ({p0}); the link between fragility and services remains ({p1})."
   }
  ]
 }

@@ -25,7 +25,7 @@
     "docs/rapporti/RAPPORTO_CASE_FRAGILITA_SERVIZI.txt",
     "data/processed/case_fragilita_servizi.json"
   ],
-  "generato": "2026-10-24T13:54:13+00:00",
+  "generato": "2026-10-24T14:00:03+00:00",
   "avviso": [
     "Dati [STIMATO] (servizi, indice) / [CENSIMENTO] (abitanti). Differenza fra zone, non effetto causale."
   ],
@@ -367,9 +367,9 @@
       "nota": "Ogni punto è una zona, grande quanto i suoi abitanti. La linea è la tendenza: più la fragilità è alta, meno servizi. Il legame regge anche a parità di distanza dal centro: correlazione −0,48 (da −0,66 a −0,23)."
     },
     "punti": [
-      "A parità di distanza dal centro il legame prezzo-servizi quasi sparisce: correlazione 0,21 su 46 zone (da −0,12 a 0,52).",
+      "Le case costano meno dove la fragilità è alta (−0,69 a parità di distanza dal centro).",
       "5 zone sono in doppio svantaggio: Mirafiori Sud, Lucento - Vallette, Rebaudengo - Regio Parco, Corona Nord, Barca - Bertolla. Ci abitano ~129 mila persone.",
-      "A parità di distanza dal centro reggono fragilità-servizi (−0,48) e prezzo-fragilità (−0,69)."
+      "Con i servizi il legame col prezzo quasi sparisce (0,21); resta quello fra fragilità e servizi (−0,48)."
     ],
     "altri": [
       {
@@ -1055,9 +1055,9 @@
       "nota": "Each dot is a zone, sized by its residents. The line is the trend: the higher the fragility, the fewer the services. The link holds even at equal distance from the centre: correlation −0.48 (from −0.66 to −0.23)."
     },
     "punti": [
-      "At equal distance from the centre the price-services link nearly disappears: correlation 0.21 over 46 zones (from −0.12 to 0.52).",
+      "Homes cost less where fragility is high (−0.69 at equal distance from the centre).",
       "5 zones are in double disadvantage: Mirafiori Sud, Lucento - Vallette, Rebaudengo - Regio Parco, Corona Nord, Barca - Bertolla. ~129 thousand people live there.",
-      "At equal distance from the centre, fragility-services (−0.48) and price-fragility (−0.69) hold."
+      "With services the link to price almost disappears (0.21); the link between fragility and services remains (−0.48)."
     ],
     "altri": [
       {

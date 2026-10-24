@@ -56,7 +56,78 @@
    "https://www.gtt.to.it/cms/biglietti-abbonamenti/287-abbonamenti-to"
   ],
   "data": "consultato il 24/10/2026 (le pagine non riportano la data dei prezzi)",
-  "cintura": "tariffe del sistema integrato per zone non assegnate alle zone dell'indagine: la cintura resta fuori (AVVISO)"
+  "cintura": "tariffe del sistema integrato per zone non assegnate alle zone dell'indagine: la cintura resta fuori (AVVISO)",
+  "agevolati": {
+   "nota": "Tariffe agevolate della rete urbana di Torino (Formula U), solo dalle pagine ufficiali GTT. Le pagine non riportano la data delle tariffe (la pagina Under 26 cita la campagna 2024-2025): vanno riconfermate sul sito. Le fasce ISEE richiedono certificato ISEE valido e residenza a Torino (Under 26: o domicilio con contratto registrato o residenza universitaria riconosciuta dal Comune).",
+   "data": "consultato il 24/10/2026",
+   "indirizzi": [
+    "https://www.gtt.to.it/cms/biglietti-abbonamenti/7326-abbonamenti-under-26",
+    "https://www.gtt.to.it/cms/biglietti-abbonamenti/7327-abbonamenti-over-65"
+   ],
+   "voci": [
+    {
+     "id": "under26_mensile",
+     "nome": "Under 26, abbonamento mensile",
+     "eur_mese": 25.0,
+     "condizioni": "tutti i giovani sotto i 26 anni"
+    },
+    {
+     "id": "under26_annuale_ordinario",
+     "nome": "Under 26, annuale ordinario",
+     "eur_anno": 258.0,
+     "condizioni": "tutti i giovani sotto i 26 anni"
+    },
+    {
+     "id": "under26_annuale_a",
+     "nome": "Under 26, annuale agevolato, ISEE fino a 12.000 euro",
+     "eur_anno": 158.0,
+     "condizioni": "ISEE fino a 12.000"
+    },
+    {
+     "id": "under26_annuale_b",
+     "nome": "Under 26, annuale agevolato, ISEE da 12.000 a 20.000 euro",
+     "eur_anno": 178.0,
+     "condizioni": "ISEE da 12.000,01 a 20.000"
+    },
+    {
+     "id": "under26_annuale_c",
+     "nome": "Under 26, annuale agevolato, ISEE da 20.000 a 50.000 euro",
+     "eur_anno": 208.0,
+     "condizioni": "ISEE da 20.000,01 a 50.000"
+    },
+    {
+     "id": "over65_mensile",
+     "nome": "Over 65, abbonamento mensile",
+     "eur_mese": 20.0,
+     "condizioni": "residenti a Torino con ISEE sotto 50.000, non in vendita online"
+    },
+    {
+     "id": "over65_annuale_a",
+     "nome": "Over 65, annuale, ISEE fino a 7.000 euro",
+     "eur_anno": 0.0,
+     "spese_pratica_eur": 3.0,
+     "condizioni": "gratuito, più 3 euro di spese di pratica"
+    },
+    {
+     "id": "over65_annuale_b",
+     "nome": "Over 65, annuale, ISEE da 7.000 a 12.000 euro",
+     "eur_anno": 118.0,
+     "condizioni": "ISEE da 7.000,01 a 12.000"
+    },
+    {
+     "id": "over65_annuale_c",
+     "nome": "Over 65, annuale, ISEE da 12.000 a 20.000 euro",
+     "eur_anno": 155.0,
+     "condizioni": "ISEE da 12.000,01 a 20.000"
+    },
+    {
+     "id": "over65_annuale_d",
+     "nome": "Over 65, annuale, ISEE da 20.000 a 50.000 euro",
+     "eur_anno": 188.0,
+     "condizioni": "ISEE da 20.000,01 a 50.000"
+    }
+   ]
+  }
  },
  "sosta": {
   "tariffe_eur_ora": {

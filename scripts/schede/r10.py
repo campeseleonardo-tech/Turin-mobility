@@ -93,14 +93,17 @@ def forma_r10(s):
     zd = e2["zone"]
     nomi_zd = ", ".join(nome_zona(z["zona"]) for z in zd[:5]) + (" e altre" if len(zd) > 5 else "")
     # legami a parita' di distanza dal centro: quelli che reggono (intervallo al 95% senza lo 0) e quelli che no
-    if gp["regge"]:
-        kp_prezzo = f"Prezzo e servizi vanno insieme anche a parità di distanza dal centro: correlazione {meno(gp['parziale'])} su {e1['n_zone']} zone."
+    # i due punti sul prezzo, legati alla domanda: la fragilita' pesa sul prezzo, i servizi a parita' di distanza quasi no
+    if gx["regge"]:
+        kp_prezzo = f"Le case costano meno dove la fragilità è alta ({meno(gx['parziale'])} a parità di distanza dal centro)."
     else:
-        kp_prezzo = (f"A parità di distanza dal centro il legame prezzo-servizi quasi sparisce: correlazione {meno(gp['parziale'])} "
-                     f"su {e1['n_zone']} zone (da {meno(gp['parziale_ic95'][0])} a {meno(gp['parziale_ic95'][1])}).")
-    kp_altri = ("A parità di distanza dal centro reggono fragilità-servizi "
-                f"({meno(gf['parziale'])}) e prezzo-fragilità ({meno(gx['parziale'])})." if gf["regge"] and gx["regge"]
-                else "A parità di distanza dal centro non reggono tutti i legami: vedi il rapporto.")
+        kp_prezzo = f"A parità di distanza dal centro il legame fra prezzo e fragilità non regge ({meno(gx['parziale'])})."
+    if gp["regge"]:
+        kp_altri = f"Con i servizi il legame col prezzo regge anche a parità di distanza dal centro ({meno(gp['parziale'])})."
+    elif gf["regge"]:
+        kp_altri = f"Con i servizi il legame col prezzo quasi sparisce ({meno(gp['parziale'])}); resta quello fra fragilità e servizi ({meno(gf['parziale'])})."
+    else:
+        kp_altri = f"Con i servizi il legame col prezzo quasi sparisce ({meno(gp['parziale'])}); a parità di distanza dal centro non reggono tutti i legami."
     classi = se["classi"]
     nomi_classi = [("tutte_e_due", "fragilità alta e servizi bassi", "rosso"), ("solo_fragilita", "solo fragilità alta", "arancio"),
                    ("solo_servizi", "solo servizi bassi", "blu"), ("nessuna", "nessuna delle due", "verde")]

@@ -56,8 +56,97 @@
   "parcheggio_lavoro_giorno": 13.6,
   "carburante_giorno_mediana": 1.76,
   "tomtom_percorsi": 17,
-  "tomtom_fuori": 11,
-  "km_mediano_punti": 6.2
+  "tomtom_fuori": 12,
+  "km_mediano_punti": 6.2,
+  "mese": {
+   "sosta_pagata": {
+    "sente": 307.29,
+    "pieno": 404.03,
+    "carburante": 35.29,
+    "sosta": 272.0
+   },
+   "parcheggio_gratis": {
+    "sente": 35.29,
+    "pieno": 132.03
+   },
+   "mezzi": {
+    "biglietti": 80.0,
+    "mensile": 38.0,
+    "annuale_su_12": 25.83,
+    "agevolati": [
+     {
+      "id": "under26_mensile",
+      "nome": "Under 26, abbonamento mensile",
+      "eur_mese": 25.0,
+      "annuale": false,
+      "eur_anno": null
+     },
+     {
+      "id": "under26_annuale_ordinario",
+      "nome": "Under 26, annuale ordinario",
+      "eur_mese": 21.5,
+      "annuale": true,
+      "eur_anno": 258.0
+     },
+     {
+      "id": "under26_annuale_a",
+      "nome": "Under 26, annuale agevolato, ISEE fino a 12.000 euro",
+      "eur_mese": 13.17,
+      "annuale": true,
+      "eur_anno": 158.0
+     },
+     {
+      "id": "under26_annuale_b",
+      "nome": "Under 26, annuale agevolato, ISEE da 12.000 a 20.000 euro",
+      "eur_mese": 14.83,
+      "annuale": true,
+      "eur_anno": 178.0
+     },
+     {
+      "id": "under26_annuale_c",
+      "nome": "Under 26, annuale agevolato, ISEE da 20.000 a 50.000 euro",
+      "eur_mese": 17.33,
+      "annuale": true,
+      "eur_anno": 208.0
+     },
+     {
+      "id": "over65_mensile",
+      "nome": "Over 65, abbonamento mensile",
+      "eur_mese": 20.0,
+      "annuale": false,
+      "eur_anno": null
+     },
+     {
+      "id": "over65_annuale_a",
+      "nome": "Over 65, annuale, ISEE fino a 7.000 euro",
+      "eur_mese": 0.25,
+      "annuale": true,
+      "eur_anno": 0.0
+     },
+     {
+      "id": "over65_annuale_b",
+      "nome": "Over 65, annuale, ISEE da 7.000 a 12.000 euro",
+      "eur_mese": 9.83,
+      "annuale": true,
+      "eur_anno": 118.0
+     },
+     {
+      "id": "over65_annuale_c",
+      "nome": "Over 65, annuale, ISEE da 12.000 a 20.000 euro",
+      "eur_mese": 12.92,
+      "annuale": true,
+      "eur_anno": 155.0
+     },
+     {
+      "id": "over65_annuale_d",
+      "nome": "Over 65, annuale, ISEE da 20.000 a 50.000 euro",
+      "eur_mese": 15.67,
+      "annuale": true,
+      "eur_anno": 188.0
+     }
+    ]
+   }
+  }
  },
  "punti": [
   {
@@ -1072,8 +1161,8 @@
   {
    "nome": "LEONARDO DA VINCI",
    "km_rete": 9.68,
-   "km_tomtom": 10.33,
-   "scarto": -0.063
+   "km_tomtom": 21.18,
+   "scarto": -0.543
   },
   {
    "nome": "DROSSO CAP",
@@ -1126,8 +1215,8 @@
   {
    "nome": "CAIO MARIO",
    "km_rete": 6.66,
-   "km_tomtom": 7.6,
-   "scarto": -0.124
+   "km_tomtom": 10.96,
+   "scarto": -0.393
   },
   {
    "nome": "FERMI",
@@ -1152,7 +1241,8 @@
   "OK     l'auto che si sente costa meno dell'auto piena",
   "OK     coppie nelle fasce = coppie con chilometri — 506 coppie",
   "OK     coppie Torino-Torino in ogni fascia — 52, 191, 207, 56",
-  "AVVISO lunghezze della nostra rete entro il 10% di TomTom — 11 su 17 fuori: SANTA RITA -11%, REGINA MARGHERITA -40%, PASINI +10%, DROSSO CAP -25%, STURA LAZIO -19%, DERNA EST +18%, FERRARA -24%, STURA -26%, CAIO MARIO -12%, FERMI -34%, SOFIA +21%",
-  "AVVISO cintura: tariffe a zone non assegnate alle zone dell'indagine — la cintura resta fuori; la scheda usa Torino e i punti del R6"
+  "AVVISO lunghezze della nostra rete entro il 10% di TomTom — 12 su 17 fuori: SANTA RITA -11%, REGINA MARGHERITA -40%, PASINI +10%, LEONARDO DA VINCI -54%, DROSSO CAP -25%, STURA LAZIO -19%, DERNA EST +18%, FERRARA -24%, STURA -26%, CAIO MARIO -39%, FERMI -34%, SOFIA +21%",
+  "AVVISO cintura: tariffe a zone non assegnate alle zone dell'indagine — la cintura resta fuori; la scheda usa Torino e i punti del R6",
+  "OK     la sosta pagata pesa piu' del carburante (caso principale)"
  ]
 }
