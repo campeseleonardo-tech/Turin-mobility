@@ -348,7 +348,7 @@ Leo chiedeva anche di chiamarli «dati misurati manualmente», ma **non si usa**
 - **`docs/FONTI_DATI.md`:** la riga TomTom dice «uso con permesso di TomTom (Leo, 25/10/2026)». Memoria: la condizione per `main` è chiusa.
 - **Prova:** in `prova_design` nessun «TomTom» nel testo visibile di home, schede (IT/EN, parte chiusa compresa) e progetto, fuori dalle righe «Fonti»; la riga «Fonti» c'è in ogni scheda.
 
-### Controllo di L21 (25/10) e giro L22 (in locale): pagine separate, risultati in due gruppi, scheda 6
+### Controllo di L21 (25/10) e giro L22 (in locale): pagine separate, risultati in due gruppi, scheda 6 — FATTO il 25/10 (`ESITO_L22.md`)
 **Controllo fatto nel cloud** su `origin/prova` 6e7be54:
 - `main` = `prova`.
 - Pages acceso: home, mappa e `r/1-6.html` rispondono 200, con titoli e immagini giusti.
