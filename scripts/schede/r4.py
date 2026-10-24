@@ -1,6 +1,6 @@
 """Risultato 4 (pubblico 2): puntualita' e attese dei mezzi GTT (comprende il vecchio Risultato 9, l'attesa)."""
 import re
-from schede.comune import DOCS, circa, forma_base, il, intero, leggi, link_linea, migliaia, minuti_a_parole, num, ora, pct2, periodo_it, virgola, voce
+from schede.comune import DOCS, circa, forma_base, il, leggi, link_linea, migliaia, minuti_a_parole, num, ora, pct2, periodo_it, virgola, voce
 
 
 
@@ -87,11 +87,6 @@ def scheda_r4():
     if cg:
         dd = cg["definizioni"]
         sett = {k: dd[k]["settimana"]["ritardo10_pct"] for k, _ in DEF_R4}
-        grafici_nuovi.append({
-            "tipo": "barre", "titolo": "GPS e dato ufficiale GTT: passaggi con oltre 10 minuti di ritardo", "unita": "%",
-            "nota": "Il GPS è la media della settimana, in quattro modi di contare. GTT è l'anno 2025, tutte le linee, con un metodo non pubblicato.",
-            "voci": [voce("GTT (2025, anno intero)", intero(GTT_RITARDO10_2025_PCT))]
-                    + [voce(f"GPS, {nome}", intero(sett[k]), tono="rosso") for k, nome in DEF_R4]})
         basso, alto = min([GTT_RITARDO10_2025_PCT] + list(sett.values())), max(sett.values())
         righe_gtt = [
             "Non è la stessa misura: GTT fa la media dell'anno intero, estate e sere comprese, su tutte le linee, con un metodo che non pubblica; "
@@ -433,7 +428,6 @@ def forma_r4(s):
                   "punta_sera": "su 100 alla sera (16-19)", "sera": "su 100 a tarda sera (19-24)"}
     linea = {"tipo": "linea", "titolo": "Ritardo oltre 5 minuti, per fascia oraria (feriale)", "unita": "%",
              "categorie": [nomi_f[f] for f, _ in fasce], "serie": [{"label": "passaggi in ritardo", "valori": [round(v) for _, v in fasce]}]}
-    gps_gtt = next(g for g in s["grafici"] if g["titolo"].startswith("GPS e dato ufficiale GTT"))
     linee = [(n, v["0"]) for n, v in r["linee"].items() if "0" in v]
     peggio = max((x for x in linee if x[1]["passaggi"] >= par.get("min_passaggi_classifica", 2000) and str(x[0]).isdigit()),
                  key=lambda x: x[1]["ritardo"])
@@ -463,7 +457,7 @@ def forma_r4(s):
           f"Guardando solo la partenza dal capolinea, i passaggi con oltre 10 minuti di ritardo sono {circa(b_fer, '%')}."),
          f"La linea più in ritardo è la {peggio[0]}: {circa(peggio[1]['ritardo'], '%')} dei passaggi feriali oltre 5 minuti.",
          f"I tram arrivano a grappolo più dei bus: {circa(gb_tram, '%')} delle coppie di mezzi contro {circa(gb_bus, '%')}."],
-        [gps_gtt, linea] + ([vb[1]] if vb else []),
+        [linea] + ([vb[1]] if vb else []),
         ["Il Raspberry Pi registra ogni minuto la posizione GPS dei mezzi GTT.",
          f"Il passaggio è l'istante in cui il GPS è a meno di {dist} metri dalla fermata.",
          "Il ritardo è quell'istante meno l'orario ufficiale.",
@@ -487,7 +481,6 @@ def forma_r4(s):
         confronto=[f"GTT dichiara il {virgola(GTT_RITARDO10_2025_PCT)}% oltre 10 minuti nel 2025: media dell'anno, tutte le linee, metodo non pubblicato.",
                    f"Il GPS misura pochi giorni di ottobre sulle linee urbane: {virgola(a_set)}% a ogni fermata, {virgola(b_set)}% alla partenza.",
                    f"Anche contando come GTT alla partenza si trova il {virgola(b_set)}%; il resto della differenza è stagione e metodo.",
-                   "Il grafico mostra la media della settimana (feriale 5 : sabato 1 : domenica 1).",
                    f"Solo feriali: {pct2(a_fer)}% a ogni fermata, {pct2(b_fer)}% alla prima, {pct2(dd['c']['per_tipo']['0']['ritardo10_pct'])}% a metà corsa, "
                    f"{pct2(dd['d']['per_tipo']['0']['ritardo10_pct'])}% senza le fasce 7-9 e 16-19."],
         extra=extra)

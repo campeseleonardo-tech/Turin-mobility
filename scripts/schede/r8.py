@@ -248,10 +248,6 @@ def forma_r8(s):
             "linee": [{"k": f1, "label": f"{virgola(f1)} volte"}, {"k": f2, "label": "il doppio"}],
             "nota": "Ogni punto è una coppia di zone, grande quanto le auto del mattino; sopra una linea i mezzi pubblici impiegano più di quel multiplo del tempo in auto."}
     peggiori = t["peggiori"]
-    pare = {"tipo": "barre", "titolo": "I tragitti dove coi mezzi pubblici si impiega più del doppio dell'auto", "unita": "auto",
-            "nota": "Ogni barra è il numero di auto del mattino su quel tragitto. A destra i minuti coi mezzi contro quelli in auto.",
-            "voci": [{"label": f"{p['da_nome'].replace('Torino, ', '')} → {p['a_nome'].replace('Torino, ', '')}", "valore": p["auto"], "tono": "rosso",
-                      "testo": f"{round(p['tp_min'])} contro {round(p['auto_punta_basso_min'])} min · {migliaia(p['auto'])} auto"} for p in peggiori]}
     p3 = peggiori[:3]
     p1 = peggiori[0]
     conferme = [n for n in t["noti"] if n["google_mezzi_min"]]
@@ -309,7 +305,7 @@ def forma_r8(s):
           else "Le 3 coppie peggiori: " + " · ".join(f"{p['da_nome'].replace('Torino, ', '')} → {p['a_nome'].replace('Torino, ', '')}" for p in p3) + "."),
          f"Un tragitto frequente tipico: {p1['da_nome'].replace('Torino, ', '')} → {p1['a_nome'].replace('Torino, ', '')}, "
          f"{circa(p1['tp_min'], ' minuti')} coi mezzi contro {circa(p1['auto_punta_basso_min'])} in auto."],
-        ([ore_linea] if ore_linea else []) + [gara, disp, pare],
+        ([ore_linea] if ore_linea else []) + [gara, disp],
         ["Le zone sono quelle dell'indagine sugli spostamenti 2022 con punti di calcolo; ognuna ha fino a 5 punti.",
          "Mezzi pubblici: a piedi, bus, tram e metro, con partenza fra le 7:45 e le 8:15. Si prende la mediana.",
          "Auto: tempo a flusso libero per il fattore di traffico della coppia, più 5 minuti. Le coppie non chieste al servizio di navigazione prendono la mediana della loro fascia.",

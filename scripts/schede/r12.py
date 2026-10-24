@@ -63,29 +63,10 @@ def scheda_r12():
 def forma_r12(s):
     j = leggi("costo_del_viaggio.json")
     r, pr, reg = j["riepilogo"], j["prezzi"], j["regole"]
-    punti = sorted(j["punti"], key=lambda p: p["km"])
     gm, ore_l, ore_c = reg["giorni_mese"], reg["ore_sosta_lavoro"], reg["ore_sosta_commissione"]
     sente, pieno, mezzi = r["auto_mese_sente_mediana"], r["auto_mese_pieno_mediana"], r["mezzi_mese"]
     diff = r["differenza_mese_sente_mediana"]
     diff_pieno = r["differenza_mese_pieno_mediana"]
-    # grafico principale: un gruppo per punto, due barre (auto che si sente con dietro il costo pieno; mezzi)
-    gruppi = []
-    for p in punti:
-        lm = p["lavoro_mese"]
-        gruppi.append({"label": f"{nome_punto(p['nome'])} ({virgola(round(p['km'], 1))} km)",
-                       "voci": [{"label": "Auto", "valore": round(lm["auto_sente"]), "prima": round(lm["auto_piena"]), "tono": "rosso",
-                                 "testo": f"{round(lm['auto_sente'])} ({round(lm['auto_piena'])} col costo pieno)"},
-                                {"label": "Mezzi pubblici", "valore": round(lm["mezzi"]), "tono": "verde", "testo": str(round(lm["mezzi"]))}]})
-    principale = {"tipo": "barre_gruppi", "titolo": "Un mese di lavoro in centro, dai 12 punti prioritari: auto e mezzi pubblici", "unita": "euro",
-                  "nota": "La barra chiara è il costo pieno dell'auto. Il parcheggio in centro pesa più del carburante.",
-                  "gruppi": gruppi}
-    # tempo contro soldi: minuti in piu' coi mezzi (x) ed euro risparmiati al mese (y), un punto per luogo; sotto zero minuti vale zero
-    tempo_soldi = {"tipo": "dispersione", "titolo": "Tempo contro soldi: minuti in più coi mezzi e euro risparmiati al mese", "dnome": "posti che mancano",
-                   "xlabel": "minuti in più coi mezzi pubblici", "ylabel": "euro risparmiati al mese",
-                   "passo_x": 5, "passo_y": 50, "xnome": "minuti in più", "ynome": "euro al mese",
-                   "punti": [[max(0.0, p["minuti_in_piu_coi_mezzi"]), p["risparmio_mese_sente"], p.get("mancano") or 1, nome_punto(p["nome"])]
-                             for p in punti if p["minuti_in_piu_coi_mezzi"] is not None],
-                   "nota": "Un punto per luogo, grande quanto i posti che mancano. Se i mezzi sono già più veloci dell'auto, i minuti in più valgono zero."}
     fasce = j["fasce_distanza"]
 
     def etichetta_fascia(f):
@@ -116,11 +97,11 @@ def forma_r12(s):
         {"valore": round(diff), "unita": "euro",
          "testo": f"in più al mese per andare al lavoro in centro in auto invece che coi mezzi pubblici. Col costo pieno dell'auto sono {circa(diff_pieno, ' euro')}.",
          "breve": "in più al mese, in auto"},
-        principale,
+        graf_commissione,
         [f"Un mese di lavoro in centro costa {circa(sente, ' euro')} in auto, {euro_intero(mezzi)} con l'abbonamento. Col costo pieno dell'auto sono {circa(pieno, ' euro')}.",
          f"Pesa il parcheggio: {ore_l} ore in centro costano {euro(r['parcheggio_lavoro_giorno'])} euro al giorno, il carburante del viaggio {circa(r['carburante_giorno_mediana'], ' euro')}.",
          f"Coi mezzi pubblici si impiegano {circa(r['minuti_in_piu_mediana'], ' minuti')} in più, ma si risparmiano {circa(diff, ' euro')} al mese."],
-        [tempo_soldi, graf_fasce, graf_commissione],
+        [graf_fasce],
         [f"Prezzi del {j['consultato'][8:10]}/{j['consultato'][5:7]}/{j['consultato'][:4]}. Carburante: media self degli impianti entro 5 km da Piazza Castello (Osservatorio prezzi). Tariffe GTT e sosta dalle pagine ufficiali, costo ACI 2026 della Gazzetta Ufficiale.",
          "Auto che si sente: chilometri × consumo urbano × prezzo del carburante, andata e ritorno, più il parcheggio. Auto piena: chilometri × costo ACI per chilometro, più il parcheggio.",
          f"Auto di riferimento: la stessa Golf da 115 CV, a benzina e a gasolio. Consumo in città: {virgola(pr['consumo_urbano_benzina'])} e {virgola(pr['consumo_urbano_gasolio'])} litri ogni 100 km. Il costo è la media delle due.",

@@ -377,7 +377,7 @@
     "docs/rapporti/RAPPORTO_RISULTATO8_TRAFFICO_TP_V2.txt",
     "data/processed/risultato8_traffico_tp_v2.json"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
     "Dati [STIMATO] (traffico) / [MISURATO] (sensori 5T) / [PROGRAMMATO] (orari GTT)",
     "Traffico stimato con un modello tarato su 22 sensori: errore tipico ±28%. Trasporto pubblico = fermate con almeno 4 passaggi all'ora entro 300 m o metro entro 600 m."
@@ -3566,86 +3566,6 @@
           }
         ],
         "nota": "Ogni punto è una coppia di zone, grande quanto le auto del mattino; sopra una linea i mezzi pubblici impiegano più di quel multiplo del tempo in auto."
-      },
-      {
-        "tipo": "barre",
-        "titolo": "I tragitti dove coi mezzi pubblici si impiega più del doppio dell'auto",
-        "unita": "auto",
-        "nota": "Ogni barra è il numero di auto del mattino su quel tragitto. A destra i minuti coi mezzi contro quelli in auto.",
-        "voci": [
-          {
-            "label": "Barriera di Milano → Falchera",
-            "valore": 1208,
-            "tono": "rosso",
-            "testo": "24 contro 12 min · 1.208 auto"
-          },
-          {
-            "label": "Pozzo Strada → Grugliasco",
-            "valore": 929,
-            "tono": "rosso",
-            "testo": "34 contro 13 min · 929 auto"
-          },
-          {
-            "label": "Falchera → Barriera di Milano",
-            "valore": 890,
-            "tono": "rosso",
-            "testo": "24 contro 10 min · 890 auto"
-          },
-          {
-            "label": "Parella → San Paolo",
-            "valore": 763,
-            "tono": "rosso",
-            "testo": "30 contro 15 min · 763 auto"
-          },
-          {
-            "label": "Parella → Cenisia",
-            "valore": 715,
-            "tono": "rosso",
-            "testo": "18 contro 8 min · 715 auto"
-          },
-          {
-            "label": "Grugliasco → Pozzo Strada",
-            "valore": 714,
-            "tono": "rosso",
-            "testo": "35 contro 14 min · 714 auto"
-          },
-          {
-            "label": "Mirafiori Nord → Grugliasco",
-            "valore": 583,
-            "tono": "rosso",
-            "testo": "34 contro 16 min · 583 auto"
-          },
-          {
-            "label": "Parella → Madonna di Campagna",
-            "valore": 540,
-            "tono": "rosso",
-            "testo": "31 contro 15 min · 540 auto"
-          },
-          {
-            "label": "Vanchiglia → Madonna Del Pilone",
-            "valore": 369,
-            "tono": "rosso",
-            "testo": "37 contro 18 min · 369 auto"
-          },
-          {
-            "label": "Grugliasco → Mirafiori Nord",
-            "valore": 348,
-            "tono": "rosso",
-            "testo": "37 contro 15 min · 348 auto"
-          },
-          {
-            "label": "Cenisia → Parella",
-            "valore": 260,
-            "tono": "rosso",
-            "testo": "18 contro 9 min · 260 auto"
-          },
-          {
-            "label": "Borgata Vittoria → Aurora",
-            "valore": 177,
-            "tono": "rosso",
-            "testo": "30 contro 14 min · 177 auto"
-          }
-        ]
       }
     ],
     "calcolo": [
@@ -6854,86 +6774,6 @@
           }
         ],
         "nota": "Each point is a pair of zones, sized by the morning cars; above a line public transport takes more than that multiple of the car's time."
-      },
-      {
-        "tipo": "barre",
-        "titolo": "Trips where public transport takes more than twice as long as the car",
-        "unita": "cars",
-        "nota": "Each bar is the number of morning cars on that trip. On the right, minutes by public transport against minutes by car.",
-        "voci": [
-          {
-            "label": "Barriera di Milano → Falchera",
-            "valore": 1208,
-            "tono": "rosso",
-            "testo": "24 against 12 min · 1,208 cars"
-          },
-          {
-            "label": "Pozzo Strada → Grugliasco",
-            "valore": 929,
-            "tono": "rosso",
-            "testo": "34 against 13 min · 929 cars"
-          },
-          {
-            "label": "Falchera → Barriera di Milano",
-            "valore": 890,
-            "tono": "rosso",
-            "testo": "24 against 10 min · 890 cars"
-          },
-          {
-            "label": "Parella → San Paolo",
-            "valore": 763,
-            "tono": "rosso",
-            "testo": "30 against 15 min · 763 cars"
-          },
-          {
-            "label": "Parella → Cenisia",
-            "valore": 715,
-            "tono": "rosso",
-            "testo": "18 against 8 min · 715 cars"
-          },
-          {
-            "label": "Grugliasco → Pozzo Strada",
-            "valore": 714,
-            "tono": "rosso",
-            "testo": "35 against 14 min · 714 cars"
-          },
-          {
-            "label": "Mirafiori Nord → Grugliasco",
-            "valore": 583,
-            "tono": "rosso",
-            "testo": "34 against 16 min · 583 cars"
-          },
-          {
-            "label": "Parella → Madonna di Campagna",
-            "valore": 540,
-            "tono": "rosso",
-            "testo": "31 against 15 min · 540 cars"
-          },
-          {
-            "label": "Vanchiglia → Madonna Del Pilone",
-            "valore": 369,
-            "tono": "rosso",
-            "testo": "37 against 18 min · 369 cars"
-          },
-          {
-            "label": "Grugliasco → Mirafiori Nord",
-            "valore": 348,
-            "tono": "rosso",
-            "testo": "37 against 15 min · 348 cars"
-          },
-          {
-            "label": "Cenisia → Parella",
-            "valore": 260,
-            "tono": "rosso",
-            "testo": "18 against 9 min · 260 cars"
-          },
-          {
-            "label": "Borgata Vittoria → Aurora",
-            "valore": 177,
-            "tono": "rosso",
-            "testo": "30 against 14 min · 177 cars"
-          }
-        ]
       }
     ],
     "calcolo": [

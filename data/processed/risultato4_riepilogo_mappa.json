@@ -231,38 +231,6 @@
     },
     {
       "tipo": "barre",
-      "titolo": "GPS e dato ufficiale GTT: passaggi con oltre 10 minuti di ritardo",
-      "unita": "%",
-      "nota": "Il GPS è la media della settimana, in quattro modi di contare. GTT è l'anno 2025, tutte le linee, con un metodo non pubblicato.",
-      "voci": [
-        {
-          "label": "GTT (2025, anno intero)",
-          "valore": 2
-        },
-        {
-          "label": "GPS, a ogni fermata",
-          "valore": 6,
-          "tono": "rosso"
-        },
-        {
-          "label": "GPS, solo alla prima fermata",
-          "valore": 5,
-          "tono": "rosso"
-        },
-        {
-          "label": "GPS, solo a metà corsa",
-          "valore": 6,
-          "tono": "rosso"
-        },
-        {
-          "label": "GPS, escluse le fasce 7-9 e 16-19",
-          "valore": 6,
-          "tono": "rosso"
-        }
-      ]
-    },
-    {
-      "tipo": "barre",
       "titolo": "Tram contro bus (feriale)",
       "unita": "%",
       "nota": "Tram: 263.231 passaggi; bus: 987.202.",
@@ -565,7 +533,7 @@
     "docs/rapporti/RAPPORTO_RISULTATO9_ATTESA.txt",
     "scripts/70_risultato9_attesa.py"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
     "Dati [MISURATO] — pochi giorni",
     "Arrivi misurati con il GPS dei mezzi GTT raccolto dal Raspberry Pi, 2026-10-10 - 2026-10-22: il GPS c'è per il 80% dei passaggi programmati delle corse viste (prima si usava il feed GTT, che sottostima i ritardi: confronto nella scheda). Giorni non tutti interi e solo linee urbane viste dal GPS: vedi i limiti."
@@ -825,38 +793,6 @@
     ],
     "altri": [
       {
-        "tipo": "barre",
-        "titolo": "GPS e dato ufficiale GTT: passaggi con oltre 10 minuti di ritardo",
-        "unita": "%",
-        "nota": "Il GPS è la media della settimana, in quattro modi di contare. GTT è l'anno 2025, tutte le linee, con un metodo non pubblicato.",
-        "voci": [
-          {
-            "label": "GTT (2025, anno intero)",
-            "valore": 2
-          },
-          {
-            "label": "GPS, a ogni fermata",
-            "valore": 6,
-            "tono": "rosso"
-          },
-          {
-            "label": "GPS, solo alla prima fermata",
-            "valore": 5,
-            "tono": "rosso"
-          },
-          {
-            "label": "GPS, solo a metà corsa",
-            "valore": 6,
-            "tono": "rosso"
-          },
-          {
-            "label": "GPS, escluse le fasce 7-9 e 16-19",
-            "valore": 6,
-            "tono": "rosso"
-          }
-        ]
-      },
-      {
         "tipo": "linea",
         "titolo": "Ritardo oltre 5 minuti, per fascia oraria (feriale)",
         "unita": "%",
@@ -1012,7 +948,6 @@
       "GTT dichiara il 2,3% oltre 10 minuti nel 2025: media dell'anno, tutte le linee, metodo non pubblicato.",
       "Il GPS misura pochi giorni di ottobre sulle linee urbane: 6,2% a ogni fermata, 5,3% alla partenza.",
       "Anche contando come GTT alla partenza si trova il 5,3%; il resto della differenza è stagione e metodo.",
-      "Il grafico mostra la media della settimana (feriale 5 : sabato 1 : domenica 1).",
       "Solo feriali: 6,41% a ogni fermata, 5,48% alla prima, 6,15% a metà corsa, 5,96% senza le fasce 7-9 e 16-19."
     ],
     "extra": {
@@ -1151,38 +1086,6 @@
       "Trams bunch together more than buses: ~27% of pairs of vehicles against ~18%."
     ],
     "altri": [
-      {
-        "tipo": "barre",
-        "titolo": "GPS and official GTT figure: arrivals more than 10 minutes late",
-        "unita": "%",
-        "nota": "GPS is the weekly average, counted in four ways. GTT is the year 2025, all lines, with an unpublished method.",
-        "voci": [
-          {
-            "label": "GTT (2025, whole year)",
-            "valore": 2
-          },
-          {
-            "label": "GPS, at every stop",
-            "valore": 6,
-            "tono": "rosso"
-          },
-          {
-            "label": "GPS, first stop only",
-            "valore": 5,
-            "tono": "rosso"
-          },
-          {
-            "label": "GPS, mid-trip only",
-            "valore": 6,
-            "tono": "rosso"
-          },
-          {
-            "label": "GPS, excluding 7-9 and 16-19",
-            "valore": 6,
-            "tono": "rosso"
-          }
-        ]
-      },
       {
         "tipo": "linea",
         "titolo": "Delay over 5 minutes, by time of day (weekday)",
@@ -1339,7 +1242,6 @@
       "GTT reports 2.3% over 10 minutes in 2025: yearly average, all lines, method not published.",
       "The GPS measures a few days of October on urban lines: 6.2% at every stop, 5.3% at departure.",
       "Even counting at departure like GTT, the figure is 5.3%; the rest of the difference is season and method.",
-      "The chart shows the weekly average (weekday 5 : Saturday 1 : Sunday 1).",
       "Weekdays only: 6.41% at every stop, 5.48% at the first, 6.15% mid-trip, 5.96% without the 7-9 and 16-19 bands."
     ],
     "extra": {

@@ -239,7 +239,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/21_risultato1_vuoti.py",
    "scripts/22_risultato1_candidati.py"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
    "Dati [STIMATO] — solo comune di Torino",
    "Distanze a piedi sulla rete stradale (15 min a 80 m/min) su 848.748 residenti (censimento 2021). Servizi dal catalogo comunale: la cintura non è confrontabile (manca il dato, non il servizio). I punti nuovi sono ipotesi di posizione, calcolate gruppo per gruppo: non si sommano tra gruppi e non tengono conto di costi o spazi disponibili."
@@ -1045,38 +1045,6 @@ window.SCHEDE_RISULTATI = [
    },
    {
     "tipo": "barre",
-    "titolo": "GPS e dato ufficiale GTT: passaggi con oltre 10 minuti di ritardo",
-    "unita": "%",
-    "nota": "Il GPS è la media della settimana, in quattro modi di contare. GTT è l'anno 2025, tutte le linee, con un metodo non pubblicato.",
-    "voci": [
-     {
-      "label": "GTT (2025, anno intero)",
-      "valore": 2
-     },
-     {
-      "label": "GPS, a ogni fermata",
-      "valore": 6,
-      "tono": "rosso"
-     },
-     {
-      "label": "GPS, solo alla prima fermata",
-      "valore": 5,
-      "tono": "rosso"
-     },
-     {
-      "label": "GPS, solo a metà corsa",
-      "valore": 6,
-      "tono": "rosso"
-     },
-     {
-      "label": "GPS, escluse le fasce 7-9 e 16-19",
-      "valore": 6,
-      "tono": "rosso"
-     }
-    ]
-   },
-   {
-    "tipo": "barre",
     "titolo": "Tram contro bus (feriale)",
     "unita": "%",
     "nota": "Tram: 263.231 passaggi; bus: 987.202.",
@@ -1379,7 +1347,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO9_ATTESA.txt",
    "scripts/70_risultato9_attesa.py"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
    "Dati [MISURATO] — pochi giorni",
    "Arrivi misurati con il GPS dei mezzi GTT raccolto dal Raspberry Pi, 2026-10-10 - 2026-10-22: il GPS c'è per il 80% dei passaggi programmati delle corse viste (prima si usava il feed GTT, che sottostima i ritardi: confronto nella scheda). Giorni non tutti interi e solo linee urbane viste dal GPS: vedi i limiti."
@@ -1639,38 +1607,6 @@ window.SCHEDE_RISULTATI = [
    ],
    "altri": [
     {
-     "tipo": "barre",
-     "titolo": "GPS e dato ufficiale GTT: passaggi con oltre 10 minuti di ritardo",
-     "unita": "%",
-     "nota": "Il GPS è la media della settimana, in quattro modi di contare. GTT è l'anno 2025, tutte le linee, con un metodo non pubblicato.",
-     "voci": [
-      {
-       "label": "GTT (2025, anno intero)",
-       "valore": 2
-      },
-      {
-       "label": "GPS, a ogni fermata",
-       "valore": 6,
-       "tono": "rosso"
-      },
-      {
-       "label": "GPS, solo alla prima fermata",
-       "valore": 5,
-       "tono": "rosso"
-      },
-      {
-       "label": "GPS, solo a metà corsa",
-       "valore": 6,
-       "tono": "rosso"
-      },
-      {
-       "label": "GPS, escluse le fasce 7-9 e 16-19",
-       "valore": 6,
-       "tono": "rosso"
-      }
-     ]
-    },
-    {
      "tipo": "linea",
      "titolo": "Ritardo oltre 5 minuti, per fascia oraria (feriale)",
      "unita": "%",
@@ -1826,7 +1762,6 @@ window.SCHEDE_RISULTATI = [
     "GTT dichiara il 2,3% oltre 10 minuti nel 2025: media dell'anno, tutte le linee, metodo non pubblicato.",
     "Il GPS misura pochi giorni di ottobre sulle linee urbane: 6,2% a ogni fermata, 5,3% alla partenza.",
     "Anche contando come GTT alla partenza si trova il 5,3%; il resto della differenza è stagione e metodo.",
-    "Il grafico mostra la media della settimana (feriale 5 : sabato 1 : domenica 1).",
     "Solo feriali: 6,41% a ogni fermata, 5,48% alla prima, 6,15% a metà corsa, 5,96% senza le fasce 7-9 e 16-19."
    ],
    "extra": {
@@ -1965,38 +1900,6 @@ window.SCHEDE_RISULTATI = [
     "Trams bunch together more than buses: ~27% of pairs of vehicles against ~18%."
    ],
    "altri": [
-    {
-     "tipo": "barre",
-     "titolo": "GPS and official GTT figure: arrivals more than 10 minutes late",
-     "unita": "%",
-     "nota": "GPS is the weekly average, counted in four ways. GTT is the year 2025, all lines, with an unpublished method.",
-     "voci": [
-      {
-       "label": "GTT (2025, whole year)",
-       "valore": 2
-      },
-      {
-       "label": "GPS, at every stop",
-       "valore": 6,
-       "tono": "rosso"
-      },
-      {
-       "label": "GPS, first stop only",
-       "valore": 5,
-       "tono": "rosso"
-      },
-      {
-       "label": "GPS, mid-trip only",
-       "valore": 6,
-       "tono": "rosso"
-      },
-      {
-       "label": "GPS, excluding 7-9 and 16-19",
-       "valore": 6,
-       "tono": "rosso"
-      }
-     ]
-    },
     {
      "tipo": "linea",
      "titolo": "Delay over 5 minutes, by time of day (weekday)",
@@ -2153,7 +2056,6 @@ window.SCHEDE_RISULTATI = [
     "GTT reports 2.3% over 10 minutes in 2025: yearly average, all lines, method not published.",
     "The GPS measures a few days of October on urban lines: 6.2% at every stop, 5.3% at departure.",
     "Even counting at departure like GTT, the figure is 5.3%; the rest of the difference is season and method.",
-    "The chart shows the weekly average (weekday 5 : Saturday 1 : Sunday 1).",
     "Weekdays only: 6.41% at every stop, 5.48% at the first, 6.15% mid-trip, 5.96% without the 7-9 and 16-19 bands."
    ],
    "extra": {
@@ -2750,7 +2652,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/84_risultato6_parcheggi.py",
    "data/processed/risultato6_v2/mappa_r6.json"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
    "Come leggere i tag. ",
    "[MISURATO] = misura vera, fatta dai sensori del sistema 5T. [STIMATO] = calcolo nostro su dati veri, non una misura diretta. [DATI SCARSI] = pochi dati, da prendere con cautela."
@@ -7284,7 +7186,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO8_TRAFFICO_TP_V2.txt",
    "data/processed/risultato8_traffico_tp_v2.json"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
    "Dati [STIMATO] (traffico) / [MISURATO] (sensori 5T) / [PROGRAMMATO] (orari GTT)",
    "Traffico stimato con un modello tarato su 22 sensori: errore tipico ±28%. Trasporto pubblico = fermate con almeno 4 passaggi all'ora entro 300 m o metro entro 600 m."
@@ -10473,86 +10375,6 @@ window.SCHEDE_RISULTATI = [
       }
      ],
      "nota": "Ogni punto è una coppia di zone, grande quanto le auto del mattino; sopra una linea i mezzi pubblici impiegano più di quel multiplo del tempo in auto."
-    },
-    {
-     "tipo": "barre",
-     "titolo": "I tragitti dove coi mezzi pubblici si impiega più del doppio dell'auto",
-     "unita": "auto",
-     "nota": "Ogni barra è il numero di auto del mattino su quel tragitto. A destra i minuti coi mezzi contro quelli in auto.",
-     "voci": [
-      {
-       "label": "Barriera di Milano → Falchera",
-       "valore": 1208,
-       "tono": "rosso",
-       "testo": "24 contro 12 min · 1.208 auto"
-      },
-      {
-       "label": "Pozzo Strada → Grugliasco",
-       "valore": 929,
-       "tono": "rosso",
-       "testo": "34 contro 13 min · 929 auto"
-      },
-      {
-       "label": "Falchera → Barriera di Milano",
-       "valore": 890,
-       "tono": "rosso",
-       "testo": "24 contro 10 min · 890 auto"
-      },
-      {
-       "label": "Parella → San Paolo",
-       "valore": 763,
-       "tono": "rosso",
-       "testo": "30 contro 15 min · 763 auto"
-      },
-      {
-       "label": "Parella → Cenisia",
-       "valore": 715,
-       "tono": "rosso",
-       "testo": "18 contro 8 min · 715 auto"
-      },
-      {
-       "label": "Grugliasco → Pozzo Strada",
-       "valore": 714,
-       "tono": "rosso",
-       "testo": "35 contro 14 min · 714 auto"
-      },
-      {
-       "label": "Mirafiori Nord → Grugliasco",
-       "valore": 583,
-       "tono": "rosso",
-       "testo": "34 contro 16 min · 583 auto"
-      },
-      {
-       "label": "Parella → Madonna di Campagna",
-       "valore": 540,
-       "tono": "rosso",
-       "testo": "31 contro 15 min · 540 auto"
-      },
-      {
-       "label": "Vanchiglia → Madonna Del Pilone",
-       "valore": 369,
-       "tono": "rosso",
-       "testo": "37 contro 18 min · 369 auto"
-      },
-      {
-       "label": "Grugliasco → Mirafiori Nord",
-       "valore": 348,
-       "tono": "rosso",
-       "testo": "37 contro 15 min · 348 auto"
-      },
-      {
-       "label": "Cenisia → Parella",
-       "valore": 260,
-       "tono": "rosso",
-       "testo": "18 contro 9 min · 260 auto"
-      },
-      {
-       "label": "Borgata Vittoria → Aurora",
-       "valore": 177,
-       "tono": "rosso",
-       "testo": "30 contro 14 min · 177 auto"
-      }
-     ]
     }
    ],
    "calcolo": [
@@ -13761,86 +13583,6 @@ window.SCHEDE_RISULTATI = [
       }
      ],
      "nota": "Each point is a pair of zones, sized by the morning cars; above a line public transport takes more than that multiple of the car's time."
-    },
-    {
-     "tipo": "barre",
-     "titolo": "Trips where public transport takes more than twice as long as the car",
-     "unita": "cars",
-     "nota": "Each bar is the number of morning cars on that trip. On the right, minutes by public transport against minutes by car.",
-     "voci": [
-      {
-       "label": "Barriera di Milano → Falchera",
-       "valore": 1208,
-       "tono": "rosso",
-       "testo": "24 against 12 min · 1,208 cars"
-      },
-      {
-       "label": "Pozzo Strada → Grugliasco",
-       "valore": 929,
-       "tono": "rosso",
-       "testo": "34 against 13 min · 929 cars"
-      },
-      {
-       "label": "Falchera → Barriera di Milano",
-       "valore": 890,
-       "tono": "rosso",
-       "testo": "24 against 10 min · 890 cars"
-      },
-      {
-       "label": "Parella → San Paolo",
-       "valore": 763,
-       "tono": "rosso",
-       "testo": "30 against 15 min · 763 cars"
-      },
-      {
-       "label": "Parella → Cenisia",
-       "valore": 715,
-       "tono": "rosso",
-       "testo": "18 against 8 min · 715 cars"
-      },
-      {
-       "label": "Grugliasco → Pozzo Strada",
-       "valore": 714,
-       "tono": "rosso",
-       "testo": "35 against 14 min · 714 cars"
-      },
-      {
-       "label": "Mirafiori Nord → Grugliasco",
-       "valore": 583,
-       "tono": "rosso",
-       "testo": "34 against 16 min · 583 cars"
-      },
-      {
-       "label": "Parella → Madonna di Campagna",
-       "valore": 540,
-       "tono": "rosso",
-       "testo": "31 against 15 min · 540 cars"
-      },
-      {
-       "label": "Vanchiglia → Madonna Del Pilone",
-       "valore": 369,
-       "tono": "rosso",
-       "testo": "37 against 18 min · 369 cars"
-      },
-      {
-       "label": "Grugliasco → Mirafiori Nord",
-       "valore": 348,
-       "tono": "rosso",
-       "testo": "37 against 15 min · 348 cars"
-      },
-      {
-       "label": "Cenisia → Parella",
-       "valore": 260,
-       "tono": "rosso",
-       "testo": "18 against 9 min · 260 cars"
-      },
-      {
-       "label": "Borgata Vittoria → Aurora",
-       "valore": 177,
-       "tono": "rosso",
-       "testo": "30 against 14 min · 177 cars"
-      }
-     ]
     }
    ],
    "calcolo": [
@@ -13934,7 +13676,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_CASE_FRAGILITA_SERVIZI.txt",
    "data/processed/case_fragilita_servizi.json"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
    "Dati [STIMATO] (servizi, indice) / [CENSIMENTO] (abitanti). Differenza fra zone, non effetto causale."
   ],
@@ -15375,7 +15117,7 @@ window.SCHEDE_RISULTATI = [
    "data/processed/costo_del_viaggio.json",
    "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
    "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -15423,226 +15165,28 @@ window.SCHEDE_RISULTATI = [
     "breve": "in più al mese, in auto"
    },
    "principale": {
-    "tipo": "barre_gruppi",
-    "titolo": "Un mese di lavoro in centro, dai 12 punti prioritari: auto e mezzi pubblici",
+    "tipo": "barre",
+    "titolo": "Una commissione in centro (2 ore di sosta): costo di andata e ritorno",
     "unita": "euro",
-    "nota": "La barra chiara è il costo pieno dell'auto. Il parcheggio in centro pesa più del carburante.",
-    "gruppi": [
+    "nota": "Mediana dei 12 punti. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
+    "voci": [
      {
-      "label": "Regina Margherita (4,2 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 296,
-        "prima": 362,
-        "tono": "rosso",
-        "testo": "296 (362 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
+      "label": "Auto, costo che si sente",
+      "valore": 5.2,
+      "tono": "rosso",
+      "testo": "5,16"
      },
      {
-      "label": "Zara (4,3 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 296,
-        "prima": 362,
-        "tono": "rosso",
-        "testo": "296 (362 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
+      "label": "Auto, costo pieno",
+      "valore": 10.0,
+      "tono": "arancio",
+      "testo": "10,00"
      },
      {
-      "label": "Pasini (4,4 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 297,
-        "prima": 365,
-        "tono": "rosso",
-        "testo": "297 (365 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Santa Rita (5,2 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 301,
-        "prima": 382,
-        "tono": "rosso",
-        "testo": "301 (382 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Derna Est (5,7 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 304,
-        "prima": 393,
-        "tono": "rosso",
-        "testo": "304 (393 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Metro Massaua (5,9 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 306,
-        "prima": 398,
-        "tono": "rosso",
-        "testo": "306 (398 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Stura Lazio (6,5 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 309,
-        "prima": 411,
-        "tono": "rosso",
-        "testo": "309 (411 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Drosso Cap (7,8 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 316,
-        "prima": 437,
-        "tono": "rosso",
-        "testo": "316 (437 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Ponte Cavalieri Templari (8,8 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 322,
-        "prima": 459,
-        "tono": "rosso",
-        "testo": "322 (459 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Ferrara (9,5 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 326,
-        "prima": 474,
-        "tono": "rosso",
-        "testo": "326 (474 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Leonardo Da Vinci (9,7 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 327,
-        "prima": 477,
-        "tono": "rosso",
-        "testo": "327 (477 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Marsè (13,3 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 347,
-        "prima": 554,
-        "tono": "rosso",
-        "testo": "347 (554 col costo pieno)"
-       },
-       {
-        "label": "Mezzi pubblici",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
+      "label": "Mezzi pubblici, 2 biglietti",
+      "valore": 4.0,
+      "tono": "verde",
+      "testo": "4,00"
      }
     ]
    },
@@ -15652,92 +15196,6 @@ window.SCHEDE_RISULTATI = [
     "Coi mezzi pubblici si impiegano ~11 minuti in più, ma si risparmiano ~269 euro al mese."
    ],
    "altri": [
-    {
-     "tipo": "dispersione",
-     "titolo": "Tempo contro soldi: minuti in più coi mezzi e euro risparmiati al mese",
-     "dnome": "posti che mancano",
-     "xlabel": "minuti in più coi mezzi pubblici",
-     "ylabel": "euro risparmiati al mese",
-     "passo_x": 5,
-     "passo_y": 50,
-     "xnome": "minuti in più",
-     "ynome": "euro al mese",
-     "punti": [
-      [
-       3.3,
-       257.95570872066725,
-       350,
-       "Regina Margherita"
-      ],
-      [
-       14.2,
-       258.17105286705726,
-       60,
-       "Zara"
-      ],
-      [
-       7.6,
-       258.9843027612095,
-       250,
-       "Pasini"
-      ],
-      [
-       9.2,
-       263.49235051596827,
-       450,
-       "Santa Rita"
-      ],
-      [
-       10.3,
-       266.24565125892906,
-       100,
-       "Derna Est"
-      ],
-      [
-       0.0,
-       267.5486729796433,
-       350,
-       "Metro Massaua"
-      ],
-      [
-       10.1,
-       271.03249288129814,
-       200,
-       "Stura Lazio"
-      ],
-      [
-       11.7,
-       278.2252091924563,
-       200,
-       "Drosso Cap"
-      ],
-      [
-       24.4,
-       283.85145115890185,
-       350,
-       "Ponte Cavalieri Templari"
-      ],
-      [
-       14.2,
-       287.9703683757964,
-       80,
-       "Ferrara"
-      ],
-      [
-       20.5,
-       288.9233849686356,
-       200,
-       "Leonardo Da Vinci"
-      ],
-      [
-       27.5,
-       309.44510182788105,
-       150,
-       "Marsè"
-      ]
-     ],
-     "nota": "Un punto per luogo, grande quanto i posti che mancano. Se i mezzi sono già più veloci dell'auto, i minuti in più valgono zero."
-    },
     {
      "tipo": "barre_gruppi",
      "titolo": "Un mese di lavoro tra due zone di Torino, per distanza: auto e mezzi pubblici",
@@ -15817,32 +15275,6 @@ window.SCHEDE_RISULTATI = [
        ]
       }
      ]
-    },
-    {
-     "tipo": "barre",
-     "titolo": "Una commissione in centro (2 ore di sosta): costo di andata e ritorno",
-     "unita": "euro",
-     "nota": "Mediana dei 12 punti. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
-     "voci": [
-      {
-       "label": "Auto, costo che si sente",
-       "valore": 5.2,
-       "tono": "rosso",
-       "testo": "5,16"
-      },
-      {
-       "label": "Auto, costo pieno",
-       "valore": 10.0,
-       "tono": "arancio",
-       "testo": "10,00"
-      },
-      {
-       "label": "Mezzi pubblici, 2 biglietti",
-       "valore": 4.0,
-       "tono": "verde",
-       "testo": "4,00"
-      }
-     ]
     }
    ],
    "calcolo": [
@@ -15920,226 +15352,28 @@ window.SCHEDE_RISULTATI = [
     "breve": "more a month, by car"
    },
    "principale": {
-    "tipo": "barre_gruppi",
-    "titolo": "A month of work in the centre, from the 12 priority points: car and public transport",
+    "tipo": "barre",
+    "titolo": "An errand in the centre (2 hours of parking): round-trip cost",
     "unita": "euros",
-    "nota": "The light bar is the full cost of the car. Parking in the centre weighs more than fuel.",
-    "gruppi": [
+    "nota": "Median of the 12 points. The full cost also includes insurance, wear and loss of value.",
+    "voci": [
      {
-      "label": "Regina Margherita (4.2 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 296,
-        "prima": 362,
-        "tono": "rosso",
-        "testo": "296 (362 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
+      "label": "Car, the cost you feel",
+      "valore": 5.2,
+      "tono": "rosso",
+      "testo": "5.16"
      },
      {
-      "label": "Zara (4.3 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 296,
-        "prima": 362,
-        "tono": "rosso",
-        "testo": "296 (362 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
+      "label": "Car, full cost",
+      "valore": 10.0,
+      "tono": "arancio",
+      "testo": "10.00"
      },
      {
-      "label": "Pasini (4.4 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 297,
-        "prima": 365,
-        "tono": "rosso",
-        "testo": "297 (365 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Santa Rita (5.2 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 301,
-        "prima": 382,
-        "tono": "rosso",
-        "testo": "301 (382 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Derna Est (5.7 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 304,
-        "prima": 393,
-        "tono": "rosso",
-        "testo": "304 (393 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Metro Massaua (5.9 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 306,
-        "prima": 398,
-        "tono": "rosso",
-        "testo": "306 (398 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Stura Lazio (6.5 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 309,
-        "prima": 411,
-        "tono": "rosso",
-        "testo": "309 (411 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Drosso Cap (7.8 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 316,
-        "prima": 437,
-        "tono": "rosso",
-        "testo": "316 (437 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Ponte Cavalieri Templari (8.8 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 322,
-        "prima": 459,
-        "tono": "rosso",
-        "testo": "322 (459 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Ferrara (9.5 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 326,
-        "prima": 474,
-        "tono": "rosso",
-        "testo": "326 (474 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Leonardo Da Vinci (9.7 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 327,
-        "prima": 477,
-        "tono": "rosso",
-        "testo": "327 (477 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
-     },
-     {
-      "label": "Marsè (13.3 km)",
-      "voci": [
-       {
-        "label": "Auto",
-        "valore": 347,
-        "prima": 554,
-        "tono": "rosso",
-        "testo": "347 (554 at full cost)"
-       },
-       {
-        "label": "Public transport",
-        "valore": 38,
-        "tono": "verde",
-        "testo": "38"
-       }
-      ]
+      "label": "Public transport, 2 tickets",
+      "valore": 4.0,
+      "tono": "verde",
+      "testo": "4.00"
      }
     ]
    },
@@ -16149,92 +15383,6 @@ window.SCHEDE_RISULTATI = [
     "Public transport takes ~11 minutes longer, but saves ~269 euros a month."
    ],
    "altri": [
-    {
-     "tipo": "dispersione",
-     "titolo": "Time against money: extra minutes by public transport and euros saved per month",
-     "dnome": "missing spaces",
-     "xlabel": "extra minutes by public transport",
-     "ylabel": "euros saved per month",
-     "passo_x": 5,
-     "passo_y": 50,
-     "xnome": "minuti in più",
-     "ynome": "euro al mese",
-     "punti": [
-      [
-       3.3,
-       257.95570872066725,
-       350,
-       "Regina Margherita"
-      ],
-      [
-       14.2,
-       258.17105286705726,
-       60,
-       "Zara"
-      ],
-      [
-       7.6,
-       258.9843027612095,
-       250,
-       "Pasini"
-      ],
-      [
-       9.2,
-       263.49235051596827,
-       450,
-       "Santa Rita"
-      ],
-      [
-       10.3,
-       266.24565125892906,
-       100,
-       "Derna Est"
-      ],
-      [
-       0.0,
-       267.5486729796433,
-       350,
-       "Metro Massaua"
-      ],
-      [
-       10.1,
-       271.03249288129814,
-       200,
-       "Stura Lazio"
-      ],
-      [
-       11.7,
-       278.2252091924563,
-       200,
-       "Drosso Cap"
-      ],
-      [
-       24.4,
-       283.85145115890185,
-       350,
-       "Ponte Cavalieri Templari"
-      ],
-      [
-       14.2,
-       287.9703683757964,
-       80,
-       "Ferrara"
-      ],
-      [
-       20.5,
-       288.9233849686356,
-       200,
-       "Leonardo Da Vinci"
-      ],
-      [
-       27.5,
-       309.44510182788105,
-       150,
-       "Marsè"
-      ]
-     ],
-     "nota": "One point per place, as large as the missing spaces. If public transport is already faster than the car, the extra minutes are zero."
-    },
     {
      "tipo": "barre_gruppi",
      "titolo": "A month of work between two zones of Turin, by distance: car and public transport",
@@ -16312,32 +15460,6 @@ window.SCHEDE_RISULTATI = [
          "testo": "38"
         }
        ]
-      }
-     ]
-    },
-    {
-     "tipo": "barre",
-     "titolo": "An errand in the centre (2 hours of parking): round-trip cost",
-     "unita": "euros",
-     "nota": "Median of the 12 points. The full cost also includes insurance, wear and loss of value.",
-     "voci": [
-      {
-       "label": "Car, the cost you feel",
-       "valore": 5.2,
-       "tono": "rosso",
-       "testo": "5.16"
-      },
-      {
-       "label": "Car, full cost",
-       "valore": 10.0,
-       "tono": "arancio",
-       "testo": "10.00"
-      },
-      {
-       "label": "Public transport, 2 tickets",
-       "valore": 4.0,
-       "tono": "verde",
-       "testo": "4.00"
       }
      ]
     }

@@ -22,7 +22,7 @@
     "data/processed/costo_del_viaggio.json",
     "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T13:52:56+00:00",
+  "generato": "2026-10-24T13:54:13+00:00",
   "avviso": [
     "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -70,226 +70,28 @@
       "breve": "in più al mese, in auto"
     },
     "principale": {
-      "tipo": "barre_gruppi",
-      "titolo": "Un mese di lavoro in centro, dai 12 punti prioritari: auto e mezzi pubblici",
+      "tipo": "barre",
+      "titolo": "Una commissione in centro (2 ore di sosta): costo di andata e ritorno",
       "unita": "euro",
-      "nota": "La barra chiara è il costo pieno dell'auto. Il parcheggio in centro pesa più del carburante.",
-      "gruppi": [
+      "nota": "Mediana dei 12 punti. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
+      "voci": [
         {
-          "label": "Regina Margherita (4,2 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 296,
-              "prima": 362,
-              "tono": "rosso",
-              "testo": "296 (362 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
+          "label": "Auto, costo che si sente",
+          "valore": 5.2,
+          "tono": "rosso",
+          "testo": "5,16"
         },
         {
-          "label": "Zara (4,3 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 296,
-              "prima": 362,
-              "tono": "rosso",
-              "testo": "296 (362 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
+          "label": "Auto, costo pieno",
+          "valore": 10.0,
+          "tono": "arancio",
+          "testo": "10,00"
         },
         {
-          "label": "Pasini (4,4 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 297,
-              "prima": 365,
-              "tono": "rosso",
-              "testo": "297 (365 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Santa Rita (5,2 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 301,
-              "prima": 382,
-              "tono": "rosso",
-              "testo": "301 (382 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Derna Est (5,7 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 304,
-              "prima": 393,
-              "tono": "rosso",
-              "testo": "304 (393 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Metro Massaua (5,9 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 306,
-              "prima": 398,
-              "tono": "rosso",
-              "testo": "306 (398 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Stura Lazio (6,5 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 309,
-              "prima": 411,
-              "tono": "rosso",
-              "testo": "309 (411 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Drosso Cap (7,8 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 316,
-              "prima": 437,
-              "tono": "rosso",
-              "testo": "316 (437 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Ponte Cavalieri Templari (8,8 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 322,
-              "prima": 459,
-              "tono": "rosso",
-              "testo": "322 (459 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Ferrara (9,5 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 326,
-              "prima": 474,
-              "tono": "rosso",
-              "testo": "326 (474 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Leonardo Da Vinci (9,7 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 327,
-              "prima": 477,
-              "tono": "rosso",
-              "testo": "327 (477 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Marsè (13,3 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 347,
-              "prima": 554,
-              "tono": "rosso",
-              "testo": "347 (554 col costo pieno)"
-            },
-            {
-              "label": "Mezzi pubblici",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
+          "label": "Mezzi pubblici, 2 biglietti",
+          "valore": 4.0,
+          "tono": "verde",
+          "testo": "4,00"
         }
       ]
     },
@@ -299,92 +101,6 @@
       "Coi mezzi pubblici si impiegano ~11 minuti in più, ma si risparmiano ~269 euro al mese."
     ],
     "altri": [
-      {
-        "tipo": "dispersione",
-        "titolo": "Tempo contro soldi: minuti in più coi mezzi e euro risparmiati al mese",
-        "dnome": "posti che mancano",
-        "xlabel": "minuti in più coi mezzi pubblici",
-        "ylabel": "euro risparmiati al mese",
-        "passo_x": 5,
-        "passo_y": 50,
-        "xnome": "minuti in più",
-        "ynome": "euro al mese",
-        "punti": [
-          [
-            3.3,
-            257.95570872066725,
-            350,
-            "Regina Margherita"
-          ],
-          [
-            14.2,
-            258.17105286705726,
-            60,
-            "Zara"
-          ],
-          [
-            7.6,
-            258.9843027612095,
-            250,
-            "Pasini"
-          ],
-          [
-            9.2,
-            263.49235051596827,
-            450,
-            "Santa Rita"
-          ],
-          [
-            10.3,
-            266.24565125892906,
-            100,
-            "Derna Est"
-          ],
-          [
-            0.0,
-            267.5486729796433,
-            350,
-            "Metro Massaua"
-          ],
-          [
-            10.1,
-            271.03249288129814,
-            200,
-            "Stura Lazio"
-          ],
-          [
-            11.7,
-            278.2252091924563,
-            200,
-            "Drosso Cap"
-          ],
-          [
-            24.4,
-            283.85145115890185,
-            350,
-            "Ponte Cavalieri Templari"
-          ],
-          [
-            14.2,
-            287.9703683757964,
-            80,
-            "Ferrara"
-          ],
-          [
-            20.5,
-            288.9233849686356,
-            200,
-            "Leonardo Da Vinci"
-          ],
-          [
-            27.5,
-            309.44510182788105,
-            150,
-            "Marsè"
-          ]
-        ],
-        "nota": "Un punto per luogo, grande quanto i posti che mancano. Se i mezzi sono già più veloci dell'auto, i minuti in più valgono zero."
-      },
       {
         "tipo": "barre_gruppi",
         "titolo": "Un mese di lavoro tra due zone di Torino, per distanza: auto e mezzi pubblici",
@@ -464,32 +180,6 @@
             ]
           }
         ]
-      },
-      {
-        "tipo": "barre",
-        "titolo": "Una commissione in centro (2 ore di sosta): costo di andata e ritorno",
-        "unita": "euro",
-        "nota": "Mediana dei 12 punti. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
-        "voci": [
-          {
-            "label": "Auto, costo che si sente",
-            "valore": 5.2,
-            "tono": "rosso",
-            "testo": "5,16"
-          },
-          {
-            "label": "Auto, costo pieno",
-            "valore": 10.0,
-            "tono": "arancio",
-            "testo": "10,00"
-          },
-          {
-            "label": "Mezzi pubblici, 2 biglietti",
-            "valore": 4.0,
-            "tono": "verde",
-            "testo": "4,00"
-          }
-        ]
       }
     ],
     "calcolo": [
@@ -567,226 +257,28 @@
       "breve": "more a month, by car"
     },
     "principale": {
-      "tipo": "barre_gruppi",
-      "titolo": "A month of work in the centre, from the 12 priority points: car and public transport",
+      "tipo": "barre",
+      "titolo": "An errand in the centre (2 hours of parking): round-trip cost",
       "unita": "euros",
-      "nota": "The light bar is the full cost of the car. Parking in the centre weighs more than fuel.",
-      "gruppi": [
+      "nota": "Median of the 12 points. The full cost also includes insurance, wear and loss of value.",
+      "voci": [
         {
-          "label": "Regina Margherita (4.2 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 296,
-              "prima": 362,
-              "tono": "rosso",
-              "testo": "296 (362 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
+          "label": "Car, the cost you feel",
+          "valore": 5.2,
+          "tono": "rosso",
+          "testo": "5.16"
         },
         {
-          "label": "Zara (4.3 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 296,
-              "prima": 362,
-              "tono": "rosso",
-              "testo": "296 (362 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
+          "label": "Car, full cost",
+          "valore": 10.0,
+          "tono": "arancio",
+          "testo": "10.00"
         },
         {
-          "label": "Pasini (4.4 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 297,
-              "prima": 365,
-              "tono": "rosso",
-              "testo": "297 (365 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Santa Rita (5.2 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 301,
-              "prima": 382,
-              "tono": "rosso",
-              "testo": "301 (382 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Derna Est (5.7 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 304,
-              "prima": 393,
-              "tono": "rosso",
-              "testo": "304 (393 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Metro Massaua (5.9 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 306,
-              "prima": 398,
-              "tono": "rosso",
-              "testo": "306 (398 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Stura Lazio (6.5 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 309,
-              "prima": 411,
-              "tono": "rosso",
-              "testo": "309 (411 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Drosso Cap (7.8 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 316,
-              "prima": 437,
-              "tono": "rosso",
-              "testo": "316 (437 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Ponte Cavalieri Templari (8.8 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 322,
-              "prima": 459,
-              "tono": "rosso",
-              "testo": "322 (459 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Ferrara (9.5 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 326,
-              "prima": 474,
-              "tono": "rosso",
-              "testo": "326 (474 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Leonardo Da Vinci (9.7 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 327,
-              "prima": 477,
-              "tono": "rosso",
-              "testo": "327 (477 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
-        },
-        {
-          "label": "Marsè (13.3 km)",
-          "voci": [
-            {
-              "label": "Auto",
-              "valore": 347,
-              "prima": 554,
-              "tono": "rosso",
-              "testo": "347 (554 at full cost)"
-            },
-            {
-              "label": "Public transport",
-              "valore": 38,
-              "tono": "verde",
-              "testo": "38"
-            }
-          ]
+          "label": "Public transport, 2 tickets",
+          "valore": 4.0,
+          "tono": "verde",
+          "testo": "4.00"
         }
       ]
     },
@@ -796,92 +288,6 @@
       "Public transport takes ~11 minutes longer, but saves ~269 euros a month."
     ],
     "altri": [
-      {
-        "tipo": "dispersione",
-        "titolo": "Time against money: extra minutes by public transport and euros saved per month",
-        "dnome": "missing spaces",
-        "xlabel": "extra minutes by public transport",
-        "ylabel": "euros saved per month",
-        "passo_x": 5,
-        "passo_y": 50,
-        "xnome": "minuti in più",
-        "ynome": "euro al mese",
-        "punti": [
-          [
-            3.3,
-            257.95570872066725,
-            350,
-            "Regina Margherita"
-          ],
-          [
-            14.2,
-            258.17105286705726,
-            60,
-            "Zara"
-          ],
-          [
-            7.6,
-            258.9843027612095,
-            250,
-            "Pasini"
-          ],
-          [
-            9.2,
-            263.49235051596827,
-            450,
-            "Santa Rita"
-          ],
-          [
-            10.3,
-            266.24565125892906,
-            100,
-            "Derna Est"
-          ],
-          [
-            0.0,
-            267.5486729796433,
-            350,
-            "Metro Massaua"
-          ],
-          [
-            10.1,
-            271.03249288129814,
-            200,
-            "Stura Lazio"
-          ],
-          [
-            11.7,
-            278.2252091924563,
-            200,
-            "Drosso Cap"
-          ],
-          [
-            24.4,
-            283.85145115890185,
-            350,
-            "Ponte Cavalieri Templari"
-          ],
-          [
-            14.2,
-            287.9703683757964,
-            80,
-            "Ferrara"
-          ],
-          [
-            20.5,
-            288.9233849686356,
-            200,
-            "Leonardo Da Vinci"
-          ],
-          [
-            27.5,
-            309.44510182788105,
-            150,
-            "Marsè"
-          ]
-        ],
-        "nota": "One point per place, as large as the missing spaces. If public transport is already faster than the car, the extra minutes are zero."
-      },
       {
         "tipo": "barre_gruppi",
         "titolo": "A month of work between two zones of Turin, by distance: car and public transport",
@@ -959,32 +365,6 @@
                 "testo": "38"
               }
             ]
-          }
-        ]
-      },
-      {
-        "tipo": "barre",
-        "titolo": "An errand in the centre (2 hours of parking): round-trip cost",
-        "unita": "euros",
-        "nota": "Median of the 12 points. The full cost also includes insurance, wear and loss of value.",
-        "voci": [
-          {
-            "label": "Car, the cost you feel",
-            "valore": 5.2,
-            "tono": "rosso",
-            "testo": "5.16"
-          },
-          {
-            "label": "Car, full cost",
-            "valore": 10.0,
-            "tono": "arancio",
-            "testo": "10.00"
-          },
-          {
-            "label": "Public transport, 2 tickets",
-            "valore": 4.0,
-            "tono": "verde",
-            "testo": "4.00"
           }
         ]
       }
