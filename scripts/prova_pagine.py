@@ -40,6 +40,7 @@ import glob
 import shutil
 import http.server
 import json
+from html import escape as html_escape
 import os
 import re
 import socketserver
@@ -382,8 +383,8 @@ def design_l16(br, cartella):
         ctx = br.br.new_context(viewport={"width": DESKTOP[0], "height": DESKTOP[1]})
         page = ctx.new_page()
         try:
-            for n_, cosa in ((3, "gara"), (4, "gara"), (4, "area")):
-                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#p{n_}", wait_until="load", timeout=60000)
+            for n_, cosa in (("6", "gara"), ("8", "gara"), ("8", "area")):   # id interni
+                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#r{n_}", wait_until="load", timeout=60000)
                 page.wait_for_timeout(800)
                 nome = f"scheda {n_} {cosa} ({lingua})"
                 comandi = page.evaluate("document.querySelectorAll('#finCorpo .gara select, #finCorpo .gara button, #finCorpo .gara input, #finCorpo .area select, #finCorpo .area button, #finCorpo .area input').length")
@@ -431,8 +432,8 @@ def design_l16(br, cartella):
         ctx = br.br.new_context(viewport={"width": DESKTOP[0], "height": DESKTOP[1]}, reduced_motion="reduce")
         page = ctx.new_page()
         try:
-            for n_, cosa in ((3, "gara"), (4, "gara"), (4, "area")):
-                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#p{n_}", wait_until="load", timeout=60000)
+            for n_, cosa in (("6", "gara"), ("8", "gara"), ("8", "area")):   # id interni
+                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#r{n_}", wait_until="load", timeout=60000)
                 page.wait_for_timeout(1200)
                 nome = f"scheda {n_} {cosa} ({lingua}, riduci movimento)"
                 if cosa == "gara":
@@ -469,10 +470,10 @@ def design_l21(br, cartella):
                 page.wait_for_timeout(900)
                 if "tomtom" in page.evaluate(JS_TESTO).lower():
                     errori.append(f"{nome} ({lingua}): «TomTom» nel testo visibile")
-            for n in range(1, 7):
-                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#p{n}", wait_until="load", timeout=60000)
+            for n in ("1", "4", "6", "8", "10", "12"):   # id interni (#rN): i numeri in pagina possono cambiare
+                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#r{n}", wait_until="load", timeout=60000)
                 page.wait_for_timeout(900)
-                nome = f"scheda {n} ({lingua})"
+                nome = f"scheda r{n} ({lingua})"
                 if "tomtom" in page.evaluate(JS_TESTO).lower():
                     errori.append(f"{nome}: «TomTom» nel testo fuori dalla riga Fonti")
                 r = page.evaluate("""() => { const p = document.querySelector('#finCorpo details.parte');
@@ -482,7 +483,7 @@ def design_l21(br, cartella):
                     errori.append(f"{nome}: manca la riga Fonti")
                 elif not r["ultima"]:
                     errori.append(f"{nome}: la riga Fonti non è l'ultima della parte chiusa")
-                if n in (3, 4, 6) and "tomtom" not in r["testo"].lower():
+                if n in ("6", "8", "12") and "tomtom" not in r["testo"].lower():
                     errori.append(f"{nome}: la riga Fonti non cita il fornitore dei tempi in auto")
         finally:
             ctx.close()
@@ -525,11 +526,21 @@ def design_l20(br, cartella):
     return errori
 
 
+# numeri in pagina decisi da Leo il 25/10/2026 (L22): id interno -> (numero, gruppo)
+NUMERI_L22 = {"12": (1, "decidere"), "8": (2, "decidere"), "6": (3, "decidere"), "10": (4, "dati"), "4": (5, "dati"), "1": (6, "dati")}
+
+
 def design_l17(br, cartella):
-    """L17: home da scorrere. I 3 numeri chiave uguali ai dati; un riquadro per scheda con anteprima, titolo e numero (testo breve); #progetto con le 6 tappe;
-    con «riduci movimento» nessuna animazione; 0 errori in index, risultati e progetto; peso della home sotto 1 MB (HTML + JS e CSS propri)."""
+    """L17 + L22: home con due gruppi di riquadri (per decidere, cosa dicono i dati), ognuno con anteprima, titolo breve, numero in pagina giusto e testo breve;
+    nessuna fascia «Il progetto» e nessun «In breve»; link a progetto.html; con «riduci movimento» nessuna animazione; 0 errori in index, risultati e progetto;
+    risultati.html divisa negli stessi due gruppi; peso della home sotto 1 MB (HTML + JS e CSS propri)."""
     errori, schede = [], _leggi_schede(cartella)
-    per_numero = {s["numero_pubblico"]: s for s in schede if s.get("numero_pubblico") is not None}
+    per_id = {str(s["risultato"]): s for s in schede if s.get("numero_pubblico") is not None}
+    for k, (n_, g_) in NUMERI_L22.items():
+        if k not in per_id or per_id[k]["numero_pubblico"] != n_ or per_id[k].get("gruppo") != g_:
+            errori.append(f"scheda r{k}: numero {per_id.get(k, {}).get('numero_pubblico')} e gruppo {per_id.get(k, {}).get('gruppo')} invece di {n_} e {g_}")
+    ordine = sorted(per_id.values(), key=lambda s: s["numero_pubblico"])
+    titoli = {"it": ("Per decidere", "Cosa dicono i dati"), "en": ("To decide", "What the data show")}
     for lingua in ("it", "en"):
         ctx = br.br.new_context(viewport={"width": DESKTOP[0], "height": DESKTOP[1]}, reduced_motion="reduce")
         page = ctx.new_page()
@@ -541,43 +552,50 @@ def design_l17(br, cartella):
             page.wait_for_timeout(1500)
             nome = f"home ({lingua})"
             r = page.evaluate("""() => ({
-              chiavi: [...document.querySelectorAll('#numeriChiave .num-chiave')].map(a => ({href: a.getAttribute('href'), val: a.querySelector('.val').textContent.trim()})),
-              riquadri: [...document.querySelectorAll('#riquadri .riquadro')].map(a => ({href: a.getAttribute('href'), anteprima: !!a.querySelector('.anteprima .anima'),
-                 titolo: (a.querySelector('h3') || {textContent: ''}).textContent.trim(), val: (a.querySelector('.grande .val') || {textContent: ''}).textContent.trim(),
-                 txt: (a.querySelector('.grande .txt') || {textContent: ''}).textContent.trim()})),
-              tappe: document.querySelectorAll('#progetto .testi section').length, figure: document.querySelectorAll('#progetto figure').length,
-              titoloProgetto: (document.querySelector('#progetto h2') || {textContent: ''}).textContent.trim(),
-              navProgetto: [...document.querySelectorAll('.barra-alta nav a')].some(a => a.getAttribute('href') === '#progetto'),
-              animazioni: document.getAnimations().length,
-              intro: document.querySelectorAll('ul.intro, .bottoni').length})""")
-            if len(r["chiavi"]) != 3:
-                errori.append(f"{nome}: {len(r['chiavi'])} numeri chiave invece di 3")
-            for c, n_ in zip(r["chiavi"], (4, 2, 5)):
-                f = (per_numero[n_]["forma_en"] if lingua == "en" and per_numero[n_].get("forma_en") else per_numero[n_]["forma"])
-                k = f.get("chiave") or {}
-                atteso = str(page.evaluate("(v) => typeof v === 'number' ? Sito.formattaNumero(v) : String(v)", k.get("valore"))) + ("%" if k.get("unita") == "%" else "")
-                if c["val"] != atteso or c["href"] != f"risultati.html#p{n_}":
-                    errori.append(f"{nome}: numero chiave della scheda {n_} è «{c['val']}» ({c['href']}), nei dati «{atteso}»")
-            if len(r["riquadri"]) != len(per_numero):
-                errori.append(f"{nome}: {len(r['riquadri'])} riquadri per {len(per_numero)} schede")
-            for q, n_ in zip(r["riquadri"], sorted(per_numero)):
-                f = (per_numero[n_]["forma_en"] if lingua == "en" and per_numero[n_].get("forma_en") else per_numero[n_]["forma"])
-                if not q["anteprima"] or q["titolo"] != f["titolo"] or not q["val"] or q["href"] != f"risultati.html#p{n_}":
-                    errori.append(f"{nome}: riquadro {n_} incompleto (anteprima {q['anteprima']}, titolo «{q['titolo'][:30]}», numero «{q['val']}», link {q['href']})")
-                breve = f["numero"].get("breve")
-                if not breve or breve not in q["txt"] or len(breve.split()) > 8:
-                    errori.append(f"{nome}: riquadro {n_}: testo breve mancante o oltre 8 parole («{breve}»)")
-            if r["tappe"] != 6 or r["figure"] != 6:
-                errori.append(f"{nome}: #progetto ha {r['tappe']} tappe e {r['figure']} disegni invece di 6 e 6")
-            if r["titoloProgetto"].lower() not in ("il progetto", "the project") or not r["navProgetto"]:
-                errori.append(f"{nome}: titolo «{r['titoloProgetto']}» o link «Il progetto» della barra verso #progetto mancanti")
+              gruppi: [...document.querySelectorAll('#riquadri .gruppo')].map(g => ({titolo: g.querySelector('h2').textContent.trim(),
+                sub: (g.querySelector('.gruppo-sub') || {textContent: ''}).textContent.trim(),
+                riquadri: [...g.querySelectorAll('.riquadro')].map(a => ({href: a.getAttribute('href'), anteprima: !!a.querySelector('.anteprima .anima'),
+                  num: (a.querySelector('.num') || {textContent: ''}).textContent.trim(),
+                  titolo: (a.querySelector('h3') || {textContent: ''}).textContent.trim(), val: (a.querySelector('.grande .val') || {textContent: ''}).textContent.trim(),
+                  txt: (a.querySelector('.grande .txt') || {textContent: ''}).textContent.trim()}))})),
+              vecchi: document.querySelectorAll('.in-breve, #numeriChiave, .num-chiave, .fascia-progetto, #progetto, #scena, ul.intro, .bottoni').length,
+              inBreve: /in breve|in brief/i.test(document.body.innerText) ? 1 : 0,
+              linkProgetto: [...document.querySelectorAll('main a')].some(a => a.getAttribute('href') === 'progetto.html'),
+              navProgetto: [...document.querySelectorAll('.barra-alta nav a')].some(a => a.getAttribute('href') === 'progetto.html'),
+              animazioni: document.getAnimations().length})""")
+            if len(r["gruppi"]) != 2:
+                errori.append(f"{nome}: {len(r['gruppi'])} gruppi invece di 2")
+            else:
+                for gr, tit, quali in zip(r["gruppi"], titoli[lingua], (ordine[:3], ordine[3:])):
+                    if gr["titolo"] != tit or not gr["sub"]:
+                        errori.append(f"{nome}: titolo del gruppo «{gr['titolo']}» invece di «{tit}» o sottotitolo mancante")
+                    if len(gr["riquadri"]) != len(quali):
+                        errori.append(f"{nome}: gruppo «{tit}» con {len(gr['riquadri'])} riquadri invece di {len(quali)}")
+                    for q, sc in zip(gr["riquadri"], quali):
+                        f = sc["forma_en"] if lingua == "en" and sc.get("forma_en") else sc["forma"]
+                        n_ = sc["numero_pubblico"]
+                        if (not q["anteprima"] or q["titolo"] != f["titolo_breve"] or not q["val"] or q["href"] != f"risultati.html#r{sc['risultato']}"
+                                or not q["num"].endswith(f" {n_}") or len(f["titolo_breve"].split()) > 4):
+                            errori.append(f"{nome}: riquadro {n_} incompleto o fuori ordine (anteprima {q['anteprima']}, titolo «{q['titolo'][:30]}», numero «{q['val']}», "
+                                          f"etichetta «{q['num']}», link {q['href']})")
+                        breve = f["numero"].get("breve")
+                        if not breve or breve not in q["txt"] or len(breve.split()) > 8:
+                            errori.append(f"{nome}: riquadro {n_}: testo breve mancante o oltre 8 parole («{breve}»)")
+            if r["vecchi"] or r["inBreve"]:
+                errori.append(f"{nome}: restano la fascia «Il progetto», «In breve», i numeri chiave o i vecchi bottoni")
+            if not r["linkProgetto"] or not r["navProgetto"]:
+                errori.append(f"{nome}: manca il link a progetto.html (in fondo alla home: {r['linkProgetto']}, nella barra: {r['navProgetto']})")
             if r["animazioni"]:
                 errori.append(f"{nome}: con «riduci movimento» ci sono {r['animazioni']} animazioni CSS in corso")
-            if r["intro"]:
-                errori.append(f"{nome}: restano la lista «intro» o i due bottoni vecchi")
-            for pagina in ("risultati.html", "progetto.html"):
-                page.goto(f"http://127.0.0.1:{PORTA}/{pagina}?lang={lingua}", wait_until="load", timeout=60000)
-                page.wait_for_timeout(1200)
+            page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}", wait_until="load", timeout=60000)
+            page.wait_for_timeout(1200)
+            rr = page.evaluate("""() => [...document.querySelectorAll('#galleria .gruppo')].map(g => ({titolo: g.querySelector('h2').textContent.trim(),
+                schede: [...g.querySelectorAll('button.scheda')].map(b => b.querySelector('.scheda-alto').textContent.trim())}))""")
+            attesi = [[f"{'Risultato' if lingua == 'it' else 'Result'} {s_['numero_pubblico']}" for s_ in q_] for q_ in (ordine[:3], ordine[3:])]
+            if [x["titolo"] for x in rr] != list(titoli[lingua]) or [x["schede"] for x in rr] != attesi:
+                errori.append(f"risultati.html ({lingua}): gruppi {[x['titolo'] for x in rr]} con schede {[x['schede'] for x in rr]} invece di {attesi}")
+            page.goto(f"http://127.0.0.1:{PORTA}/progetto.html?lang={lingua}", wait_until="load", timeout=60000)
+            page.wait_for_timeout(1200)
             if brutti:
                 errori.append(f"{nome}: errori JavaScript in index, risultati o progetto: {brutti[:3]}")
         finally:
@@ -589,7 +607,67 @@ def design_l17(br, cartella):
     print(f"  peso della home (HTML, script e stili propri): {peso / 1e6:.2f} MB su {len(file_home)} file")
     if peso >= 1_000_000:
         errori.append(f"la home pesa {peso / 1e6:.2f} MB (limite 1 MB, HTML + JS e CSS propri)")
-    print(f"  L17 (home: numeri chiave, riquadri, tappe del progetto, riduci movimento): {'OK' if not errori else 'ERRORE'}")
+    print(f"  L17/L22 (home e risultati in due gruppi, numeri in pagina, link a progetto.html, riduci movimento): {'OK' if not errori else 'ERRORE'}")
+    return errori
+
+
+def design_l22(br, cartella):
+    """L22: (1) progetto.html ha lo stesso testo visibile di prima (IT ed EN, salvo i numeri delle schede citate) e nessuna cifra manca («…»);
+    (2) scheda dei costi: nessun «12 punti» nel testo visibile fuori dalla parte chiusa, grafico «Un mese di lavoro», abbonamenti agevolati con fonte e data;
+    (3) le pagine r/N.html seguono i numeri in pagina; (4) ogni #rN apre la scheda del suo id interno."""
+    errori, schede = [], _leggi_schede(cartella)
+    base = json.loads((RADICE / "scripts" / "prove" / "progetto_testo_prima_L22.json").read_text(encoding="utf-8"))
+    for lingua in ("it", "en"):
+        ctx = br.br.new_context(viewport={"width": DESKTOP[0], "height": DESKTOP[1]}, reduced_motion="reduce")
+        page = ctx.new_page()
+        try:
+            page.goto(f"http://127.0.0.1:{PORTA}/progetto.html?lang={lingua}", wait_until="load", timeout=60000)
+            page.wait_for_timeout(2000)
+            t = re.sub(r"[ \t]+", " ", page.evaluate("() => document.body.innerText")).strip()
+            t = re.sub(r"\b(Risultato|Result) \d+\b", r"\1 #", t)
+            if "…" in t:
+                errori.append(f"progetto.html ({lingua}): una cifra manca (resta «…»)")
+            if t != base[lingua]:
+                righe_a, righe_b = base[lingua].split("\n"), t.split("\n")
+                diff = [(x[:50], y[:50]) for x, y in zip(righe_a, righe_b) if x != y][:2]
+                errori.append(f"progetto.html ({lingua}): il testo visibile non è più quello di prima di L22 ({len(righe_a)} righe contro {len(righe_b)}; {diff})")
+            for k in NUMERI_L22:
+                page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#r{k}", wait_until="load", timeout=60000)
+                page.wait_for_timeout(700)
+                titolo = page.evaluate("document.getElementById('finTitolo').textContent.trim()")
+                sc = next(x for x in schede if str(x["risultato"]) == k)
+                f = sc["forma_en"] if lingua == "en" and sc.get("forma_en") else sc["forma"]
+                if titolo != f["titolo"]:
+                    errori.append(f"#r{k} ({lingua}): apre «{titolo[:40]}» invece di «{f['titolo'][:40]}»")
+            page.goto(f"http://127.0.0.1:{PORTA}/risultati.html?lang={lingua}#r12", wait_until="load", timeout=60000)
+            page.wait_for_timeout(900)
+            r = page.evaluate(r"""() => { const c = document.getElementById('finCorpo').cloneNode(true);
+                c.querySelectorAll('details.parte').forEach(d => d.remove());
+                const pc = document.getElementById('finCorpo').querySelector('details.parte');
+                return {visibile: c.textContent.replace(/\s+/g, ' '), chiusa: pc ? pc.textContent.replace(/\s+/g, ' ') : ''}; }""")
+            for brutto in (r"12 punti", r"dodici", r"12 points", r"twelve"):
+                if re.search(brutto, r["visibile"], re.I):
+                    errori.append(f"scheda dei costi ({lingua}): «{brutto}» nel testo visibile fuori dalla parte chiusa")
+            if not any(n_ in r["visibile"] for n_ in ("Un mese di lavoro in centro", "A month of work in the centre")):
+                errori.append(f"scheda dei costi ({lingua}): manca il grafico «Un mese di lavoro in centro»")
+            for voce in ("Under 26", "Over 65"):
+                if voce not in r["visibile"]:
+                    errori.append(f"scheda dei costi ({lingua}): manca l'abbonamento «{voce}» nel grafico del mese")
+            if "GTT" not in r["chiusa"] or not re.search(r"\d\d/\d\d/\d{4}", r["chiusa"]):
+                errori.append(f"scheda dei costi ({lingua}): nella parte chiusa mancano la fonte GTT e la data delle tariffe")
+        finally:
+            ctx.close()
+    for s_ in schede:
+        n_ = s_.get("numero_pubblico")
+        if n_ is None:
+            continue
+        pag = (cartella / "r" / f"{n_}.html").read_text(encoding="utf-8")
+        titolo = html_escape(s_["forma"]["titolo"], quote=True)
+        if f"risultati.html#p{n_}" not in pag or titolo not in pag:
+            errori.append(f"r/{n_}.html non segue la scheda {n_} («{s_['forma']['titolo'][:40]}»)")
+        if not (cartella / "assets" / "anteprime" / f"r{n_}.jpg").exists():
+            errori.append(f"manca assets/anteprime/r{n_}.jpg")
+    print(f"  L22 (progetto.html invariata, scheda dei costi senza «12 punti», r/N.html e #rN coi numeri nuovi): {'OK' if not errori else 'ERRORE'}")
     return errori
 
 
@@ -658,7 +736,7 @@ def prova_design(br, cartella):
     if not isinstance(br, BrowserPlaywright) or not (cartella / "data" / "schede_risultati.js").exists():
         print("  prova_design: non provata (serve Playwright e data/schede_risultati.js)")
         return []
-    return design_l15(br, cartella) + design_l16(br, cartella) + design_l17(br, cartella) + design_l18(br, cartella) + design_l20(br, cartella) + design_l21(br, cartella)
+    return design_l15(br, cartella) + design_l16(br, cartella) + design_l17(br, cartella) + design_l18(br, cartella) + design_l20(br, cartella) + design_l21(br, cartella) + design_l22(br, cartella)
 
 
 ANTEPRIME = RADICE / "assets" / "anteprime"
