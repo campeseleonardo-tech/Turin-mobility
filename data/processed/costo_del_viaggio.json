@@ -38,7 +38,8 @@
   "aci_gasolio_eur_km": 0.5047,
   "biglietto_urbano": 2.0,
   "abbonamento_mensile": 38.0,
-  "sosta_ordinaria_ora": 1.7
+  "sosta_ordinaria_ora": 1.7,
+  "sosta_ztl_ora": 2.8
  },
  "riepilogo": {
   "punti": 12,
@@ -58,6 +59,7 @@
   "tomtom_percorsi": 17,
   "tomtom_fuori": 12,
   "km_mediano_punti": 6.2,
+  "soglia_km_senza_sosta": 6.7,
   "mese": {
    "sosta_pagata": {
     "sente": 307.29,
@@ -1191,8 +1193,8 @@
   {
    "nome": "FERRARA",
    "km_rete": 9.51,
-   "km_tomtom": 12.55,
-   "scarto": -0.242
+   "km_tomtom": 25.82,
+   "scarto": -0.632
   },
   {
    "nome": "ZARA",
@@ -1241,7 +1243,7 @@
   "OK     l'auto che si sente costa meno dell'auto piena",
   "OK     coppie nelle fasce = coppie con chilometri — 506 coppie",
   "OK     coppie Torino-Torino in ogni fascia — 52, 191, 207, 56",
-  "AVVISO lunghezze della nostra rete entro il 10% di TomTom — 12 su 17 fuori: SANTA RITA -11%, REGINA MARGHERITA -40%, PASINI +10%, LEONARDO DA VINCI -54%, DROSSO CAP -25%, STURA LAZIO -19%, DERNA EST +18%, FERRARA -24%, STURA -26%, CAIO MARIO -39%, FERMI -34%, SOFIA +21%",
+  "AVVISO lunghezze della nostra rete entro il 10% di TomTom — 12 su 17 fuori: SANTA RITA -11%, REGINA MARGHERITA -40%, PASINI +10%, LEONARDO DA VINCI -54%, DROSSO CAP -25%, STURA LAZIO -19%, DERNA EST +18%, FERRARA -63%, STURA -26%, CAIO MARIO -39%, FERMI -34%, SOFIA +21%",
   "AVVISO cintura: tariffe a zone non assegnate alle zone dell'indagine — la cintura resta fuori; la scheda usa Torino e i punti del R6",
   "OK     la sosta pagata pesa piu' del carburante (caso principale)"
  ]

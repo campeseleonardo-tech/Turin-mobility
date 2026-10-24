@@ -239,7 +239,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/21_risultato1_vuoti.py",
    "scripts/22_risultato1_candidati.py"
   ],
-  "generato": "2026-10-24T14:43:58+00:00",
+  "generato": "2026-10-24T14:46:56+00:00",
   "avviso": [
    "Dati [STIMATO] — solo comune di Torino",
    "Distanze a piedi sulla rete stradale (15 min a 80 m/min) su 848.748 residenti (censimento 2021). Servizi dal catalogo comunale: la cintura non è confrontabile (manca il dato, non il servizio). I punti nuovi sono ipotesi di posizione, calcolate gruppo per gruppo: non si sommano tra gruppi e non tengono conto di costi o spazi disponibili."
@@ -1347,7 +1347,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO9_ATTESA.txt",
    "scripts/70_risultato9_attesa.py"
   ],
-  "generato": "2026-10-24T14:43:58+00:00",
+  "generato": "2026-10-24T14:46:56+00:00",
   "avviso": [
    "Dati [MISURATO] — pochi giorni",
    "Arrivi misurati con il GPS dei mezzi GTT raccolto dal Raspberry Pi, 2026-10-10 - 2026-10-22: il GPS c'è per il 80% dei passaggi programmati delle corse viste (prima si usava il feed GTT, che sottostima i ritardi: confronto nella scheda). Giorni non tutti interi e solo linee urbane viste dal GPS: vedi i limiti."
@@ -2652,7 +2652,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/84_risultato6_parcheggi.py",
    "data/processed/risultato6_v2/mappa_r6.json"
   ],
-  "generato": "2026-10-24T14:43:58+00:00",
+  "generato": "2026-10-24T14:46:56+00:00",
   "avviso": [
    "Come leggere i tag. ",
    "[MISURATO] = misura vera, fatta dai sensori del sistema 5T. [STIMATO] = calcolo nostro su dati veri, non una misura diretta. [DATI SCARSI] = pochi dati, da prendere con cautela."
@@ -7186,7 +7186,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO8_TRAFFICO_TP_V2.txt",
    "data/processed/risultato8_traffico_tp_v2.json"
   ],
-  "generato": "2026-10-24T14:43:58+00:00",
+  "generato": "2026-10-24T14:46:56+00:00",
   "avviso": [
    "Dati [STIMATO] (traffico) / [MISURATO] (sensori 5T) / [PROGRAMMATO] (orari GTT)",
    "Traffico stimato con un modello tarato su 22 sensori: errore tipico ±28%. Trasporto pubblico = fermate con almeno 4 passaggi all'ora entro 300 m o metro entro 600 m."
@@ -13676,7 +13676,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_CASE_FRAGILITA_SERVIZI.txt",
    "data/processed/case_fragilita_servizi.json"
   ],
-  "generato": "2026-10-24T14:43:58+00:00",
+  "generato": "2026-10-24T14:46:56+00:00",
   "avviso": [
    "Dati [STIMATO] (servizi, indice) / [CENSIMENTO] (abitanti). Differenza fra zone, non effetto causale."
   ],
@@ -15117,7 +15117,7 @@ window.SCHEDE_RISULTATI = [
    "data/processed/costo_del_viaggio.json",
    "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T14:43:58+00:00",
+  "generato": "2026-10-24T14:46:56+00:00",
   "avviso": [
    "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -15156,19 +15156,19 @@ window.SCHEDE_RISULTATI = [
   ],
   "forma": {
    "tipo_dato": "Tipo di dato: calcolato con prezzi pubblici di ottobre 2026 e con i tempi in auto col traffico tipico.",
-   "titolo": "Con la sosta pagata, andare al lavoro in centro in auto costa circa 270 euro al mese più dei mezzi",
-   "domanda": "Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi?",
+   "titolo": "Al lavoro in auto vicino al centro: circa 270 euro al mese più dei mezzi pubblici",
+   "domanda": "Quanto costa andare al lavoro vicino al centro in auto e quanto coi mezzi pubblici?",
    "numero": {
     "valore": 269,
     "unita": "euro",
-    "testo": "in più al mese dei mezzi pubblici, in auto con la sosta pagata in strada. Col costo pieno dell'auto sono ~366 euro.",
+    "testo": "in più al mese per andare al lavoro in auto vicino al centro, pagando la sosta",
     "breve": "in più al mese, in auto"
    },
    "principale": {
     "tipo": "barre",
-    "titolo": "Una commissione in centro (2 ore di sosta): costo di andata e ritorno",
+    "titolo": "Una commissione vicino al centro (2 ore di sosta): costo di andata e ritorno",
     "unita": "euro",
-    "nota": "Mediana dei viaggi dai punti d'ingresso in città a Piazza Castello. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
+    "nota": "Mediana dei viaggi dai punti d'ingresso in città verso il centro. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
     "voci": [
      {
       "label": "Auto, costo che si sente",
@@ -15191,14 +15191,14 @@ window.SCHEDE_RISULTATI = [
     ]
    },
    "punti": [
-    "Il parcheggio pesa più di tutto: 8 ore in centro costano 13,60 euro al giorno, il carburante 1,76 euro.",
-    "Con il parcheggio gratis al lavoro l'auto costa ~35 euro al mese di carburante, l'abbonamento tra 26 e 38 euro.",
+    "Il parcheggio pesa più di tutto: ~14 euro al giorno, il carburante ~2.",
+    "Senza sosta da pagare, l'auto costa meno dell'abbonamento fino a ~7 km.",
     "Coi mezzi pubblici si impiegano ~11 minuti in più a ogni viaggio."
    ],
    "altri": [
     {
      "tipo": "barre_gruppi",
-     "titolo": "Un mese di lavoro in centro: auto e mezzi pubblici",
+     "titolo": "Un mese di lavoro vicino al centro: auto e mezzi pubblici",
      "unita": "euro",
      "nota": "La barra chiara è il costo pieno dell'auto. Le tariffe agevolate sono quelle GTT per giovani e anziani, con certificato ISEE.",
      "gruppi": [
@@ -15259,22 +15259,10 @@ window.SCHEDE_RISULTATI = [
          "testo": "25"
         },
         {
-         "label": "Under 26, annuale agevolato, ISEE fino a 12.000 euro",
-         "valore": 13,
-         "tono": "verde",
-         "testo": "13"
-        },
-        {
          "label": "Over 65, abbonamento mensile",
          "valore": 20,
          "tono": "verde",
          "testo": "20"
-        },
-        {
-         "label": "Over 65, annuale, ISEE da 20.000 a 50.000 euro",
-         "valore": 16,
-         "tono": "verde",
-         "testo": "16"
         }
        ]
       }
@@ -15365,7 +15353,7 @@ window.SCHEDE_RISULTATI = [
     "Prezzi del 24/10/2026. Carburante: media self degli impianti entro 5 km da Piazza Castello (Osservatorio prezzi). Tariffe GTT e sosta dalle pagine ufficiali, costo ACI 2026 della Gazzetta Ufficiale.",
     "Auto che si sente: chilometri × consumo urbano × prezzo del carburante, andata e ritorno, più il parcheggio. Auto piena: chilometri × costo ACI per chilometro, più il parcheggio.",
     "Auto di riferimento: la stessa Golf da 115 CV, a benzina e a gasolio. Consumo in città: 7,2 e 6,2 litri ogni 100 km. Il costo è la media delle due.",
-    "Lavoro: 20 giorni al mese, 8 ore di sosta a tariffa ordinaria (1,70 euro l'ora). Se il parcheggio è gratis, solo carburante.",
+    "Lavoro: 20 giorni al mese, 8 ore di sosta a tariffa ordinaria (1,70 euro l'ora). La tariffa ordinaria vale fuori dalla zona a traffico limitato (dentro: 2,80 euro l'ora). Se il parcheggio è gratis, solo carburante.",
     "Mezzi pubblici: abbonamento mensile urbano (38 euro), 40 biglietti da 2,00 euro o abbonamento annuale diviso 12.",
     "Tariffe agevolate GTT: pagine ufficiali del 24/10/2026, senza data di validità. Under 26: mensile 25 euro, annuale 258 euro, da 158 a 208 con ISEE. Over 65: mensile 20 euro, annuale da 0 a 188 euro con ISEE.",
     "Commissione: 2 ore di sosta contro 2 biglietti urbani (2,00 euro l'uno).",
@@ -15389,7 +15377,7 @@ window.SCHEDE_RISULTATI = [
      "biglietto 2,00 euro, abbonamento mensile 38 euro"
     ],
     [
-     "Sosta in centro",
+     "Sosta",
      "1,70 euro l'ora, tariffa ordinaria"
     ]
    ],
@@ -15423,24 +15411,24 @@ window.SCHEDE_RISULTATI = [
       "tono": "verde"
      }
     ],
-    "didascalia": "In un anno di lavoro in centro: ~3.687 euro in auto, 456 euro coi mezzi pubblici (costo che si sente)."
+    "didascalia": "In un anno di lavoro vicino al centro: ~3.687 euro in auto, 456 euro coi mezzi pubblici (costo che si sente)."
    }
   },
   "forma_en": {
    "tipo_dato": "Type of data: calculated from public prices of October 2026 and car times with typical traffic.",
-   "titolo": "With paid parking, going to work downtown by car costs about 270 euros a month more than public transport",
-   "domanda": "How much does it cost to go to the centre by car and by public transport, today?",
+   "titolo": "To work by car near the centre: about 270 euros a month more than public transport",
+   "domanda": "How much does it cost to go to work near the centre by car, and how much by public transport?",
    "numero": {
     "valore": 269,
     "unita": "euros",
-    "testo": "more a month than public transport, driving and paying for street parking. At the car's full cost it is ~366 euros.",
+    "testo": "more a month to go to work by car near the centre, paying for parking",
     "breve": "more a month, by car"
    },
    "principale": {
     "tipo": "barre",
-    "titolo": "An errand in the centre (2 hours of parking): round-trip cost",
+    "titolo": "An errand near the centre (2 hours of parking): round-trip cost",
     "unita": "euros",
-    "nota": "Median of the trips from the city's entry points to Piazza Castello. The full cost also includes insurance, wear and loss of value.",
+    "nota": "Median of the trips from the city's entry points towards the centre. The full cost also includes insurance, wear and loss of value.",
     "voci": [
      {
       "label": "Car, the cost you feel",
@@ -15463,14 +15451,14 @@ window.SCHEDE_RISULTATI = [
     ]
    },
    "punti": [
-    "Parking weighs the most: 8 hours in the centre cost 13.60 euros a day, the fuel 1.76 euros.",
-    "With free parking at work the car costs ~35 euros a month in fuel, the pass between 26 and 38 euros.",
+    "Parking weighs the most: ~14 euros a day, the fuel ~2.",
+    "With no parking to pay, the car costs less than the pass up to ~7 km.",
     "By public transport a trip takes ~11 minutes longer."
    ],
    "altri": [
     {
      "tipo": "barre_gruppi",
-     "titolo": "A month of work in the centre: car and public transport",
+     "titolo": "A month of work near the centre: car and public transport",
      "unita": "euros",
      "nota": "The light bar is the full cost of the car. Concession fares are GTT's for young people and older people, with an ISEE certificate.",
      "gruppi": [
@@ -15531,22 +15519,10 @@ window.SCHEDE_RISULTATI = [
          "testo": "25"
         },
         {
-         "label": "Under 26, annual concession pass, ISEE up to 12,000 euros",
-         "valore": 13,
-         "tono": "verde",
-         "testo": "13"
-        },
-        {
          "label": "Over 65, monthly pass",
          "valore": 20,
          "tono": "verde",
          "testo": "20"
-        },
-        {
-         "label": "Over 65, annual pass, ISEE from 20,000 to 50,000 euros",
-         "valore": 16,
-         "tono": "verde",
-         "testo": "16"
         }
        ]
       }
@@ -15637,7 +15613,7 @@ window.SCHEDE_RISULTATI = [
     "Prices of 24/10/2026. Fuel: self-service average of the stations within 5 km of Piazza Castello (fuel price observatory). GTT fares and parking from the official pages, 2026 ACI cost from the Gazzetta Ufficiale.",
     "The car cost you feel: kilometres × urban consumption × fuel price, round trip, plus parking. The full car cost: kilometres × ACI cost per kilometre, plus parking.",
     "Reference cars: the same 115 hp Golf, petrol and diesel. Urban consumption: 7.2 and 6.2 litres per 100 km. The cost is the average of the two.",
-    "Work: 20 days a month, 8 hours of parking at the ordinary rate (1.70 euros an hour). If parking is free, fuel only.",
+    "Work: 20 days a month, 8 hours of parking at the ordinary rate (1.70 euros an hour). The ordinary rate applies outside the limited traffic zone (inside: 2.80 euros an hour). If parking is free, fuel only.",
     "Public transport: monthly urban pass (38 euros), 40 tickets at 2.00 euros or the annual pass divided by 12.",
     "GTT concession fares: official pages of 24/10/2026, with no validity date. Under 26: monthly 25 euros, annual 258 euros, from 158 to 208 with ISEE. Over 65: monthly 20 euros, annual from 0 to 188 euros with ISEE.",
     "Errand: 2 hours of parking against 2 urban tickets (2.00 euros each).",
@@ -15661,7 +15637,7 @@ window.SCHEDE_RISULTATI = [
      "ticket 2.00 euros, monthly pass 38 euros"
     ],
     [
-     "Parking in the centre",
+     "Sosta",
      "1.70 euros an hour, ordinary rate"
     ]
    ],
@@ -15695,7 +15671,7 @@ window.SCHEDE_RISULTATI = [
       "tono": "verde"
      }
     ],
-    "didascalia": "In a year of work in the centre: ~3,687 euros by car, 456 euros by public transport (the cost you feel)."
+    "didascalia": "In a year of work near the centre: ~3,687 euros by car, 456 euros by public transport (cost you feel)."
    }
   },
   "numero_pubblico": 1,

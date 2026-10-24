@@ -41,7 +41,7 @@ CONTROLLO DELLE LUNGHEZZE CON TOMTOM
   STURA LAZIO: rete 6.53 km, TomTom 8.04 km (-19%)
   MARSÈ: rete 13.3 km, TomTom 13.21 km (+1%)
   DERNA EST: rete 5.68 km, TomTom 4.8 km (+18%)
-  FERRARA: rete 9.51 km, TomTom 12.55 km (-24%)
+  FERRARA: rete 9.51 km, TomTom 25.82 km (-63%)
   ZARA: rete 4.26 km, TomTom 4.26 km (-0%)
   STURA: rete 7.98 km, TomTom 10.77 km (-26%)
   VENCHI UNICA: rete 6.36 km, TomTom 6.76 km (-6%)
@@ -59,6 +59,6 @@ OK     nessun costo negativo o nullo
 OK     l'auto che si sente costa meno dell'auto piena
 OK     coppie nelle fasce = coppie con chilometri — 506 coppie
 OK     coppie Torino-Torino in ogni fascia — 52, 191, 207, 56
-AVVISO lunghezze della nostra rete entro il 10% di TomTom — 12 su 17 fuori: SANTA RITA -11%, REGINA MARGHERITA -40%, PASINI +10%, LEONARDO DA VINCI -54%, DROSSO CAP -25%, STURA LAZIO -19%, DERNA EST +18%, FERRARA -24%, STURA -26%, CAIO MARIO -39%, FERMI -34%, SOFIA +21%
+AVVISO lunghezze della nostra rete entro il 10% di TomTom — 12 su 17 fuori: SANTA RITA -11%, REGINA MARGHERITA -40%, PASINI +10%, LEONARDO DA VINCI -54%, DROSSO CAP -25%, STURA LAZIO -19%, DERNA EST +18%, FERRARA -63%, STURA -26%, CAIO MARIO -39%, FERMI -34%, SOFIA +21%
 AVVISO cintura: tariffe a zone non assegnate alle zone dell'indagine — la cintura resta fuori; la scheda usa Torino e i punti del R6
 OK     la sosta pagata pesa piu' del carburante (caso principale)

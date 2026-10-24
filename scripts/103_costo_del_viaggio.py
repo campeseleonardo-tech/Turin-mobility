@@ -283,6 +283,9 @@ def main():
     for v in costi["gtt"]["agevolati"]["voci"]:
         mese = v["eur_mese"] if "eur_mese" in v else (v["eur_anno"] + v.get("spese_pratica_eur", 0.0)) / 12.0
         agevolati.append({"id": v["id"], "nome": v["nome"], "eur_mese": round(mese, 2), "annuale": "eur_anno" in v, "eur_anno": v.get("eur_anno")})
+    # chilometri sotto i quali, senza sosta da pagare, l'auto che si sente costa meno dell'abbonamento mensile (stessa formula di costi_viaggio)
+    euro_per_km_mese = costi_viaggio(1.0, costi)["lavoro_mese_senza_sosta"]["auto_sente"]
+    riepilogo["soglia_km_senza_sosta"] = round(costi["gtt"]["abbonamento_mensile_urbano_eur"] / euro_per_km_mese, 2)
     riepilogo["mese"] = {
         "sosta_pagata": {"sente": riepilogo["auto_mese_sente_mediana"], "pieno": riepilogo["auto_mese_pieno_mediana"],
                          "carburante": round(carb_mese, 2), "sosta": round(GIORNI_MESE * ORE_LAVORO * ora_sosta, 2)},
@@ -299,7 +302,7 @@ def main():
                       "consumo_urbano_benzina": costi["auto"]["benzina"]["consumo_urbano_l_100km"], "consumo_urbano_gasolio": costi["auto"]["gasolio"]["consumo_urbano_l_100km"],
                       "aci_benzina_eur_km": costi["auto"]["benzina"]["costo_pieno_eur_km"], "aci_gasolio_eur_km": costi["auto"]["gasolio"]["costo_pieno_eur_km"],
                       "biglietto_urbano": costi["gtt"]["biglietto_urbano_eur"], "abbonamento_mensile": costi["gtt"]["abbonamento_mensile_urbano_eur"],
-                      "sosta_ordinaria_ora": costi["sosta"]["tariffe_eur_ora"]["ordinaria"]},
+                      "sosta_ordinaria_ora": costi["sosta"]["tariffe_eur_ora"]["ordinaria"], "sosta_ztl_ora": costi["sosta"]["tariffe_eur_ora"]["ztl_centrale"]},
            "riepilogo": riepilogo, "punti": arrotonda(punti), "interscambi": arrotonda(inter), "fasce_distanza": fasce, "controllo_tomtom": tomtom,
            "controlli": c.righe}
     out_json = OUT_JSON.with_name("costo_del_viaggio_prova.json") if args.prova else OUT_JSON

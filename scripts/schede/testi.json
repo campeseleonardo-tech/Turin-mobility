@@ -326,7 +326,12 @@
   "Over 65, abbonamento mensile": "Over 65, monthly pass",
   "Carburante: prezzi del giorno, non la media di 4 settimane. Una Golf di consumo medio, non la propria auto.": "Fuel: prices of the day, not a 4-week average. A Golf of average consumption, not your own car.",
   "La zona a traffico limitato e gli abbonamenti alla sosta non contano; vale la tariffa ordinaria. Solo Torino: le tariffe a zone della cintura non sono assegnate alle zone dell'indagine.": "The limited traffic zone and parking passes are not counted; the ordinary rate applies. Turin only: the zone-based fares of the surrounding area are not assigned to the survey zones.",
-  "Le tariffe agevolate valgono solo con i requisiti (età, ISEE, residenza a Torino); la data delle tariffe non è pubblicata.": "Concession fares apply only to those who qualify (age, ISEE, residence in Turin); the date of the fares is not published."
+  "Le tariffe agevolate valgono solo con i requisiti (età, ISEE, residenza a Torino); la data delle tariffe non è pubblicata.": "Concession fares apply only to those who qualify (age, ISEE, residence in Turin); the date of the fares is not published.",
+  "Quanto costa andare al lavoro vicino al centro in auto e quanto coi mezzi pubblici?": "How much does it cost to go to work near the centre by car, and how much by public transport?",
+  "in più al mese per andare al lavoro in auto vicino al centro, pagando la sosta": "more a month to go to work by car near the centre, paying for parking",
+  "Una commissione vicino al centro (2 ore di sosta): costo di andata e ritorno": "An errand near the centre (2 hours of parking): round-trip cost",
+  "Mediana dei viaggi dai punti d'ingresso in città verso il centro. Il costo pieno comprende anche assicurazione, usura e perdita di valore.": "Median of the trips from the city's entry points towards the centre. The full cost also includes insurance, wear and loss of value.",
+  "Un mese di lavoro vicino al centro: auto e mezzi pubblici": "A month of work near the centre: car and public transport"
  },
  "modelli": [
   {
@@ -1252,6 +1257,26 @@
   {
    "it": "Con i servizi il legame col prezzo quasi sparisce ({p0}); resta quello fra fragilità e servizi ({p1}).",
    "en": "With services the link to price almost disappears ({p0}); the link between fragility and services remains ({p1})."
+  },
+  {
+   "it": "Al lavoro in auto vicino al centro: circa {n0} euro al mese più dei mezzi pubblici",
+   "en": "To work by car near the centre: about {n0} euros a month more than public transport"
+  },
+  {
+   "it": "Il parcheggio pesa più di tutto: ~{n0} euro al giorno, il carburante ~{n1}.",
+   "en": "Parking weighs the most: ~{n0} euros a day, the fuel ~{n1}."
+  },
+  {
+   "it": "Senza sosta da pagare, l'auto costa meno dell'abbonamento fino a ~{n0} km.",
+   "en": "With no parking to pay, the car costs less than the pass up to ~{n0} km."
+  },
+  {
+   "it": "Lavoro: {n0} giorni al mese, {n1} ore di sosta a tariffa ordinaria ({n2} euro l'ora). La tariffa ordinaria vale fuori dalla zona a traffico limitato (dentro: {n3} euro l'ora). Se il parcheggio è gratis, solo carburante.",
+   "en": "Work: {n0} days a month, {n1} hours of parking at the ordinary rate ({n2} euros an hour). The ordinary rate applies outside the limited traffic zone (inside: {n3} euros an hour). If parking is free, fuel only."
+  },
+  {
+   "it": "In un anno di lavoro vicino al centro: ~{n0} euro in auto, {n1} euro coi mezzi pubblici (costo che si sente).",
+   "en": "In a year of work near the centre: ~{n0} euros by car, {n1} euros by public transport (cost you feel)."
   }
  ]
 }

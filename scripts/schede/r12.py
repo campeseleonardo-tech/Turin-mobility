@@ -77,7 +77,7 @@ def forma_r12(s):
 
     def voce_mezzi(label, euro_mese):
         return {"label": label, "valore": round(euro_mese), "tono": "verde", "testo": str(round(euro_mese))}
-    graf_mese = {"tipo": "barre_gruppi", "titolo": "Un mese di lavoro in centro: auto e mezzi pubblici", "unita": "euro",
+    graf_mese = {"tipo": "barre_gruppi", "titolo": "Un mese di lavoro vicino al centro: auto e mezzi pubblici", "unita": "euro",
                  "nota": "La barra chiara è il costo pieno dell'auto. Le tariffe agevolate sono quelle GTT per giovani e anziani, con certificato ISEE.",
                  "gruppi": [{"label": "Auto, sosta pagata in strada", "voci": [voce_auto("Carburante e sosta", sp["sente"], sp["pieno"])]},
                             {"label": "Auto, parcheggio gratis al lavoro", "voci": [voce_auto("Solo carburante", pg["sente"], pg["pieno"])]},
@@ -85,7 +85,7 @@ def forma_r12(s):
                                                               voce_mezzi("Abbonamento mensile", mz["mensile"]),
                                                               voce_mezzi("Abbonamento annuale, al mese", mz["annuale_su_12"])]},
                             {"label": "Mezzi pubblici, tariffe agevolate",
-                             "voci": [voce_mezzi(ag[i]["nome"], ag[i]["eur_mese"]) for i in ("under26_mensile", "under26_annuale_a", "over65_mensile", "over65_annuale_d")]}]}
+                             "voci": [voce_mezzi(ag[i]["nome"], ag[i]["eur_mese"]) for i in ("under26_mensile", "over65_mensile")]}]}
     fasce = j["fasce_distanza"]
 
     def etichetta_fascia(f):
@@ -100,8 +100,8 @@ def forma_r12(s):
                       {"label": "Auto", "valore": round(f["auto_sente_mese"]), "prima": round(f["auto_piena_mese"]), "tono": "rosso",
                        "testo": f"{round(f['auto_sente_mese'])} ({round(f['auto_piena_mese'])} col costo pieno)"},
                       {"label": "Mezzi pubblici", "valore": round(f["mezzi_mese"]), "tono": "verde", "testo": str(round(f["mezzi_mese"]))}]} for f in fasce]}
-    graf_commissione = {"tipo": "barre", "titolo": f"Una commissione in centro ({ore_c} ore di sosta): costo di andata e ritorno", "unita": "euro",
-                        "nota": "Mediana dei viaggi dai punti d'ingresso in città a Piazza Castello. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
+    graf_commissione = {"tipo": "barre", "titolo": f"Una commissione vicino al centro ({ore_c} ore di sosta): costo di andata e ritorno", "unita": "euro",
+                        "nota": "Mediana dei viaggi dai punti d'ingresso in città verso il centro. Il costo pieno comprende anche assicurazione, usura e perdita di valore.",
                         "voci": [{"label": "Auto, costo che si sente", "valore": round(r["commissione_auto_sente_mediana"], 1), "tono": "rosso",
                                   "testo": euro(r["commissione_auto_sente_mediana"])},
                                  {"label": "Auto, costo pieno", "valore": round(r["commissione_auto_piena_mediana"], 1), "tono": "arancio",
@@ -111,20 +111,20 @@ def forma_r12(s):
     anno_auto, anno_mezzi = sente * 12, mezzi * 12
     return forma_base(
         s,
-        f"Con la sosta pagata, andare al lavoro in centro in auto costa circa {circa_dieci(diff)} euro al mese più dei mezzi",
-        "Quanto costa andare in centro in auto e quanto coi mezzi pubblici, oggi?",
+        f"Al lavoro in auto vicino al centro: circa {circa_dieci(diff)} euro al mese più dei mezzi pubblici",
+        "Quanto costa andare al lavoro vicino al centro in auto e quanto coi mezzi pubblici?",
         {"valore": round(diff), "unita": "euro",
-         "testo": f"in più al mese dei mezzi pubblici, in auto con la sosta pagata in strada. Col costo pieno dell'auto sono {circa(diff_pieno, ' euro')}.",
+         "testo": "in più al mese per andare al lavoro in auto vicino al centro, pagando la sosta",
          "breve": "in più al mese, in auto"},
         graf_commissione,
-        [f"Il parcheggio pesa più di tutto: {ore_l} ore in centro costano {euro(r['parcheggio_lavoro_giorno'])} euro al giorno, il carburante {euro(r['carburante_giorno_mediana'])} euro.",
-         f"Con il parcheggio gratis al lavoro l'auto costa {circa(pg['sente'], ' euro')} al mese di carburante, l'abbonamento tra {euro_intero(mz['annuale_su_12'])} e {euro_intero(mz['mensile'])} euro.",
+        [f"Il parcheggio pesa più di tutto: {circa(r['parcheggio_lavoro_giorno'], ' euro')} al giorno, il carburante {circa(r['carburante_giorno_mediana'])}.",
+         f"Senza sosta da pagare, l'auto costa meno dell'abbonamento fino a {circa(r['soglia_km_senza_sosta'], ' km')}.",
          f"Coi mezzi pubblici si impiegano {circa(r['minuti_in_piu_mediana'], ' minuti')} in più a ogni viaggio."],
         [graf_mese, graf_fasce],
         [f"Prezzi del {j['consultato'][8:10]}/{j['consultato'][5:7]}/{j['consultato'][:4]}. Carburante: media self degli impianti entro 5 km da Piazza Castello (Osservatorio prezzi). Tariffe GTT e sosta dalle pagine ufficiali, costo ACI 2026 della Gazzetta Ufficiale.",
          "Auto che si sente: chilometri × consumo urbano × prezzo del carburante, andata e ritorno, più il parcheggio. Auto piena: chilometri × costo ACI per chilometro, più il parcheggio.",
          f"Auto di riferimento: la stessa Golf da 115 CV, a benzina e a gasolio. Consumo in città: {virgola(pr['consumo_urbano_benzina'])} e {virgola(pr['consumo_urbano_gasolio'])} litri ogni 100 km. Il costo è la media delle due.",
-         f"Lavoro: {gm} giorni al mese, {ore_l} ore di sosta a tariffa ordinaria ({euro(pr['sosta_ordinaria_ora'])} euro l'ora). Se il parcheggio è gratis, solo carburante.",
+         f"Lavoro: {gm} giorni al mese, {ore_l} ore di sosta a tariffa ordinaria ({euro(pr['sosta_ordinaria_ora'])} euro l'ora). La tariffa ordinaria vale fuori dalla zona a traffico limitato (dentro: {euro(pr['sosta_ztl_ora'])} euro l'ora). Se il parcheggio è gratis, solo carburante.",
          f"Mezzi pubblici: abbonamento mensile urbano ({euro_intero(pr['abbonamento_mensile'])} euro), {reg['viaggi_abbonamento']} biglietti da {euro(pr['biglietto_urbano'])} euro o abbonamento annuale diviso 12.",
          f"Tariffe agevolate GTT: pagine ufficiali del {j['consultato'][8:10]}/{j['consultato'][5:7]}/{j['consultato'][:4]}, senza data di validità. "
          f"Under 26: mensile {euro_intero(ag['under26_mensile']['eur_mese'])} euro, annuale {euro_intero(ag['under26_annuale_ordinario']['eur_anno'])} euro, da {euro_intero(ag['under26_annuale_a']['eur_anno'])} a {euro_intero(ag['under26_annuale_c']['eur_anno'])} con ISEE. "
@@ -136,12 +136,12 @@ def forma_r12(s):
          ["Consumo in città", f"benzina {dec(pr['consumo_urbano_benzina'], 1)}, gasolio {dec(pr['consumo_urbano_gasolio'], 1)} litri ogni 100 km"],
          ["Costo pieno ACI", f"benzina {dec(pr['aci_benzina_eur_km'], 4)}, gasolio {dec(pr['aci_gasolio_eur_km'], 4)} euro al km"],
          ["Mezzi pubblici", f"biglietto {euro(pr['biglietto_urbano'])} euro, abbonamento mensile {euro_intero(pr['abbonamento_mensile'])} euro"],
-         ["Sosta in centro", f"{euro(pr['sosta_ordinaria_ora'])} euro l'ora, tariffa ordinaria"]],
+         ["Sosta", f"{euro(pr['sosta_ordinaria_ora'])} euro l'ora, tariffa ordinaria"]],
         ["Carburante: prezzi del giorno, non la media di 4 settimane. Una Golf di consumo medio, non la propria auto.",
          "La zona a traffico limitato e gli abbonamenti alla sosta non contano; vale la tariffa ordinaria. Solo Torino: le tariffe a zone della cintura non sono assegnate alle zone dell'indagine.",
          "Le tariffe agevolate valgono solo con i requisiti (età, ISEE, residenza a Torino); la data delle tariffe non è pubblicata.",
          f"Chilometri: su {r['tomtom_fuori']} dei {r['tomtom_percorsi']} percorsi il servizio di navigazione dà una lunghezza diversa di oltre il 10%. Pesa poco: il parcheggio vale la maggior parte del costo."],
         anima={"tipo": "contatori", "mesi": 12, "etichetta": "mesi di lavoro",
                "righe": [{"label": "Auto", "mese": round(sente, 1), "tono": "rosso"}, {"label": "Mezzi pubblici", "mese": round(mezzi, 1), "tono": "verde"}],
-               "didascalia": f"In un anno di lavoro in centro: {circa(anno_auto, ' euro')} in auto, {euro_intero(anno_mezzi)} euro coi mezzi pubblici (costo che si sente)."},
+               "didascalia": f"In un anno di lavoro vicino al centro: {circa(anno_auto, ' euro')} in auto, {euro_intero(anno_mezzi)} euro coi mezzi pubblici (costo che si sente)."},
         )

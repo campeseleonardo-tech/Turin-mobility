@@ -648,8 +648,8 @@ def design_l22(br, cartella):
             for brutto in (r"12 punti", r"dodici", r"12 points", r"twelve"):
                 if re.search(brutto, r["visibile"], re.I):
                     errori.append(f"scheda dei costi ({lingua}): «{brutto}» nel testo visibile fuori dalla parte chiusa")
-            if not any(n_ in r["visibile"] for n_ in ("Un mese di lavoro in centro", "A month of work in the centre")):
-                errori.append(f"scheda dei costi ({lingua}): manca il grafico «Un mese di lavoro in centro»")
+            if not any(n_ in r["visibile"] for n_ in ("Un mese di lavoro vicino al centro", "A month of work near the centre")):
+                errori.append(f"scheda dei costi ({lingua}): manca il grafico «Un mese di lavoro vicino al centro»")
             for voce in ("Under 26", "Over 65"):
                 if voce not in r["visibile"]:
                     errori.append(f"scheda dei costi ({lingua}): manca l'abbonamento «{voce}» nel grafico del mese")
