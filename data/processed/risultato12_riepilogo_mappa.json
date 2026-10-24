@@ -22,7 +22,7 @@
     "data/processed/costo_del_viaggio.json",
     "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
     "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -536,6 +536,7 @@
       "OpenStreetMap",
       "TomTom (tempi di percorrenza in auto, uso autorizzato)"
     ],
+    "titolo_breve": "Quanto costa muoversi",
     "anima": {
       "tipo": "contatori",
       "mesi": 12,
@@ -553,11 +554,6 @@
         }
       ],
       "didascalia": "In un anno di lavoro in centro: ~3.687 euro in auto, 456 euro coi mezzi pubblici (costo che si sente)."
-    },
-    "chiave": {
-      "valore": "~270",
-      "unita": "euro",
-      "testo": "in più al mese per andare al lavoro in centro in auto"
     }
   },
   "forma_en": {
@@ -1037,6 +1033,7 @@
       "OpenStreetMap",
       "TomTom (car travel times, used with permission)"
     ],
+    "titolo_breve": "What getting around costs",
     "anima": {
       "tipo": "contatori",
       "mesi": 12,
@@ -1054,11 +1051,6 @@
         }
       ],
       "didascalia": "In a year of work in the centre: ~3,687 euros by car, 456 euros by public transport (the cost you feel)."
-    },
-    "chiave": {
-      "valore": "~270",
-      "unita": "euros",
-      "testo": "more a month to go to work in the centre by car"
     }
   },
   "numero_pubblico": 1,

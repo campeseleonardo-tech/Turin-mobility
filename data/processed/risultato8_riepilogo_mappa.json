@@ -377,7 +377,7 @@
     "docs/rapporti/RAPPORTO_RISULTATO8_TRAFFICO_TP_V2.txt",
     "data/processed/risultato8_traffico_tp_v2.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
     "Dati [STIMATO] (traffico) / [MISURATO] (sensori 5T) / [PROGRAMMATO] (orari GTT)",
     "Traffico stimato con un modello tarato su 22 sensori: errore tipico ±28%. Trasporto pubblico = fermate con almeno 4 passaggi all'ora entro 300 m o metro entro 600 m."
@@ -3702,11 +3702,7 @@
       "TomTom (tempi di percorrenza in auto, uso autorizzato)",
       "Google Maps (3 percorsi controllati a mano)"
     ],
-    "chiave": {
-      "valore": "1,9",
-      "unita": "volte",
-      "testo": "il tempo dell'auto coi mezzi pubblici, al mattino"
-    },
+    "titolo_breve": "Bus contro auto",
     "anima": {
       "tipo": "area",
       "didascalia": "Da Piazza Castello, alle 7:45 di un feriale. In 30 minuti si raggiungono ~42% dei torinesi coi mezzi pubblici e ~90% in auto (traffico tipico, parcheggio compreso)."
@@ -6994,11 +6990,7 @@
       "TomTom (car travel times, used with permission)",
       "Google Maps (3 routes checked by hand)"
     ],
-    "chiave": {
-      "valore": "1.9",
-      "unita": "times",
-      "testo": "the car's time by public transport, in the morning"
-    },
+    "titolo_breve": "Bus against car",
     "anima": {
       "tipo": "area",
       "didascalia": "From Piazza Castello, at 7:45 a.m. on a weekday. In 30 minutes you reach ~42% of Turin residents by public transport and ~90% by car (typical traffic, parking included)."

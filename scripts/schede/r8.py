@@ -332,5 +332,4 @@ def forma_r8(s):
          f"For {100 * ti['quota_oltre_2_basso']:.0f}% of cars it takes more than twice as long ({100 * ti['quota_oltre_2_alto']:.0f}% with the sensors).",
          "Limit: car travel times use typical traffic on a November weekday, not measured on a specific day; we use a single service. "
          "Without metropolitan trains, public transport looks slower than it is."],
-        chiave={"valore": x, "unita": "volte", "testo": "il tempo dell'auto coi mezzi pubblici, al mattino"},
         **({"anima": anima} if anima else {}))

@@ -240,6 +240,11 @@ FONTI_SCHEDA = {   # per numero interno del risultato
 }
 
 
+# nome breve del risultato (al massimo 4 parole) per i riquadri della home; l'inglese sta in testi.json
+TITOLI_BREVI = {"12": "Quanto costa muoversi", "8": "Bus contro auto", "6": "Dove lasciare l'auto",
+                "10": "Fragilità e servizi", "4": "Ritardi dei mezzi", "1": "Servizi a piedi"}
+
+
 def forma_base(s, titolo, domanda, numero, principale, punti, altri, calcolo, criteri, limiti, english=None, mappa=True, **extra):
     """La forma di una scheda. «english» non si usa più (l'inglese viene da traduci.py): resta come argomento per non cambiare le chiamate."""
     f = {"tipo_dato": TIPO_DATO[s["tag"]], "titolo": titolo, "domanda": domanda, "numero": numero, "principale": principale,
@@ -249,6 +254,7 @@ def forma_base(s, titolo, domanda, numero, principale, punti, altri, calcolo, cr
         if s["mappa"].get("vista"):   # es. #tema=vulnerabilita&vista=doppio
             f["mappa"]["vista"] = s["mappa"]["vista"]
     f["fonti"] = [FONTI_NOMI[k] for k in FONTI_SCHEDA[str(s["risultato"])]]
+    f["titolo_breve"] = TITOLI_BREVI[str(s["risultato"])]
     f.update(extra)
     return f
 

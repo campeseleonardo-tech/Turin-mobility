@@ -551,7 +551,7 @@
     "scripts/84_risultato6_parcheggi.py",
     "data/processed/risultato6_v2/mappa_r6.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
     "Come leggere i tag. ",
     "[MISURATO] = misura vera, fatta dai sensori del sistema 5T. [STIMATO] = calcolo nostro su dati veri, non una misura diretta. [DATI SCARSI] = pochi dati, da prendere con cautela."
@@ -914,6 +914,7 @@
       "OpenStreetMap",
       "TomTom (tempi di percorrenza in auto, uso autorizzato)"
     ],
+    "titolo_breve": "Dove lasciare l'auto",
     "anima": {
       "tipo": "fermate",
       "contorno": {
@@ -2947,7 +2948,7 @@
         "from 15/10/2,026 to 22/10/2,026"
       ],
       [
-        "Bus versus car",
+        "Bus against car",
         "to Piazza Castello at 8; car: traffic factor of the route (median 2.6) + 5 minutes; estimate most favourable to the car: 5T sensors, factor 1.2"
       ]
     ],
@@ -2969,6 +2970,7 @@
       "OpenStreetMap",
       "TomTom (car travel times, used with permission)"
     ],
+    "titolo_breve": "Where to leave the car",
     "anima": {
       "tipo": "fermate",
       "contorno": {

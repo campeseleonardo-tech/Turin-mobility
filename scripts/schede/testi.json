@@ -99,7 +99,7 @@
   "Fermate importanti": "Important stops",
   "Distanza a piedi": "Walking distance",
   "Auto da fermare": "Cars to stop",
-  "Bus contro auto": "Bus versus car",
+  "Bus contro auto": "Bus against car",
   "Il costo del parcheggio in centro non è nel calcolo: pesa come minuti in più.": "The cost of parking downtown is not in the calculation: it counts as extra minutes.",
   "Si guarda un solo punto per luogo e una sola destinazione, Piazza Castello.": "We look at one point per place and a single destination, Piazza Castello.",
   "Le auto che passano vengono da un modello del traffico. I posti sono spesso stimati, con ±30%.": "Passing cars come from a traffic model. Spaces are often estimated, with ±30%.",
@@ -309,7 +309,12 @@
   "Google Maps (3 percorsi controllati a mano)": "Google Maps (3 routes checked by hand)",
   "Osservatorio prezzi carburanti (Ministero delle imprese e del made in Italy)": "Fuel price observatory (Ministry of Enterprises and Made in Italy)",
   "ACI (tabelle dei costi chilometrici 2026)": "ACI (2026 cost-per-kilometre tables)",
-  "GTT (tariffe e sosta)": "GTT (fares and parking)"
+  "GTT (tariffe e sosta)": "GTT (fares and parking)",
+  "Quanto costa muoversi": "What getting around costs",
+  "Dove lasciare l'auto": "Where to leave the car",
+  "Fragilità e servizi": "Fragility and services",
+  "Ritardi dei mezzi": "Vehicle delays",
+  "Servizi a piedi": "Services on foot"
  },
  "modelli": [
   {

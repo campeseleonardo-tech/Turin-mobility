@@ -100,10 +100,27 @@
     return Math.max(1, Math.floor((new Date(oggi.getFullYear(), oggi.getMonth(), oggi.getDate()) - d0) / 864e5) + 1);
   }
 
+  /* i risultati in due gruppi (campo «gruppo» delle schede, scritto da scripts/schede_risultati.py): prima «Per decidere», poi «Cosa dicono i dati».
+     voce(scheda, posizione) scrive il riquadro di una scheda; classe = classe CSS del contenitore dei riquadri. Home e risultati.html usano lo stesso codice. */
+  var GRUPPI = [
+    {id: "decidere", it: "Per decidere", en: "To decide", sit: "Risultati che aiutano il Comune e chi si muove a scegliere", sen: "Results that help the city and travellers choose"},
+    {id: "dati", it: "Cosa dicono i dati", en: "What the data show", sit: "Come funziona la città, misurato", sen: "How the city works, measured"}
+  ];
+  function perGruppi(schede, voce, classe){
+    return GRUPPI.map(function(g, k){
+      var righe = schede.map(function(s, i){
+        var suo = s.gruppo === g.id || (k === GRUPPI.length - 1 && !GRUPPI.some(function(x){ return x.id === s.gruppo; }));
+        return suo ? voce(s, i) : "";
+      }).join("");
+      return righe ? '<section class="gruppo" aria-label="' + esc(T(g.it, g.en)) + '"><h2 class="gruppo-titolo">' + esc(T(g.it, g.en)) + '</h2><p class="gruppo-sub">' + esc(T(g.sit, g.sen))
+        + '</p><div class="' + classe + '">' + righe + '</div></section>' : "";
+    }).join("");
+  }
+
   function avvia(){
     document.querySelectorAll(".lingua button").forEach(function(b){ b.addEventListener("click", function(){ impostaLingua(b.dataset.l); }); });
     traduciStatico();
   }
-  window.Sito = {esc: esc, formattaNumero: formattaNumero, contaSu: contaSu, osserva: osserva, dataAggiornamento: dataAggiornamento, giorniRaccolta: giorniRaccolta, ridotto: ridotto,
+  window.Sito = {esc: esc, formattaNumero: formattaNumero, contaSu: contaSu, osserva: osserva, perGruppi: perGruppi, dataAggiornamento: dataAggiornamento, giorniRaccolta: giorniRaccolta, ridotto: ridotto,
                  T: T, traduci: traduciStatico, lingua: function(){ return lang; }, impostaLingua: impostaLingua, avvia: avvia};
 })();

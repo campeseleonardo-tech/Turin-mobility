@@ -212,23 +212,13 @@ table.param td:first-child{color:var(--muted);width:40%}
 .riquadro .anteprima{border:1px solid var(--line);border-radius:8px;background:var(--sunk);padding:10px 12px;min-height:150px;display:flex;flex-direction:column;justify-content:center}
 .riquadro .anteprima .anima{margin:0}
 
-/* home, parte 1 «In breve»: due frasi e tre numeri chiave, ognuno col link alla sua scheda */
-.in-breve{margin:0 0 30px}
-.in-breve .lead{margin:0 0 6px;max-width:62ch;font-size:18px}
-.num-chiavi{display:flex;flex-wrap:wrap;gap:14px 22px;margin:16px 0 18px}
-.num-chiave{flex:1 1 230px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);border-left:5px solid var(--oro);padding:4px 0 4px 16px}
-.num-chiave .val{font:700 60px/1 var(--font-titoli);color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
-.num-chiave .txt{font-size:16px;color:var(--ink)}
-.num-chiave:hover .txt,.num-chiave:focus-visible .txt{text-decoration:underline}
-.bottone-mappa{margin:0}
+/* due gruppi di risultati (home e risultati.html): titolo, riga di spiegazione, riquadri */
+.gruppo{margin:0 0 10px}
+.gruppo-titolo{font-size:clamp(28px,4.4vw,38px);line-height:1.05;text-transform:uppercase;margin:26px 0 4px;color:var(--accent)}
+.gruppo-sub{margin:0 0 14px;color:var(--muted);font-size:16px;max-width:70ch}
+.link-progetto{margin:10px 0 26px}
 
-/* home, parte 3 «Il progetto»: fascia scura come l'eroe, con le sei tappe (assets/progetto.js); scura anche nel modo chiaro */
-.fascia-progetto{background:linear-gradient(135deg,#08142e 0%,#0b2559 100%);color:#f1f4fb;border-top:3px solid var(--oro);border-bottom:3px solid var(--oro);margin-top:34px}
-.fascia-progetto .dentro{max-width:1040px;margin:0 auto;padding:34px 16px 12px}
-.fascia-progetto h2{font-size:clamp(36px,6vw,56px);line-height:1;text-transform:uppercase;color:#e3bf55;margin:0 0 10px}
-.fascia-progetto .sub{color:#c8d2ea;font-size:18px;margin:0 0 4px;max-width:60ch}
-.fascia-progetto .testi{--ink:#f1f4fb;--muted:#a8b5d1;--line:#27407a;--accent:#e3bf55;--card:#0f2147;--hover:#162b58;--on-accent:#08142e}
-@media (max-width:820px){ .fascia-progetto .sticky{background:#0b2559} }
+
 
 /* riga «Fonti» in fondo alla parte chiusa delle schede (L21) */
 .fin-corpo .fonti{margin:14px 0 0;font-size:13px;color:var(--muted)}

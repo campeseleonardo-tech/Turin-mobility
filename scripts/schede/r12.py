@@ -140,5 +140,4 @@ def forma_r12(s):
         anima={"tipo": "contatori", "mesi": 12, "etichetta": "mesi di lavoro",
                "righe": [{"label": "Auto", "mese": round(sente, 1), "tono": "rosso"}, {"label": "Mezzi pubblici", "mese": round(mezzi, 1), "tono": "verde"}],
                "didascalia": f"In un anno di lavoro in centro: {circa(anno_auto, ' euro')} in auto, {euro_intero(anno_mezzi)} euro coi mezzi pubblici (costo che si sente)."},
-        chiave={"valore": f"~{circa_dieci(diff)}", "unita": "euro", "testo": "in più al mese per andare al lavoro in centro in auto"},
         )

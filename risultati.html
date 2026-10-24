@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-en="Results — Torino Mobilità">Risultati — Torino Mobilità</title>
-<meta name="description" content="Sei domande sulla mobilità e sui servizi di Torino, ognuna con la sua risposta, un grafico e i limiti dei dati.">
+<meta name="description" content="Sei risultati sulla mobilità di Torino in due gruppi, quelli per decidere e quelli ricavati dai dati: ognuno con la sua risposta, un grafico e i limiti dei dati.">
 <meta name="theme-color" content="#0b2559">
 <link rel="icon" href="assets/icona-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/icona-180.png">
@@ -12,14 +12,14 @@
 <meta property="og:site_name" content="Torino Mobilità">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Risultati — Torino Mobilità">
-<meta property="og:description" content="Sei domande sulla mobilità e sui servizi di Torino, ognuna con la sua risposta, un grafico e i limiti dei dati.">
+<meta property="og:description" content="Sei risultati sulla mobilità di Torino in due gruppi, quelli per decidere e quelli ricavati dai dati: ognuno con la sua risposta, un grafico e i limiti dei dati.">
 <meta property="og:url" content="https://campeseleonardo-tech.github.io/Turin-mobility/risultati.html">
 <meta property="og:image" content="https://campeseleonardo-tech.github.io/Turin-mobility/assets/anteprima.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Risultati — Torino Mobilità">
-<meta name="twitter:description" content="Sei domande sulla mobilità e sui servizi di Torino, ognuna con la sua risposta, un grafico e i limiti dei dati.">
+<meta name="twitter:description" content="Sei risultati sulla mobilità di Torino in due gruppi, quelli per decidere e quelli ricavati dai dati: ognuno con la sua risposta, un grafico e i limiti dei dati.">
 <meta name="twitter:image" content="https://campeseleonardo-tech.github.io/Turin-mobility/assets/anteprima.png">
 <link rel="stylesheet" href="assets/stile.css">
 </head>
@@ -33,11 +33,11 @@
 <div class="testa">
   <div>
     <h1 data-en="Results">Risultati</h1>
-    <p class="sub" data-en="Six questions about mobility and services in Turin, each with its answer, a chart and the limits of the data.">Sei domande sulla mobilità e sui servizi di Torino, ognuna con la sua risposta, un grafico e i limiti dei dati.</p>
+    <p class="sub" data-en="Six results about mobility in Turin in two groups, the ones to decide with and the ones the data show: each with its answer, a chart and the limits of the data.">Sei risultati sulla mobilità di Torino in due gruppi, quelli per decidere e quelli ricavati dai dati: ognuno con la sua risposta, un grafico e i limiti dei dati.</p>
   </div>
 </div>
 
-<div id="galleria" class="galleria"></div>
+<div id="galleria"></div>
 
 <p class="sub perche" style="margin-top:22px"><a class="btn" href="progetto.html" data-en="Why this project">Perché questo progetto</a></p>
 
@@ -94,7 +94,7 @@ function schedaValida(r){
   return !!(f && typeof f.titolo === "string" && f.numero && Array.isArray(f.punti));
 }
 
-/* numero mostrato in pagina (1-5); il numero interno (s.risultato) resta valido per i link #rN */
+/* numero mostrato in pagina (1-6); il numero interno (s.risultato) resta valido per i link #rN */
 function numeroDi(s){ return s.numero_pubblico != null ? s.numero_pubblico : s.risultato; }
 
 /* ---------------- elenco ---------------- */
@@ -104,7 +104,7 @@ function mostraGalleria(){
     g.innerHTML = `<div class="vuoto" style="flex:1 1 100%">${T("Nessun risultato trovato.", "No results found.")}</div>`;
     return;
   }
-  g.innerHTML = schede.map((s, i) => {
+  g.innerHTML = Sito.perGruppi(schede, (s, i) => {
     const f = forma(s);
     return `<button class="scheda" data-i="${i}" aria-haspopup="dialog">
       <div class="scheda-alto"><span>${T("Risultato", "Result")} ${esc(numeroDi(s))}</span></div>
@@ -113,7 +113,7 @@ function mostraGalleria(){
       <div class="chiave"><span class="val"${attrConta(f.numero)}>${valoreGrande(f.numero)}</span><span class="txt">${dopoGrande(f.numero)}${esc(f.numero.testo)}</span></div>
       <span class="apri">${T("Apri →", "Open →")}</span>
     </button>`;
-  }).join("");
+  }, "galleria");
   g.querySelectorAll(".scheda").forEach(b => b.addEventListener("click", () => apri(+b.dataset.i)));
   Sito.osserva(g);
 }
@@ -328,7 +328,7 @@ mostraGalleria();
 Sito.dataAggiornamento();
 // cambio di lingua: si ridisegnano l'elenco e, se aperta, la scheda
 window.addEventListener("lingua", () => { mostraGalleria(); if($("finestra").open && corrente >= 0) apri(corrente); });
-// #r4 = numero interno (link di prima, restano validi); #p2 = numero in pagina (1-5)
+// #r4 = numero interno (link di prima, restano validi); #p2 = numero in pagina (1-6)
 function apriDalIndirizzo(){
   const dalLink = /^#([rp])(\d+)$/.exec(location.hash);
   if(!dalLink) return;

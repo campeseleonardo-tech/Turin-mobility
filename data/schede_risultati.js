@@ -239,7 +239,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/21_risultato1_vuoti.py",
    "scripts/22_risultato1_candidati.py"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
    "Dati [STIMATO] — solo comune di Torino",
    "Distanze a piedi sulla rete stradale (15 min a 80 m/min) su 848.748 residenti (censimento 2021). Servizi dal catalogo comunale: la cintura non è confrontabile (manca il dato, non il servizio). I punti nuovi sono ipotesi di posizione, calcolate gruppo per gruppo: non si sommano tra gruppi e non tengono conto di costi o spazi disponibili."
@@ -561,6 +561,7 @@ window.SCHEDE_RISULTATI = [
     "5T (sensori del traffico)",
     "Agenzia della mobilità piemontese (indagine sugli spostamenti 2022)"
    ],
+   "titolo_breve": "Servizi a piedi",
    "anima": {
     "tipo": "cerchi",
     "voci": [
@@ -784,6 +785,7 @@ window.SCHEDE_RISULTATI = [
     "5T (traffic sensors)",
     "Piedmont Mobility Agency (2022 travel survey)"
    ],
+   "titolo_breve": "Services on foot",
    "anima": {
     "tipo": "cerchi",
     "voci": [
@@ -1377,7 +1379,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO9_ATTESA.txt",
    "scripts/70_risultato9_attesa.py"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
    "Dati [MISURATO] — pochi giorni",
    "Arrivi misurati con il GPS dei mezzi GTT raccolto dal Raspberry Pi, 2026-10-10 - 2026-10-22: il GPS c'è per il 80% dei passaggi programmati delle corse viste (prima si usava il feed GTT, che sottostima i ritardi: confronto nella scheda). Giorni non tutti interi e solo linee urbane viste dal GPS: vedi i limiti."
@@ -1791,6 +1793,7 @@ window.SCHEDE_RISULTATI = [
    "fonti": [
     "GTT (posizioni GPS dei mezzi, dato in tempo reale e orari ufficiali)"
    ],
+   "titolo_breve": "Ritardi dei mezzi",
    "anima": {
     "tipo": "quadratini",
     "totale": 100,
@@ -1861,11 +1864,6 @@ window.SCHEDE_RISULTATI = [
       }
      ]
     }
-   },
-   "chiave": {
-    "valore": "~6",
-    "unita": "%",
-    "testo": "dei passaggi arriva con oltre 10 minuti di ritardo"
    }
   },
   "forma_en": {
@@ -2122,6 +2120,7 @@ window.SCHEDE_RISULTATI = [
    "fonti": [
     "GTT (GPS positions of vehicles, real-time feed and official timetables)"
    ],
+   "titolo_breve": "Vehicle delays",
    "anima": {
     "tipo": "quadratini",
     "totale": 100,
@@ -2192,11 +2191,6 @@ window.SCHEDE_RISULTATI = [
       }
      ]
     }
-   },
-   "chiave": {
-    "valore": "~6",
-    "unita": "%",
-    "testo": "of arrivals are more than 10 minutes late"
    }
   },
   "numero_pubblico": 5,
@@ -2756,7 +2750,7 @@ window.SCHEDE_RISULTATI = [
    "scripts/84_risultato6_parcheggi.py",
    "data/processed/risultato6_v2/mappa_r6.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
    "Come leggere i tag. ",
    "[MISURATO] = misura vera, fatta dai sensori del sistema 5T. [STIMATO] = calcolo nostro su dati veri, non una misura diretta. [DATI SCARSI] = pochi dati, da prendere con cautela."
@@ -3119,6 +3113,7 @@ window.SCHEDE_RISULTATI = [
     "OpenStreetMap",
     "TomTom (tempi di percorrenza in auto, uso autorizzato)"
    ],
+   "titolo_breve": "Dove lasciare l'auto",
    "anima": {
     "tipo": "fermate",
     "contorno": {
@@ -5152,7 +5147,7 @@ window.SCHEDE_RISULTATI = [
      "from 15/10/2,026 to 22/10/2,026"
     ],
     [
-     "Bus versus car",
+     "Bus against car",
      "to Piazza Castello at 8; car: traffic factor of the route (median 2.6) + 5 minutes; estimate most favourable to the car: 5T sensors, factor 1.2"
     ]
    ],
@@ -5174,6 +5169,7 @@ window.SCHEDE_RISULTATI = [
     "OpenStreetMap",
     "TomTom (car travel times, used with permission)"
    ],
+   "titolo_breve": "Where to leave the car",
    "anima": {
     "tipo": "fermate",
     "contorno": {
@@ -7288,7 +7284,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_RISULTATO8_TRAFFICO_TP_V2.txt",
    "data/processed/risultato8_traffico_tp_v2.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
    "Dati [STIMATO] (traffico) / [MISURATO] (sensori 5T) / [PROGRAMMATO] (orari GTT)",
    "Traffico stimato con un modello tarato su 22 sensori: errore tipico ±28%. Trasporto pubblico = fermate con almeno 4 passaggi all'ora entro 300 m o metro entro 600 m."
@@ -10613,11 +10609,7 @@ window.SCHEDE_RISULTATI = [
     "TomTom (tempi di percorrenza in auto, uso autorizzato)",
     "Google Maps (3 percorsi controllati a mano)"
    ],
-   "chiave": {
-    "valore": "1,9",
-    "unita": "volte",
-    "testo": "il tempo dell'auto coi mezzi pubblici, al mattino"
-   },
+   "titolo_breve": "Bus contro auto",
    "anima": {
     "tipo": "area",
     "didascalia": "Da Piazza Castello, alle 7:45 di un feriale. In 30 minuti si raggiungono ~42% dei torinesi coi mezzi pubblici e ~90% in auto (traffico tipico, parcheggio compreso)."
@@ -13905,11 +13897,7 @@ window.SCHEDE_RISULTATI = [
     "TomTom (car travel times, used with permission)",
     "Google Maps (3 routes checked by hand)"
    ],
-   "chiave": {
-    "valore": "1.9",
-    "unita": "times",
-    "testo": "the car's time by public transport, in the morning"
-   },
+   "titolo_breve": "Bus against car",
    "anima": {
     "tipo": "area",
     "didascalia": "From Piazza Castello, at 7:45 a.m. on a weekday. In 30 minutes you reach ~42% of Turin residents by public transport and ~90% by car (typical traffic, parking included)."
@@ -13946,7 +13934,7 @@ window.SCHEDE_RISULTATI = [
    "docs/rapporti/RAPPORTO_CASE_FRAGILITA_SERVIZI.txt",
    "data/processed/case_fragilita_servizi.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
    "Dati [STIMATO] (servizi, indice) / [CENSIMENTO] (abitanti). Differenza fra zone, non effetto causale."
   ],
@@ -14663,16 +14651,12 @@ window.SCHEDE_RISULTATI = [
     "OpenStreetMap",
     "GTT (orari ufficiali)"
    ],
+   "titolo_breve": "Fragilità e servizi",
    "anima": {
     "tipo": "omini",
     "totale": 10,
     "colorati": 1,
     "didascalia": "Circa 1 torinese su 10 vive dove l'indice di fragilità sociale è alto e i servizi sono pochi (9,5% dei residenti delle zone abitate)."
-   },
-   "chiave": {
-    "valore": "~1",
-    "unita": "torinese su 10",
-    "testo": "vive dove i servizi sono pochi e le difficoltà sociali alte"
    }
   },
   "forma_en": {
@@ -15355,16 +15339,12 @@ window.SCHEDE_RISULTATI = [
     "OpenStreetMap",
     "GTT (official timetables)"
    ],
+   "titolo_breve": "Fragility and services",
    "anima": {
     "tipo": "omini",
     "totale": 10,
     "colorati": 1,
     "didascalia": "About 1 Turin resident in 10 lives where the social fragility index is high and services are few (9.5% of residents of inhabited areas)."
-   },
-   "chiave": {
-    "valore": "~1",
-    "unita": "Turin resident in 10",
-    "testo": "lives where services are few and social difficulties high"
    }
   },
   "numero_pubblico": 4,
@@ -15395,7 +15375,7 @@ window.SCHEDE_RISULTATI = [
    "data/processed/costo_del_viaggio.json",
    "data/ref/costi.json"
   ],
-  "generato": "2026-10-24T13:50:26+00:00",
+  "generato": "2026-10-24T13:52:56+00:00",
   "avviso": [
    "Dati [STIMATO]: prezzi di ottobre 2026 e chilometri della rete stradale. Costo medio di una Golf, non della propria auto."
   ],
@@ -15909,6 +15889,7 @@ window.SCHEDE_RISULTATI = [
     "OpenStreetMap",
     "TomTom (tempi di percorrenza in auto, uso autorizzato)"
    ],
+   "titolo_breve": "Quanto costa muoversi",
    "anima": {
     "tipo": "contatori",
     "mesi": 12,
@@ -15926,11 +15907,6 @@ window.SCHEDE_RISULTATI = [
      }
     ],
     "didascalia": "In un anno di lavoro in centro: ~3.687 euro in auto, 456 euro coi mezzi pubblici (costo che si sente)."
-   },
-   "chiave": {
-    "valore": "~270",
-    "unita": "euro",
-    "testo": "in più al mese per andare al lavoro in centro in auto"
    }
   },
   "forma_en": {
@@ -16410,6 +16386,7 @@ window.SCHEDE_RISULTATI = [
     "OpenStreetMap",
     "TomTom (car travel times, used with permission)"
    ],
+   "titolo_breve": "What getting around costs",
    "anima": {
     "tipo": "contatori",
     "mesi": 12,
@@ -16427,11 +16404,6 @@ window.SCHEDE_RISULTATI = [
      }
     ],
     "didascalia": "In a year of work in the centre: ~3,687 euros by car, 456 euros by public transport (the cost you feel)."
-   },
-   "chiave": {
-    "valore": "~270",
-    "unita": "euros",
-    "testo": "more a month to go to work in the centre by car"
    }
   },
   "numero_pubblico": 1,

@@ -142,5 +142,4 @@ def forma_r10(s):
         anima={"tipo": "omini", "totale": 10, "colorati": round(10 * se["quota_residenti_di_riferimento"]),
                "didascalia": f"Circa {round(10 * se['quota_residenti_di_riferimento'])} torinese su 10 vive dove l'indice di fragilità sociale è alto e i servizi sono pochi "
                              f"({virgola(100 * se['quota_residenti_di_riferimento'])}% dei residenti delle zone abitate)."},
-        chiave={"valore": "~1", "unita": f"torinese su {n_su}", "testo": "vive dove i servizi sono pochi e le difficoltà sociali alte"},
         )
