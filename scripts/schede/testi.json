@@ -331,7 +331,9 @@
   "in più al mese per andare al lavoro in auto vicino al centro, pagando la sosta": "more a month to go to work by car near the centre, paying for parking",
   "Una commissione vicino al centro (2 ore di sosta): costo di andata e ritorno": "An errand near the centre (2 hours of parking): round-trip cost",
   "Mediana dei viaggi dai punti d'ingresso in città verso il centro. Il costo pieno comprende anche assicurazione, usura e perdita di valore.": "Median of the trips from the city's entry points towards the centre. The full cost also includes insurance, wear and loss of value.",
-  "Un mese di lavoro vicino al centro: auto e mezzi pubblici": "A month of work near the centre: car and public transport"
+  "Un mese di lavoro vicino al centro: auto e mezzi pubblici": "A month of work near the centre: car and public transport",
+  "il tempo dell'auto, per i viaggi in auto del mattino fra zone diverse": "the car's travel time, for morning car trips between different zones",
+  "Il passaggio è l'ultimo istante con il GPS a meno di 60 metri dalla fermata. L'orario ufficiale è di partenza.": "An arrival is the last moment the GPS is within 60 metres of the stop. The official timetable is a departure time."
  },
  "modelli": [
   {
@@ -1277,6 +1279,50 @@
   {
    "it": "In un anno di lavoro vicino al centro: ~{n0} euro in auto, {n1} euro coi mezzi pubblici (costo che si sente).",
    "en": "In a year of work near the centre: ~{n0} euros by car, {n1} euros by public transport (cost you feel)."
+  },
+  {
+   "it": "Distanza dal centro della sezione. Strada molto trafficata: ~{n0} mila veicoli al giorno.",
+   "en": "Distance from the centre of the section. Very busy road: ~{n0} thousand vehicles a day."
+  },
+  {
+   "it": "Il passaggio è l'ultimo istante con il GPS a meno di {n0} metri dalla fermata. L'orario ufficiale è di partenza.",
+   "en": "An arrival is the last moment the GPS is within {n0} metres of the stop. The official timetable is a departure time."
+  },
+  {
+   "it": "Circa {n0} fermate importanti su {n1} non hanno abbastanza posti per lasciare l'auto",
+   "en": "About {n0} in {n1} important stops lack enough spaces to leave the car"
+  },
+  {
+   "it": "Fermate importanti: fuori dal centro, con metro, stazione o capolinea oppure {n0} corse all'ora, e almeno {n1} auto che passano.",
+   "en": "Important stops: outside the centre, with a metro, station or terminus or {n0} trips an hour, and at least {n1} passing cars."
+  },
+  {
+   "it": "Pareggio: minuti di parcheggio in centro che rendono l'auto lenta quanto il bus, {n0} (mediana dei {n1} punti, traffico tipico).",
+   "en": "Break-even: minutes of parking downtown that make the car as slow as the bus, {n0} (median of the {n1} points, typical traffic)."
+  },
+  {
+   "it": "metro, stazione o capolinea oppure {n0} corse all'ora, e almeno {n1} auto che passano",
+   "en": "metro, station or terminus or {n0} trips an hour, and at least {n1} passing cars"
+  },
+  {
+   "it": "Doppio svantaggio = fragilità nel 20% più alto e servizi nel 20% più basso. Soglie fissate prima dei numeri, per sezioni: {n0} e {n1}; per zone: {n2} e {n3}.",
+   "en": "Double disadvantage = fragility in the highest 20% and services in the lowest 20%. Thresholds fixed before the numbers, for sections: {n0} and {n1}; for zones: {n2} and {n3}."
+  },
+  {
+   "it": "indice sopra {n0} su 100",
+   "en": "index above {n0} out of 100"
+  },
+  {
+   "it": "punteggio fino a {n0} su 100",
+   "en": "score up to {n0} out of 100"
+  },
+  {
+   "it": "~{n0} passaggi su 100 partono più di 1 minuto prima dell'orario.",
+   "en": "~{n0} departures out of 100 leave more than 1 minute before the timetable."
+  },
+  {
+   "it": "Dove il bus è veloce i parcheggi di scambio si riempiono: ~{n0} volte il tempo dell'auto (dove è lento ~{n1}).",
+   "en": "Where the bus is fast, park-and-ride lots fill up: ~{n0} times the car's time (where it is slow ~{n1})."
   }
  ]
 }

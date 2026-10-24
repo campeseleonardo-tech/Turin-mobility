@@ -319,8 +319,8 @@ def _segmento(punti, i, flat, flon, kx):
 def cerca_vincolata(punti, flat, flon, kx, t_prec, i0, partenza=False):
     """Primo gruppo di segmenti vicini alla fermata con istante >= t_prec, dal segmento i0.
     Ritorna (istante, indice del segmento) del piu' vicino del gruppo, oppure None.
-    partenza=True (giro L9b, solo prima fermata della corsa): al capolinea il bus aspetta fermo vicino alla fermata e il punto piu' vicino
-    cade durante l'attesa; il passaggio e' invece l'ultimo istante del gruppo, quando il bus se ne va."""
+    partenza=True (L9b al capolinea, dal giro L23 a tutte le fermate): il bus aspetta fermo vicino alla fermata e il punto piu' vicino
+    cade durante l'attesa; il passaggio e' invece l'ultimo istante del gruppo, quando il bus se ne va (l'orario GTFS e' di partenza)."""
     migliore = None
     for i in range(i0, len(punti) - 1):
         s = _segmento(punti, i, flat, flon, kx)
@@ -344,7 +344,9 @@ def passaggi_corsa(punti, fermate_corsa, sched_base, fermate):
             continue
         flat, flon = info[1], info[2]
         kx = 111320.0 * math.cos(math.radians(flat))
-        r = cerca_vincolata(punti, flat, flon, kx, t_prec, i0, partenza=(n == 0))
+        # L23: nel GTFS GTT arrival_time = departure_time nel 100% delle righe di stop_times: l'orario di una fermata e' un istante solo, da leggere come
+        # partenza. Il passaggio e' quindi per TUTTE le fermate l'ultimo istante del gruppo vicino (quando il bus riparte), come gia' al capolinea (L9b).
+        r = cerca_vincolata(punti, flat, flon, kx, t_prec, i0, partenza=True)
         if r is None or abs(r[0] - (sched_base + sec)) / 60.0 > MAX_RITARDO_VERO_MIN:
             continue
         out[seq] = r[0]

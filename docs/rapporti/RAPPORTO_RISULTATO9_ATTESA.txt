@@ -8,68 +8,68 @@ Chiavi fermata-linea-verso-fascia-giorno frequenti: 3887, usate: 2569 (tolte que
 I NUMERI (feriale, linee frequenti, media pesata sugli intervalli programmati)
   attesa promessa:  4.8 min
   attesa reale:     6.4 min (stima bassa) - 6.5 min (stima alta)
-  attesa in piu':   1.6 - 1.7 min (stima bassa = +33% sulla promessa)
+  attesa in piu':   1.6 - 1.8 min (stima bassa = +33% sulla promessa)
   corse programmate assenti dal GPS: 7.7%
 
 PER TIPO DI GIORNO
 tipo      | promessa | reale bassa | reale alta | in piu' bassa | in piu' alta | intervalli oss.
-feriale   |      4.8 |         6.4 |        6.5 |           1.6 |          1.7 |      92004
-sabato    |      4.8 |         6.9 |        7.0 |           2.1 |          2.2 |       7932
-domenica  |      4.8 |         5.2 |        6.0 |           0.4 |          1.1 |        354
+feriale   |      4.8 |         6.4 |        6.5 |           1.6 |          1.8 |      91680
+sabato    |      4.8 |         6.9 |        7.0 |           2.1 |          2.2 |       7893
+domenica  |      4.8 |         5.2 |        6.0 |           0.4 |          1.2 |        354
 
 PER FASCIA ORARIA (feriale)
 fascia        | promessa | in piu' bassa | in piu' alta | intervalli oss.
-punta_mattina |      4.5 |           1.3 |          1.6 |       3851
-giorno        |      3.9 |           1.4 |          1.7 |      48165
-punta_sera    |      4.4 |           2.1 |          2.0 |      22724
-sera          |      8.2 |           1.7 |          1.7 |      10574
-notte         |      6.2 |           0.8 |          1.4 |       6690
+punta_mattina |      4.5 |           1.3 |          1.7 |       3843
+giorno        |      3.9 |           1.5 |          1.7 |      47995
+punta_sera    |      4.4 |           2.1 |          2.0 |      22675
+sera          |      8.2 |           1.8 |          1.7 |      10524
+notte         |      6.2 |           0.9 |          1.5 |       6643
 
 SENSIBILITA' alla soglia 'frequente' (feriale): 
   <= 10 min: promessa 4.0, in piu' 1.7 - 1.7 min, intervalli 107070
-  <= 12 min: promessa 4.8, in piu' 1.6 - 1.7 min, intervalli 148419
-  <= 15 min: promessa 6.2, in piu' 1.5 - 2.1 min, intervalli 336014
+  <= 12 min: promessa 4.8, in piu' 1.6 - 1.8 min, intervalli 148419
+  <= 15 min: promessa 6.2, in piu' 1.5 - 2.1 min, intervalli 336002
 
 10 LINEE CON PIU' ATTESA IN PIU' (feriale, stima bassa, >= 30 intervalli osservati)
  1. linea 61    promessa  5.9 min | in piu'  3.2 -  3.6 min | assenti 15.6% | intervalli 151
- 2. linea 33    promessa  5.5 min | in piu'  2.2 -  1.6 min | assenti 4.5% | intervalli 205
- 3. linea 4     promessa  4.3 min | in piu'  2.2 -  1.7 min | assenti 5.4% | intervalli 38487
+ 2. linea 33    promessa  5.5 min | in piu'  2.3 -  1.6 min | assenti 4.5% | intervalli 205
+ 3. linea 4     promessa  4.3 min | in piu'  2.2 -  1.7 min | assenti 5.4% | intervalli 38191
  4. linea 46    promessa  5.5 min | in piu'  1.9 -  2.9 min | assenti 1.7% | intervalli 195
- 5. linea 56    promessa  6.2 min | in piu'  1.6 -  1.8 min | assenti 4.2% | intervalli 2573
- 6. linea 16 CD promessa  5.8 min | in piu'  1.6 -  2.2 min | assenti 9.3% | intervalli 1530
- 7. linea 15    promessa  4.7 min | in piu'  1.4 -  1.8 min | assenti 8.8% | intervalli 12774
+ 5. linea 16 CD promessa  5.8 min | in piu'  1.6 -  2.2 min | assenti 9.3% | intervalli 1530
+ 6. linea 56    promessa  6.2 min | in piu'  1.6 -  1.8 min | assenti 4.2% | intervalli 2573
+ 7. linea 15    promessa  4.7 min | in piu'  1.4 -  1.8 min | assenti 8.8% | intervalli 12769
  8. linea 2     promessa  4.8 min | in piu'  1.4 -  2.5 min | assenti 12.3% | intervalli 3946
- 9. linea 3     promessa  5.0 min | in piu'  1.2 -  1.2 min | assenti 12.5% | intervalli 134
-10. linea 55    promessa  6.7 min | in piu'  1.2 -  3.0 min | assenti 9.0% | intervalli 1159
+ 9. linea 55    promessa  6.7 min | in piu'  1.3 -  3.0 min | assenti 9.0% | intervalli 1159
+10. linea 3     promessa  5.0 min | in piu'  1.2 -  1.2 min | assenti 12.5% | intervalli 134
 
 20 FERMATE (linea e verso) CON PIU' ATTESA IN PIU' (feriale, stima bassa)
- 1. linea 2     v0 Fermata 82 - REBAUDENGO            promessa  4.9 | in piu'  3.5 -  4.4 min | intervalli 43
+ 1. linea 2     v0 Fermata 82 - REBAUDENGO            promessa  4.9 | in piu'  3.6 -  4.4 min | intervalli 43
  2. linea 4     v0 Fermata 3233 - STAZIONE STURA      promessa  4.3 | in piu'  3.3 -  1.6 min | intervalli 248
  3. linea 4     v0 Fermata 243 - DUOMO - MUSEI REALI  promessa  4.3 | in piu'  3.1 -  2.0 min | intervalli 449
  4. linea 4     v0 Fermata 3239 - ABETI               promessa  4.3 | in piu'  3.1 -  2.0 min | intervalli 413
- 5. linea 4     v1 Fermata 3358 - CASTELLO DI MIRAFIO promessa  4.1 | in piu'  3.1 -  1.9 min | intervalli 439
- 6. linea 4     v0 Fermata 3237 - ULIVI               promessa  4.3 | in piu'  3.1 -  1.7 min | intervalli 313
- 7. linea 4     v1 Fermata 3362 - PAVESE              promessa  4.1 | in piu'  3.0 -  1.5 min | intervalli 362
+ 5. linea 4     v0 Fermata 3237 - ULIVI               promessa  4.3 | in piu'  3.1 -  1.7 min | intervalli 313
+ 6. linea 4     v1 Fermata 3362 - PAVESE              promessa  4.1 | in piu'  3.0 -  1.5 min | intervalli 362
+ 7. linea 4     v0 Fermata 3219 - FALCHERA CAP        promessa  4.4 | in piu'  3.0 -  1.8 min | intervalli 218
  8. linea 4     v0 Fermata 245 - GARIBALDI            promessa  4.5 | in piu'  3.0 -  1.7 min | intervalli 471
  9. linea 4     v1 Fermata 3360 - PLAVA               promessa  4.2 | in piu'  2.9 -  1.6 min | intervalli 360
-10. linea 4     v1 Fermata 248 - ARCIVESCOVADO        promessa  4.1 | in piu'  2.9 -  1.9 min | intervalli 429
-11. linea 4     v1 Fermata 3364 - BISCARETTI          promessa  4.1 | in piu'  2.8 -  1.5 min | intervalli 377
-12. linea 15    v0 Fermata 248 - ARCIVESCOVADO        promessa  4.7 | in piu'  2.8 -  2.1 min | intervalli 155
-13. linea 4     v1 Fermata 3492 - PORTA NUOVA         promessa  4.2 | in piu'  2.8 -  1.8 min | intervalli 445
-14. linea 2     v0 Fermata 86 - ALA DI STURA          promessa  4.9 | in piu'  2.8 -  3.8 min | intervalli 39
-15. linea 10N   v0 Fermata 350 - MASSARI CAP          promessa  5.6 | in piu'  2.8 -  3.3 min | intervalli 166
-16. linea 2     v1 Fermata 150 - UNIONE SOVIETICA     promessa  5.0 | in piu'  2.7 -  3.0 min | intervalli 43
-17. linea 4     v0 Fermata 3224 - SCOTELLARO          promessa  4.3 | in piu'  2.7 -  2.1 min | intervalli 465
-18. linea 2     v1 Fermata 136 - PITAGORA SUD         promessa  4.9 | in piu'  2.7 -  2.8 min | intervalli 43
-19. linea 4     v1 Fermata 250 - SAN QUINTINO         promessa  4.1 | in piu'  2.7 -  2.0 min | intervalli 428
-20. linea 4     v1 Fermata 3234 - STAZIONE STURA      promessa  4.6 | in piu'  2.7 -  0.9 min | intervalli 260
+10. linea 4     v0 Fermata 3228 - CASCINETTE          promessa  4.3 | in piu'  2.9 -  2.4 min | intervalli 446
+11. linea 55    v1 Fermata 1511 - ROBILANT SUD        promessa  7.9 | in piu'  2.9 -  5.1 min | intervalli 45
+12. linea 4     v1 Fermata 1914 - SOMMEILLER          promessa  4.2 | in piu'  2.9 -  2.1 min | intervalli 538
+13. linea 4     v1 Fermata 248 - ARCIVESCOVADO        promessa  4.1 | in piu'  2.9 -  1.9 min | intervalli 429
+14. linea 4     v1 Fermata 3364 - BISCARETTI          promessa  4.1 | in piu'  2.9 -  1.5 min | intervalli 377
+15. linea 15    v0 Fermata 248 - ARCIVESCOVADO        promessa  4.7 | in piu'  2.8 -  2.1 min | intervalli 155
+16. linea 4     v1 Fermata 280 - TAZZOLI EST          promessa  4.2 | in piu'  2.8 -  2.0 min | intervalli 481
+17. linea 4     v1 Fermata 3492 - PORTA NUOVA         promessa  4.2 | in piu'  2.8 -  1.8 min | intervalli 445
+18. linea 2     v0 Fermata 86 - ALA DI STURA          promessa  4.9 | in piu'  2.8 -  3.8 min | intervalli 39
+19. linea 2     v1 Fermata 150 - UNIONE SOVIETICA     promessa  5.0 | in piu'  2.7 -  3.0 min | intervalli 43
+20. linea 2     v1 Fermata 134 - PITAGORA NORD        promessa  4.9 | in piu'  2.7 -  3.0 min | intervalli 46
 
 DATI SCARSI (linea-fascia-tipo con > 20% corse assenti dal GPS, fuori dai numeri): 31
   linea 36N   punta_mattina feriale   assenti 100.0%
   linea 30    punta_mattina feriale   assenti 82.3%
   linea 81    punta_mattina feriale   assenti 63.6%
-  linea 17/   notte         feriale   assenti 50.0%
   linea 67    punta_mattina feriale   assenti 50.0%
+  linea 17/   notte         feriale   assenti 50.0%
   linea 68    punta_mattina feriale   assenti 47.0%
   linea 8     punta_mattina feriale   assenti 43.3%
   linea 72/   notte         feriale   assenti 41.7%
@@ -108,7 +108,7 @@ ESEMPI PER IL CONTROLLO A MANO (passo 2): orario, arrivo misurato dal GPS (ora i
     08:44:00     -      feed=si gps=si
     08:49:00     -      feed=si gps=si
     08:53:00     -      feed=si gps=si
-    08:57:00  09:00:47  feed=si gps=si
+    08:57:00  09:01:59  feed=si gps=si
   linea 68 verso 0 fermata 582 (Fermata 1518 - PRAGELATO), 20261015
     08:00:47     -      feed=no gps=no
     08:10:47     -      feed=no gps=no
@@ -126,10 +126,10 @@ ATTESA PER MODO (feriale, linee frequenti, stessa media pesata della citta')
 modo  | promessa | in piu' bassa - alta | reale bassa - alta | intervalli programmati | intervalli oss.
 bus   |      5.7 |      1.1 - 2.0      |      6.9 - 7.7      |                  30859 |      18454
 metro | nessuna linea frequente con dati
-tram  |      4.5 |      1.7 - 1.7      |      6.2 - 6.2      |                 117560 |      73550
+tram  |      4.5 |      1.7 - 1.7      |      6.3 - 6.2      |                 117560 |      73226
 
 RIEPILOGO DEI DATI USATI (Giro 6)
   chiavi fermata-linea-verso-fascia-giorno frequenti: 3887, usate: 2569
-  tram: intervalli osservati 73550, programmati 117560
+  tram: intervalli osservati 73226, programmati 117560
   bus: intervalli osservati 18454, programmati 30859
   OK: i bus hanno 18454 intervalli osservati (almeno 10000)

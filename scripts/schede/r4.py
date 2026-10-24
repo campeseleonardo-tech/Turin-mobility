@@ -431,8 +431,6 @@ def forma_r4(s):
     linee = [(n, v["0"]) for n, v in r["linee"].items() if "0" in v]
     peggio = max((x for x in linee if x[1]["passaggi"] >= par.get("min_passaggi_classifica", 2000) and str(x[0]).isdigit()),
                  key=lambda x: x[1]["ritardo"])
-    tram, bus = r["modi"]["tram"]["0"], r["modi"]["bus"]["0"]
-    gb_tram, gb_bus = tram["grappolo"] + tram["buco"], bus["grappolo"] + bus["buco"]
     dist = int(r["regole_gps"]["dist_gps_m"])
     gg = r["giorni"]
     a9 = leggi("risultato9_attesa.json")
@@ -456,10 +454,10 @@ def forma_r4(s):
         [(f"Alle 8 di un feriale un bus va in media a {circa(vb[0], ' km/h')}, fermate e semafori compresi." if vb else
           f"Guardando solo la partenza dal capolinea, i passaggi con oltre 10 minuti di ritardo sono {circa(b_fer, '%')}."),
          f"La linea più in ritardo è la {peggio[0]}: {circa(peggio[1]['ritardo'], '%')} dei passaggi feriali oltre 5 minuti.",
-         f"I tram arrivano a grappolo più dei bus: {circa(gb_tram, '%')} delle coppie di mezzi contro {circa(gb_bus, '%')}."],
+         f"{circa(fer['anticipo'])} passaggi su 100 partono più di 1 minuto prima dell'orario."],   # L23: l'anticipo resta oltre il 20% anche col passaggio letto come partenza
         [linea] + ([vb[1]] if vb else []),
         ["Il Raspberry Pi registra ogni minuto la posizione GPS dei mezzi GTT.",
-         f"Il passaggio è l'istante in cui il GPS è a meno di {dist} metri dalla fermata.",
+         f"Il passaggio è l'ultimo istante con il GPS a meno di {dist} metri dalla fermata. L'orario ufficiale è di partenza.",
          "Il ritardo è quell'istante meno l'orario ufficiale.",
          f"In anticipo oltre {virgola(abs(par['soglia_anticipo_min']))} minuto; in ritardo oltre {virgola(par['soglia_ritardo_min'])} minuti.",
          "Grappolo: due mezzi attaccati. Buco: intervallo doppio del previsto. Solo linee frequenti."]
