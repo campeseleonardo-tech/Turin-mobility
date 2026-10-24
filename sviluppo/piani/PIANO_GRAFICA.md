@@ -408,3 +408,69 @@ Leo chiedeva anche di chiamarli «dati misurati manualmente», ma **non si usa**
 - **Altro da sistemare (controllo di Claude):**
   - il sottotitolo di `risultati.html` («Cinque domande» / «Five questions», se c'è ancora) e ogni testo che conta i risultati: 6;
   - `og:description` della home e di `risultati.html` coerenti con le pagine nuove.
+
+### Giro L23 (in locale): le priorità 1-5 dell'analisi completa (`ANALISI_COMPLETA_25-10.md`)
+**Decisioni di Leo (25/10):**
+- I costi hanno **un numero solo**. Che sia misurato o stimato si dice solo nel «come è stato calcolato».
+- Risultati sempre **chiari e concisi**: dati chiari ed esplicativi, poche spiegazioni; il resto va nel «come è stato calcolato». Vale per ogni testo nuovo o cambiato.
+- Le piccole correzioni di testi e numeri emerse dall'analisi entrano in questo giro.
+
+**Regole fissate ora, prima dei numeri** (valori predefiniti di Claude):
+1. **Controllo di GitHub verde.**
+   - Le tre cause del § 2.1:
+     - (a) nei testi inglesi i prezzi con due decimali («2.00», «2.25») o la prova che accetta i prezzi;
+     - (b) `prova_funzioni_comuni.py` allineata allo script 24 di L9b (o lo script 24 di nuovo sulle funzioni comuni, se è stata una copia);
+     - (c) `99_area_tempi.py --finto` senza file IMQ (dati finti generati dalla prova).
+   - Nuovo `scripts/controllo_completo.py` (e `CONTROLLO_COMPLETO.bat`): esegue gli stessi passi di `.github/workflows/controllo.yml`, nello stesso ordine. Una riga in `sviluppo/AGENTS.md`, «Come provare»: alla fine di ogni giro si lancia questo, non solo `prova_pagine.py`.
+2. **Scheda dei costi** (r12.py, 103 se servono valori).
+   - **Numero grande, uno solo:** «~270 euro in più al mese» (valore preciso dal JSON), con testo breve: «per andare al lavoro in auto vicino al centro, pagando la sosta». Via «col costo pieno…» dal testo del numero.
+   - **Titolo:** «Andare al lavoro in auto vicino al centro costa ~270 euro al mese più dei mezzi pubblici» (o simile, ≤ 15 parole). Mai «in centro» o «Piazza Castello» come luogo di sosta: la tariffa usata (1,70) è fuori dalla ZTL. Lo dice il calcolo in una frase.
+   - **Punti:**
+     1. «Il parcheggio pesa più di tutto: ~14 euro al giorno, il carburante ~2.»
+     2. «Senza sosta da pagare, l'auto costa meno dell'abbonamento fino a ~6 km.» Soglia letta dal grafico per distanza; se la soglia non si legge dai dati, la frase dice la fascia.
+     3. «Coi mezzi ~11 minuti in più a viaggio.»
+   - **Tariffe agevolate:** stesso tipo per tutte, solo i mensili (Under 26: 25; Over 65: 20). Gli annuali ISEE vanno nel calcolo.
+   - Anteprima `r1.jpg` e `r/1.html` rifatte col titolo nuovo.
+3. **Anticipo dei bus** (script 27, e 70 che usa la stessa funzione).
+   - Controllo: nel GTFS GTT `arrival_time` = `departure_time` per quale quota delle righe di `stop_times`?
+   - Se oltre il 95%, l'orario di una fermata è un istante solo, da leggere come partenza: il passaggio diventa per **tutte** le fermate l'**ultimo** istante del gruppo entro 60 m, come già al capolinea (L9b).
+   - Se sotto il 95%, si confronta l'istante più vicino con `arrival_time` e l'ultimo istante con `departure_time`.
+   - Prova piccola con una corsa finta (bus fermo 40 secondi alla fermata).
+   - Rilancio di 27 e 70. Tabella prima/dopo nell'esito: anticipo, oltre 5, oltre 10, partenza, attese.
+   - In scheda una riga sola fra i punti o nel calcolo, a seconda del numero: se l'anticipo resta oltre il 20%, un punto chiave («~N passaggi su 100 partono più di 1 minuto prima dell'orario»); se no, solo il calcolo.
+4. **Tempi coi mezzi corretti coi dati misurati** (schede 2 e 3, e i minuti della scheda 1), dopo il punto 3:
+   - **attesa in più:** quella misurata dallo script 70 nella fascia 7-9 (feriale), una volta per viaggio. I cambi non si contano: stima prudente, scritta nel calcolo;
+   - **ritardo guadagnato a bordo:** dal GPS (script 27), mediana sulle corse feriali 7-9 di (ritardo all'ultima fermata − ritardo alla prima) / minuti programmati della corsa;
+   - **quota del tempo a bordo:** r5py `DetailedItineraries` su un campione fisso di 200 coppie dello script 93 (seme fisso) alle 8, mediana della quota a bordo sul tempo totale;
+   - **tempo corretto** = tempo da orario + attesa in più + ritardo per minuto × quota a bordo × tempo da orario;
+   - si applica agli script 93 (scheda 2), 94 e 100 (scheda 3, gara) e di conseguenza alla 103 (minuti in più della scheda 1);
+   - il numero grande della scheda 2 e le classi della scheda 3 si rifanno col tempo corretto; il valore «da orario» va nel calcolo;
+   - nessuna parola in più nei titoli: è il calcolo che cambia, e il calcolo lo dice in una frase.
+5. **Piccoli testi e numeri** (analisi §§ 3 e 8):
+   - Scheda 3:
+     - titolo con «Circa 2 fermate importanti su 3…» (la forchetta 135-212 resta nel calcolo);
+     - un punto chiave nuovo dagli interscambi esistenti: «I parcheggi di scambio si riempiono dove il bus dopo è veloce» (Stura, Venchi pieni o a metà; Sofia, Caio Mario con posti, dove il bus è più lento). Sostituisce il punto più debole;
+     - una sola definizione di «fermata importante» (calcolo = criteri);
+     - la frase dei 16 minuti di pareggio più semplice o tolta dal visibile.
+   - Scheda 2:
+     - via dai limiti «Prova sulla scelta del mezzo senza esito» (resta in `docs/R8_traffico.md`);
+     - nella domanda o nel testo del numero «per i viaggi in auto fra zone diverse» (il 47% resta nel calcolo).
+   - Scheda 4: le soglie per zone (49,8 e 33,4) solo nel calcolo; nei criteri visibili una coppia sola.
+   - Scheda 6: «almeno 10.677 veicoli al giorno» → «~10 mila veicoli al giorno»; le domande e i titoli restano.
+   - Pulizia: righe inutilizzate di `scripts/schede/testi.json`.
+   - Mappa: il tema «Velocità e traffico» usa solo le letture affidabili (come `velocita_5t.json`)? Se no, una riga nella sua legenda: «medie di tutte le letture, anche quelle poco affidabili».
+
+```
+Sei sul PC di Leo, cartella C:\projects\Progetti\GTT, ramo prova. Prima: git pull --no-rebase origin prova; git fetch origin; git merge --no-edit origin/claude/epic-clarke-6zdofk; git push origin prova; python scripts\controlla_rami.py (se un ramo ha commit non in prova, fermati e dillo a Leo).
+Leggi sviluppo/AGENTS.md, la memoria, sviluppo/piani/ANALISI_COMPLETA_25-10.md e, in sviluppo/piani/PIANO_GRAFICA.md, solo «Discussione di design» (valori predefiniti) e «Giro L23». Non leggere altri piani né esiti salvo un fatto preciso. Le regole di L23 sono fissate prima dei numeri: non cambiarle dopo averli visti; se una non si può applicare, scrivilo nell'esito e passa avanti.
+Niente controlli grafici (li fa Leo), niente telefono, niente scritture sul Pi. Testi nuovi chiari e concisi, dettagli solo nel «come è stato calcolato», inglese in testi.json. Un commit per punto, git push origin prova dopo ognuno. Circa 2-3 ore: se il tempo finisce, chiudi il punto in corso, fai l'esito e scrivi da dove ripartire.
+1. Controllo di GitHub verde (regola 1): correggi le tre cause, scrivi scripts\controllo_completo.py e CONTROLLO_COMPLETO.bat, una riga in sviluppo/AGENTS.md; lancialo: tutto verde.
+2. Scheda dei costi (regola 2), anteprima r1 e r/1.html.
+3. Anticipo dei bus (regola 3): controllo del GTFS, regola, prova con corsa finta, rilancio 27 e 70, tabella prima/dopo, riga in scheda.
+4. Tempi coi mezzi corretti (regola 4): misure dal GPS e dallo script 70, campione con DetailedItineraries, correzione negli script 93, 94, 100 e conseguenze in 103; rilancio; tabella prima/dopo (rapporto mediano, quota oltre 2, classi dei 12 punti, minuti della scheda 1).
+5. Piccoli testi e numeri (regola 5).
+6. Rilancio e prove: python scripts\04_genera_mappa.py; python scripts\schede_risultati.py (nessuna ATTENZIONE); python scripts\controllo_completo.py (verde); python scripts\prova_pagine.py --playwright (0 errori, anteprime e immagini del README rifatte). Aggiorna docs\R4, R6, R8, R12 coi numeri e le regole nuove.
+7. Esito sviluppo/piani/ESITO_L23.md (una sezione per punto, tabelle prima/dopo, cosa è saltato e perché), memoria, commit, git pull --no-rebase origin prova, git push origin prova.
+8. Se il punto 6 è tutto verde: git checkout main; git pull origin main; git merge --no-edit prova; git push origin main; git checkout prova. Poi controlla su GitHub (Actions) che l'esecuzione su main sia verde e scrivilo.
+ALLA FINE a Leo: per punto fatto/saltato; i numeri grandi che sono cambiati (prima → dopo); cosa guardare (schede 1, 2, 3, 5 e le anteprime); se main e il controllo di GitHub sono verdi.
+```
